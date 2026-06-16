@@ -465,12 +465,52 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
 </section>
 
 <!-- FORMULAIRE -->
-<section style="padding:90px 8vw;background:var(--gris-clair);text-align:center">
-  <div class="eyebrow">Développement</div>
-  <h2 class="stitle" style="color:var(--noir)">Devenir conseiller iad<br/><em style="font-style:normal;color:var(--corail)">avec Élodie.</em></h2>
-  <p class="ssub" style="color:var(--gris);max-width:720px">Élodie n'est pas seulement conseillère : elle est aussi <strong>Manager iad</strong> et anime une équipe de 15 conseillers. Le modèle iad repose sur le <strong>marketing de réseau</strong> (parrainage) : en plus des commissions sur vos propres ventes — jusqu'à 85 % des honoraires avec le dispositif Production+ — vous percevez des <strong>commissions récurrentes</strong> sur l'activité des conseillers que vous formez et accompagnez, sur plusieurs niveaux. C'est ce qui permet de bâtir un revenu qui dure dans le temps.</p>
-  <p class="ssub" style="color:var(--gris);max-width:720px;margin-top:18px">Pour accélérer vos débuts, iad propose des <strong>dispositifs+</strong> : <strong>Starter+</strong> (pack à 99 € HT jusqu'à votre 1re vente), <strong>Booster+</strong> (commission de parrainage portée de 7 % à 10 % la 1re année), <strong>Production+</strong> (jusqu'à 85 % des honoraires), <strong>Croissance+</strong> (bonus de 10 à 15 % sur vos récurrences) et <strong>TIP</strong> pour intégrer des équipes de professionnels. Élodie vous accompagne personnellement, en français comme en espagnol, dans votre lancement.</p>
-  <a href="#contact" class="btn-estim" style="background:var(--bleu);color:#fff;margin-top:32px">👥 Rejoindre l'équipe d'Élodie</a>
+<section class="dev">
+  <style>
+  .dev{position:relative;padding:100px 8vw;background:linear-gradient(160deg,#E8F7FD 0%,#F4F9FC 100%);overflow:hidden}
+  .dev::before{content:'';position:absolute;top:-120px;right:-100px;width:380px;height:380px;background:radial-gradient(circle,rgba(0,180,236,.18),transparent 70%);pointer-events:none}
+  .dev::after{content:'';position:absolute;bottom:-140px;left:-120px;width:420px;height:420px;background:radial-gradient(circle,rgba(234,88,74,.12),transparent 70%);pointer-events:none}
+  .dev-inner{position:relative;max-width:1000px;margin:0 auto;text-align:center}
+  .dev-badge{display:inline-block;background:rgba(0,180,236,.12);color:var(--bleu-fonce);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border-radius:100px;margin-bottom:18px}
+  .dev h2{font-size:clamp(28px,4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.05;color:var(--noir);margin-bottom:18px}
+  .dev h2 em{font-style:normal;color:var(--corail)}
+  .dev-lead{font-size:17px;line-height:1.7;color:var(--gris-fonce);max-width:720px;margin:0 auto 40px}
+  .dev-lead strong{color:var(--bleu-fonce)}
+  .dev-stats{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:48px}
+  .dev-stat{background:#fff;border-radius:16px;padding:24px 28px;min-width:200px;box-shadow:0 10px 30px rgba(0,95,128,.08);border-top:3px solid var(--bleu)}
+  .dev-stat b{display:block;font-size:26px;font-weight:800;color:var(--corail);letter-spacing:-.02em;line-height:1}
+  .dev-stat span{display:block;font-size:13px;color:var(--gris);margin-top:8px}
+  .dev-sub{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--bleu-fonce);margin-bottom:20px}
+  .dev-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:44px}
+  @media(max-width:900px){.dev-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.dev-grid{grid-template-columns:1fr}}
+  .dev-card{background:#fff;border-radius:14px;padding:22px 16px;text-align:left;box-shadow:0 6px 20px rgba(0,95,128,.06);transition:transform .2s,box-shadow .2s}
+  .dev-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,95,128,.14)}
+  .dev-tag{display:inline-block;font-size:12px;font-weight:800;color:#fff;background:var(--bleu);padding:5px 12px;border-radius:100px;margin-bottom:12px}
+  .dev-card:nth-child(2) .dev-tag{background:var(--corail)}
+  .dev-card p{font-size:13px;line-height:1.55;color:var(--gris-fonce);margin:0}
+  .dev-cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--bleu),var(--bleu-fonce));color:#fff;font-size:15px;font-weight:700;padding:16px 40px;border-radius:100px;text-decoration:none;box-shadow:0 10px 30px rgba(0,95,128,.25);transition:transform .2s}
+  .dev-cta:hover{transform:translateY(-2px)}
+  </style>
+  <div class="dev-inner">
+    <span class="dev-badge">Développement</span>
+    <h2>Devenir conseiller iad<br/><em>avec Élodie.</em></h2>
+    <p class="dev-lead">Élodie n'est pas seulement conseillère : elle est aussi <strong>Manager iad</strong> et anime une équipe de 15 conseillers. Le modèle iad repose sur le <strong>marketing de réseau</strong> (parrainage) : en plus des commissions sur vos propres ventes, vous percevez des <strong>revenus récurrents</strong> sur l'activité des conseillers que vous formez — sur plusieurs niveaux. Un revenu qui se construit et qui dure.</p>
+    <div class="dev-stats">
+      <div class="dev-stat"><b>jusqu'à 85 %</b><span>de commission sur vos ventes</span></div>
+      <div class="dev-stat"><b>revenus récurrents</b><span>sur votre réseau, dans le temps</span></div>
+      <div class="dev-stat"><b>+ de 15 conseillers</b><span>accompagnés par Élodie</span></div>
+    </div>
+    <div class="dev-sub">Les dispositifs+ pour accélérer vos débuts</div>
+    <div class="dev-grid">
+      <div class="dev-card"><span class="dev-tag">STARTER+</span><p>Pack à 99 € HT jusqu'à votre 1re vente</p></div>
+      <div class="dev-card"><span class="dev-tag">BOOSTER+</span><p>Parrainage porté de 7 % à 10 % la 1re année</p></div>
+      <div class="dev-card"><span class="dev-tag">PRODUCTION+</span><p>Jusqu'à 85 % des honoraires HT</p></div>
+      <div class="dev-card"><span class="dev-tag">CROISSANCE+</span><p>Bonus de 10 à 15 % sur vos récurrences</p></div>
+      <div class="dev-card"><span class="dev-tag">TIP</span><p>Bonus pour intégrer une équipe de pros</p></div>
+    </div>
+    <a href="#contact" class="dev-cta">👥 Rejoindre l'équipe d'Élodie</a>
+  </div>
 </section>
 
 <section id="contact">
