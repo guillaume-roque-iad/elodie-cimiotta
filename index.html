@@ -19,7 +19,10 @@
 {"@context":"https://schema.org","@graph":[{"@type":"Person","name":"Elodie Cimiotta","jobTitle":"Conseillère & Manager iad","telephone":["+33642344612","+34613599378"],"email":"elodie.cimiotta@iadespana.es","url":"https://elodie-cimiotta-iad.fr","worksFor":{"@type":"Organization","name":"iad France"}},{"@type":"LocalBusiness","name":"Elodie Cimiotta — Conseillère iad","telephone":"+33642344612","email":"elodie.cimiotta@iadespana.es","address":{"@type":"PostalAddress","addressLocality":"Quarante","postalCode":"34310","addressRegion":"Hérault","addressCountry":"FR"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"19","bestRating":"5"},"sameAs":["https://www.facebook.com/Elodie.cimiotta.transactionimmo/","https://www.google.com/maps?cid=6386072553264324792"]}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -213,13 +216,13 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--noir);background:v
 /* FOOTER */
 footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
 .ft{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:32px}
-.fb p{font-size:13px;color:rgba(255,255,255,.35);line-height:1.65;margin-top:14px;max-width:280px}
-.fc h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:14px}
-.fc a{display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:9px;transition:color .2s}
-.fc a:hover{color:#fff}
+.fb p{font-size:13px;color:rgba(255,255,255,.72);line-height:1.65;margin-top:14px;max-width:280px}
+.fc h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.75);margin-bottom:14px}
+.fc a{display:block;font-size:13px;color:rgba(255,255,255,.82);text-decoration:none;margin-bottom:9px;transition:color .2s}
+.fc a:hover{color:#fff;text-decoration:underline}
 .fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
-.fleg{font-size:11px;color:rgba(255,255,255,.2);line-height:1.5;max-width:600px}
-.fcopy{font-size:12px;color:rgba(255,255,255,.2)}
+.fleg{font-size:11px;color:rgba(255,255,255,.7);line-height:1.5;max-width:600px}
+.fcopy{font-size:12px;color:rgba(255,255,255,.7)}
 
 /* RESPONSIVE */
 @media(max-width:1024px){
@@ -242,6 +245,9 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
   .fg2{grid-template-columns:1fr}
   .btabs{gap:6px}
 }
+/* Accessibilité — accents texte suffisamment contrastés sur fond clair (WCAG AA 4.5:1) */
+.eyebrow,.sva,.blire,.avcta a,.cinfo a,.bcat:not(.co):not(.dk){color:#0079A3}
+.bcat.co{color:#C84133}
 </style>
 </head>
 <body>
@@ -272,7 +278,7 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
     </div>
   </div>
   <div class="hero-right">
-    <img src="img-a1d68288b51c.jpg" alt="Elodie Cimiotta" class="hero-photo"/>
+    <img src="img-a1d68288b51c.jpg" alt="Elodie Cimiotta, conseillère immobilière iad" class="hero-photo" width="400" height="533" fetchpriority="high"/>
     <div class="hero-card">
       <strong>Elodie Cimiotta</strong>
       <span>Conseillère & Manager iad · depuis 2018</span>
@@ -336,7 +342,7 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
 <!-- ELODIE -->
 <section class="elodie">
   <div class="elodie-img">
-    <img src="img-a1d68288b51c.jpg" alt="Elodie Cimiotta" class="elodie-photo"/>
+    <img src="img-a1d68288b51c.jpg" alt="Elodie Cimiotta, conseillère immobilière iad" class="elodie-photo" width="520" height="520" loading="lazy"/>
     <div class="elodie-tag">
       <strong>Conseillère & Manager</strong>
       <span>iad France · iad España</span>
@@ -392,7 +398,7 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
       <p class="ssub">Vendeurs, acheteurs, primo-accédants — découvrez ce que les clients d'Elodie retiennent de leur collaboration.</p>
     </div>
     <div class="avbadge">
-      <svg class="avbadge-logo" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C12.955 4 4 12.955 4 24s8.955 20 20 20s20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="m6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
+      <svg class="avbadge-logo" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C12.955 4 4 12.955 4 24s8.955 20 20 20s20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="m6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
       <div><div class="avbadge-score"><span class="stars">★★★★★</span> 5,0</div><div class="avbadge-count">19 avis Google</div></div>
     </div>
   </div>
@@ -421,8 +427,8 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
     <div class="avctrl">
       <div class="avdots" id="avDots"></div>
       <div class="avarrows">
-        <button class="avbtn" id="avPrev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-        <button class="avbtn" id="avNext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <button class="avbtn" id="avPrev" type="button" aria-label="Avis précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button class="avbtn" id="avNext" type="button" aria-label="Avis suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="9 18 15 12 9 6"/></svg></button>
       </div>
     </div>
     <div class="avcta"><a href="https://www.google.com/maps/search/Elodie+Cimiotta+iad" target="_blank" rel="noopener">Voir les 19 avis sur Google →</a></div>
@@ -448,10 +454,10 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
     <a href="article-quarante-elodie.html" class="bcard" data-cat="france"><div class="btop"></div><div class="bbody"><div class="bcat">Marché local · Hérault</div><h3>Immobilier à Quarante (34310) en 2026</h3><p>Prix, tendances et opportunités à Quarante et ses environs.</p><div class="blire">Lire l'article</div></div></a>
     <a href="article-hauts-cantons-elodie.html" class="bcard" data-cat="france"><div class="btop"></div><div class="bbody"><div class="bcat">Marché local · Hérault</div><h3>Hauts Cantons de l'Hérault en 2026</h3><p>Saint-Chinian, Saint-Pons, Olargues — le marché immobilier analysé.</p><div class="blire">Lire l'article</div></div></a>
     <a href="article-beziers-elodie.html" class="bcard" data-cat="france"><div class="btop"></div><div class="bbody"><div class="bcat">Marché local · Hérault</div><h3>Immobilier à Béziers et son bassin en 2026</h3><p>La ville en transformation — prix, quartiers et opportunités d'investissement.</p><div class="blire">Lire l'article</div></div></a>
-    <a href="article-rosas-elodie.html" class="bcard" data-cat="espagne"><div class="btop co"></div><div class="bbody"><div class="bcat co">Marché local · Espagne</div><h3>Immobilier à Rosas (Costa Brava) en 2026</h3><p>Prix, quartiers et conseils pour acheter à Rosas.</p><div class="blire" style="color:var(--corail)">Lire l'article</div></div></a>
-    <a href="article-costa-brava-elodie.html" class="bcard" data-cat="espagne"><div class="btop co"></div><div class="bbody"><div class="bcat co">Guide · Espagne</div><h3>Acheter sur la Costa Brava — guide pour les Français</h3><p>NIE, frais, secteurs, démarches — tout ce qu'il faut savoir.</p><div class="blire" style="color:var(--corail)">Lire l'article</div></div></a>
-    <a href="article-acheter-espagne-elodie.html" class="bcard" data-cat="espagne"><div class="btop co"></div><div class="bbody"><div class="bcat co">Guide pratique · Espagne</div><h3>Acheter en Espagne depuis la France en 2026</h3><p>Fiscalité, banque, notaire, pièges à éviter — guide complet.</p><div class="blire" style="color:var(--corail)">Lire l'article</div></div></a>
-    <a href="article-investissement-espagne-elodie.html" class="bcard" data-cat="espagne"><div class="btop co"></div><div class="bbody"><div class="bcat co">Investissement · Espagne</div><h3>Investissement locatif en Espagne en 2026</h3><p>Rentabilité, zones à privilégier, gestion locative à distance.</p><div class="blire" style="color:var(--corail)">Lire l'article</div></div></a>
+    <a href="article-rosas-elodie.html" class="bcard" data-cat="espagne"><div class="btop co"></div><div class="bbody"><div class="bcat co">Marché local · Espagne</div><h3>Immobilier à Rosas (Costa Brava) en 2026</h3><p>Prix, quartiers et conseils pour acheter à Rosas.</p><div class="blire" style="color:#C84133">Lire l'article</div></div></a>
+    <a href="article-costa-brava-elodie.html" class="bcard" data-cat="espagne"><div class="btop co"></div><div class="bbody"><div class="bcat co">Guide · Espagne</div><h3>Acheter sur la Costa Brava — guide pour les Français</h3><p>NIE, frais, secteurs, démarches — tout ce qu'il faut savoir.</p><div class="blire" style="color:#C84133">Lire l'article</div></div></a>
+    <a href="article-acheter-espagne-elodie.html" class="bcard" data-cat="espagne"><div class="btop co"></div><div class="bbody"><div class="bcat co">Guide pratique · Espagne</div><h3>Acheter en Espagne depuis la France en 2026</h3><p>Fiscalité, banque, notaire, pièges à éviter — guide complet.</p><div class="blire" style="color:#C84133">Lire l'article</div></div></a>
+    <a href="article-investissement-espagne-elodie.html" class="bcard" data-cat="espagne"><div class="btop co"></div><div class="bbody"><div class="bcat co">Investissement · Espagne</div><h3>Investissement locatif en Espagne en 2026</h3><p>Rentabilité, zones à privilégier, gestion locative à distance.</p><div class="blire" style="color:#C84133">Lire l'article</div></div></a>
     <a href="article-vendre-herault-elodie.html" class="bcard" data-cat="guide"><div class="btop dk"></div><div class="bbody"><div class="bcat dk">Guide vendeur</div><h3>Comment vendre sa maison dans l'Hérault</h3><p>Estimation, diagnostics, home staging, négociation — les étapes clés.</p><div class="blire" style="color:var(--bleu-fonce)">Lire le guide</div></div></a>
     <a href="article-premier-achat-elodie.html" class="bcard" data-cat="guide"><div class="btop dk"></div><div class="bbody"><div class="bcat dk">Guide acheteur</div><h3>Premier achat immobilier — les étapes clés 2026</h3><p>Budget, PTZ, compromis, signature — tout ce qu'il faut savoir.</p><div class="blire" style="color:var(--bleu-fonce)">Lire le guide</div></div></a>
     <a href="article-bi-residence-elodie.html" class="bcard" data-cat="guide"><div class="btop dk"></div><div class="bbody"><div class="bcat dk">Guide bi-résidence</div><h3>Vivre entre France et Espagne en 2026</h3><p>Résidence fiscale, couverture sociale, immobilier transfrontalier.</p><div class="blire" style="color:var(--bleu-fonce)">Lire le guide</div></div></a>
@@ -570,17 +576,17 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
     </div>
     <form id="fme" onsubmit="envoyerElodie(event); return false;">
       <input type="hidden" name="destinataire" value="elodie.cimiotta@iadespana.es"/>
-      <div class="fg"><label>Nom et prénom *</label><input type="text" name="nom" required placeholder="Jean Dupont"/></div>
+      <div class="fg"><label for="f-nom">Nom et prénom *</label><input id="f-nom" type="text" name="nom" required placeholder="Jean Dupont"/></div>
       <div class="fg2">
-        <div class="fg"><label>Email *</label><input type="email" name="email" required placeholder="jean@email.com"/></div>
-        <div class="fg"><label>Téléphone</label><input type="tel" name="telephone" placeholder="+33 6 00 00 00 00"/></div>
+        <div class="fg"><label for="f-email">Email *</label><input id="f-email" type="email" name="email" required placeholder="jean@email.com"/></div>
+        <div class="fg"><label for="f-tel">Téléphone</label><input id="f-tel" type="tel" name="telephone" placeholder="+33 6 00 00 00 00"/></div>
       </div>
       <div class="fg2">
-        <div class="fg"><label>Ville</label><input type="text" name="ville" placeholder="Quarante"/></div>
-        <div class="fg"><label>Pays</label><select name="pays"><option>France</option><option>Espagne</option><option>Autre</option></select></div>
+        <div class="fg"><label for="f-ville">Ville</label><input id="f-ville" type="text" name="ville" placeholder="Quarante"/></div>
+        <div class="fg"><label for="f-pays">Pays</label><select id="f-pays" name="pays"><option>France</option><option>Espagne</option><option>Autre</option></select></div>
       </div>
-      <div class="fg"><label>Votre projet</label><select name="projet"><option value="">Sélectionnez...</option><option>Vendre mon bien</option><option>Acheter un bien</option><option>Estimer mon bien</option><option>Investissement locatif</option><option>Rejoindre iad</option><option>Autre</option></select></div>
-      <div class="fg"><label>Message</label><textarea name="message" placeholder="Décrivez votre projet..."></textarea></div>
+      <div class="fg"><label for="f-projet">Votre projet</label><select id="f-projet" name="projet"><option value="">Sélectionnez...</option><option>Vendre mon bien</option><option>Acheter un bien</option><option>Estimer mon bien</option><option>Investissement locatif</option><option>Rejoindre iad</option><option>Autre</option></select></div>
+      <div class="fg"><label for="f-message">Message</label><textarea id="f-message" name="message" placeholder="Décrivez votre projet..."></textarea></div>
       <button type="submit" class="fsub">Envoyer mon message →</button>
     </form>
   </div>
@@ -590,7 +596,7 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
 <footer>
   <div class="ft">
     <div class="fb">
-      <img src="img-cadd4684987b.png" alt="iad Immobilier" style="height:30px;width:auto;opacity:.7"/>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 176 32" role="img" aria-label="iad Immobilier" style="height:30px;width:auto;opacity:.7" fill="#fff"><path d="M17.309,21.608c-0,-1.549 1.263,-2.805 2.821,-2.805l5.17,-0c1.558,-0 2.822,1.256 2.822,2.805c-0,1.55 -1.264,2.806 -2.822,2.806l-5.17,0c-1.558,0 -2.821,-1.256 -2.821,-2.806Zm-13.535,-21.608c2.084,0 3.773,1.68 3.773,3.752c0,2.072 -1.689,3.752 -3.773,3.752c-2.084,-0 -3.774,-1.68 -3.774,-3.752c-0,-2.072 1.69,-3.752 3.774,-3.752Zm46.201,0.01c8.949,0.056 16.185,7.286 16.185,16.197c0,6.782 -4.191,12.584 -10.128,14.998c-3.515,1.428 -8.049,1.199 -9.337,1.199l0,-0.188c0,-2.903 2.395,-5.021 5.274,-5.511c0.7,-0.119 1.379,-0.292 1.991,-0.54c3.95,-1.606 6.725,-5.463 6.725,-9.958c0,-5.916 -4.804,-10.716 -10.745,-10.753l-4.84,-0c-0.419,-0 -0.759,0.338 -0.759,0.755l-0,20.312c-0,3.221 -2.626,5.832 -5.866,5.832c-2.334,0 -4.446,-1.376 -5.378,-3.504l-9.93,-22.683c-0.165,-0.375 -0.699,-0.376 -0.865,-0.001l-10.053,22.711c-0.936,2.113 -3.038,3.477 -5.361,3.477c-3.238,0 -5.862,-2.612 -5.857,-5.831l0.024,-16.159c3.012,0 5.457,2.422 5.47,5.416l0.041,9.929c0.002,0.507 0.701,0.65 0.905,0.184l9.738,-22.268c0.941,-2.151 3.076,-3.542 5.435,-3.542c2.359,-0 4.463,1.37 5.415,3.497l9.959,22.255c0.207,0.463 0.903,0.316 0.903,-0.191l0,-19.814c0,-3.214 2.621,-5.819 5.853,-5.819l5.096,-0l0.105,-0Z"></path><path d="M118.474,23.252c0.515,0.488 0.918,1.058 1.208,1.709c0.29,0.651 0.436,1.381 0.436,2.156c-0,0.776 -0.146,1.495 -0.436,2.156c-0.291,0.662 -0.693,1.234 -1.208,1.716c-0.516,0.483 -1.121,0.858 -1.816,1.127c-0.696,0.268 -1.443,0.403 -2.274,0.403c-0.831,-0 -1.598,-0.134 -2.304,-0.403c-0.705,-0.269 -1.315,-0.647 -1.83,-1.134c-0.516,-0.488 -0.916,-1.06 -1.201,-1.717c-0.285,-0.656 -0.428,-1.372 -0.428,-2.148c-0,-0.776 0.143,-1.492 0.428,-2.149c0.285,-0.657 0.688,-1.229 1.208,-1.716c0.52,-0.488 1.131,-0.866 1.831,-1.134c0.701,-0.268 1.451,-0.403 2.281,-0.403c0.831,-0 1.593,0.134 2.289,0.403c0.695,0.268 1.301,0.646 1.816,1.134Zm-1.066,5.222c0.166,-0.408 0.248,-0.86 0.248,-1.358c-0,-0.497 -0.082,-0.95 -0.248,-1.358c-0.165,-0.408 -0.395,-0.761 -0.69,-1.059c-0.296,-0.299 -0.644,-0.528 -1.043,-0.687c-0.401,-0.159 -0.836,-0.238 -1.306,-0.238c-0.47,-0 -0.903,0.079 -1.298,0.238c-0.396,0.16 -0.743,0.388 -1.043,0.687c-0.3,0.298 -0.533,0.651 -0.698,1.059c-0.165,0.408 -0.247,0.871 -0.247,1.358c-0,0.487 0.082,0.938 0.247,1.35c0.165,0.413 0.396,0.769 0.69,1.067c0.296,0.299 0.644,0.528 1.043,0.687c0.401,0.159 0.836,0.238 1.306,0.238c0.471,0 0.903,-0.079 1.299,-0.238c0.395,-0.159 0.743,-0.389 1.043,-0.687c0.3,-0.298 0.533,-0.651 0.697,-1.059Zm-28.625,-6.579l1.996,-0l0.031,10.445l-2.282,-0l-0.013,-6.269l-3.093,5.165l-1.096,-0l-3.077,-5.031l0,6.135l-2.28,-0l-0,-10.446l2.011,0l3.935,6.486l3.868,-6.486Zm15.082,0l1.996,0l0.031,10.446l-2.282,-0l-0.014,-6.269l-3.092,5.165l-1.096,-0l-3.077,-5.031l0,6.135l-2.28,-0l-0,-10.446l2.01,0l3.935,6.486l3.869,-6.486Zm-28.289,0l-0,10.446l-2.432,-0l0,-10.446l2.432,0Zm61.711,0l-0,10.446l-2.432,-0l-0,-10.446l2.432,0Zm21.293,6.088l-0,2.418l5.718,-0l-0,1.94l-8.134,-0l-0,-10.446l7.939,0l-0,1.94l-5.523,0l-0,2.268l4.878,0l-0,1.88l-4.878,0Zm17.783,4.356l-2.626,-0l-2.017,-2.911l-0.114,0.001l-2.116,0l-0,2.91l-2.431,-0l-0,-10.445l4.547,-0c0.94,-0 1.75,0.151 2.431,0.455c0.68,0.303 1.206,0.738 1.576,1.305c0.37,0.568 0.555,1.254 0.555,2.03c-0,0.776 -0.185,1.445 -0.555,2.007c-0.371,0.562 -0.896,0.992 -1.576,1.291l-0.021,0.008l2.347,3.349Zm-3.212,-7.998c-0.37,-0.318 -0.93,-0.477 -1.68,-0.477l-1.982,0l-0,3.641l1.982,-0c0.75,-0 1.31,-0.162 1.68,-0.485c0.37,-0.324 0.555,-0.759 0.555,-1.336c-0,-0.577 -0.185,-1.024 -0.555,-1.343Zm-30.267,-2.446l-0,8.476l5.268,-0l-0,1.97l-7.699,-0l-0,-10.446l2.431,0Zm10.266,0l-0,10.446l-2.431,-0l-0,-10.446l2.431,0Zm-22.437,5.11c0.51,0.213 0.908,0.529 1.193,0.947c0.286,0.418 0.428,0.93 0.428,1.537c-0,0.895 -0.355,1.594 -1.066,2.096c-0.71,0.502 -1.756,0.754 -3.136,0.754l-5.433,-0l-0,-10.445l5.133,-0c1.32,-0 2.313,0.249 2.979,0.746c0.665,0.497 0.998,1.154 0.998,1.97c-0,0.547 -0.135,1.022 -0.405,1.425c-0.244,0.364 -0.57,0.652 -0.977,0.865c0.097,0.032 0.193,0.066 0.286,0.105Zm-1.328,3.208c0.325,-0.204 0.487,-0.54 0.487,-0.978c-0,-0.437 -0.162,-0.763 -0.487,-0.977c-0.325,-0.214 -0.803,-0.321 -1.433,-0.321l-2.837,-0l-0,2.582l2.837,-0c0.63,-0 1.108,-0.102 1.433,-0.306Zm-1.854,-6.499l-2.416,0l-0,2.462l2.416,0c0.591,0 1.043,-0.101 1.358,-0.305c0.316,-0.204 0.473,-0.525 0.473,-0.933c-0,-0.408 -0.157,-0.714 -0.473,-0.918c-0.315,-0.203 -0.768,-0.306 -1.358,-0.306Z"></path></svg>
       <p>Élodie Cimiotta · Conseillère immobilière iad · Quarante, Capestang, Saint-Chinian, Hérault & Aude · Rosas, Costa Brava, Espagne</p>
     </div>
     <div class="fc">
@@ -659,6 +665,8 @@ function filterArticles(cat, btn) {
     for(let i=0;i<pages();i++){
       const b=document.createElement('button');
       b.className='avdot'+(i===0?' active':'');
+      b.type='button';
+      b.setAttribute('aria-label','Afficher le groupe d’avis '+(i+1));
       b.onclick=()=>{current=i;render();restart();};
       dotsBox.appendChild(b);
     }
