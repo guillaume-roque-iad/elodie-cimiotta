@@ -26,7 +26,7 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bleu:#00B4EC;--bleu-dark:#0090C0;--bleu-bg:#E8F7FD;
+  --bleu:#00B4EC;--bleu-dark:#0090C0;--bleu-prof:#00709C;--bleu-bg:#E8F7FD;
   --corail:#EA584A;--corail-dark:#C84133;
   --noir:#111;--gris-fonce:#333;--gris:#6B7280;
   --gris-clair:#F4F9FC;--blanc:#fff;--bleu-fonce:#005F80;--r:16px;
@@ -41,22 +41,22 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--noir);background:v
 .nb-sep{width:1px;height:26px;background:rgba(0,0,0,.1)}
 .nb-name{font-size:12px;font-weight:700;color:var(--noir);line-height:1.25}
 .nb-name em{color:var(--corail);font-style:normal}
-.nb-cta{background:var(--bleu);color:#fff;font-size:13px;font-weight:700;padding:10px 26px;border-radius:100px;text-decoration:none;transition:background .2s}
+.nb-cta{background:var(--bleu-prof);color:#fff;font-size:13px;font-weight:700;padding:10px 26px;border-radius:100px;text-decoration:none;transition:background .2s}
 .nb-cta:hover{background:var(--bleu-dark)}
 
 /* HERO */
-.hero{background:var(--bleu);min-height:88vh;display:grid;grid-template-columns:1fr 400px;align-items:center;padding:80px 8vw;gap:60px;position:relative;overflow:hidden}
+.hero{background:var(--bleu-prof);min-height:88vh;display:grid;grid-template-columns:1fr 400px;align-items:center;padding:80px 8vw;gap:60px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(255,255,255,.08) 0%,transparent 70%);pointer-events:none}
 .hero::after{content:'';position:absolute;bottom:-80px;left:10%;width:400px;height:400px;background:radial-gradient(circle,rgba(234,88,74,.12) 0%,transparent 70%);pointer-events:none}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:12px;font-weight:600;padding:6px 16px;border-radius:100px;margin-bottom:24px;letter-spacing:.04em}
 .hero-tag::before{content:'';width:6px;height:6px;background:#fff;border-radius:50%;opacity:.8}
 .hero h1{font-size:clamp(36px,5vw,64px);font-weight:800;color:#fff;line-height:1.05;letter-spacing:-.035em;margin-bottom:20px}
 .hero h1 em{color:var(--corail);font-style:normal;display:block}
-.hero-sub{font-size:17px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:36px;max-width:460px}
+.hero-sub{font-size:17px;color:rgba(255,255,255,.92);line-height:1.65;margin-bottom:36px;max-width:460px}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:50px}
 .btn-w{background:#fff;color:var(--bleu);font-size:14px;font-weight:700;padding:15px 32px;border-radius:100px;text-decoration:none;transition:all .2s;display:inline-block}
 .btn-w:hover{background:var(--gris-clair);transform:translateY(-1px)}
-.btn-o{background:transparent;color:rgba(255,255,255,.8);font-size:14px;font-weight:500;padding:15px 32px;border-radius:100px;text-decoration:none;border:1.5px solid rgba(255,255,255,.3);transition:all .2s;display:inline-block}
+.btn-o{background:transparent;color:rgba(255,255,255,.95);font-size:14px;font-weight:500;padding:15px 32px;border-radius:100px;text-decoration:none;border:1.5px solid rgba(255,255,255,.3);transition:all .2s;display:inline-block}
 .btn-o:hover{color:#fff;border-color:rgba(255,255,255,.6)}
 .hero-zones{display:flex;gap:10px;flex-wrap:wrap}
 .zone-badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:12px;font-weight:600;padding:7px 14px;border-radius:100px}
@@ -73,7 +73,7 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--noir);background:v
 .metrics{background:var(--blanc);display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #E5F4FB}
 .metric{padding:44px 28px;text-align:center;border-right:1px solid #E5F4FB}
 .metric:last-child{border:none}
-.metric strong{display:block;font-size:48px;font-weight:800;color:var(--bleu);letter-spacing:-.04em;line-height:1;margin-bottom:6px}
+.metric strong{display:block;font-size:48px;font-weight:800;color:#0079A3;letter-spacing:-.04em;line-height:1;margin-bottom:6px}
 .metric strong em{color:var(--corail);font-style:normal}
 .metric span{font-size:12px;color:var(--gris);text-transform:uppercase;letter-spacing:.1em;font-weight:600}
 
@@ -89,12 +89,12 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--noir);background:v
 .sh .ssub{margin:0 auto}
 .sgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .scard{border-radius:22px;overflow:hidden;position:relative;min-height:300px;display:flex;align-items:flex-end}
-.scard-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--bleu) 0%,var(--bleu-fonce) 100%)}
+.scard-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--bleu-prof) 0%,var(--bleu-fonce) 100%)}
 .scard-bg.espagne{background:linear-gradient(135deg,#E03B2E 0%,#AA2A1F 100%)}
 .scard-body{position:relative;z-index:1;padding:32px;color:#fff;width:100%}
 .scard-flag{font-size:28px;margin-bottom:10px;display:block}
 .scard h3{font-size:24px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
-.scard p{font-size:14px;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:16px}
+.scard p{font-size:14px;color:rgba(255,255,255,.92);line-height:1.6;margin-bottom:16px}
 .scard-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
 .scard-tag{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);font-size:11px;font-weight:600;color:#fff;padding:4px 12px;border-radius:100px}
 .scard-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--bleu);font-size:12px;font-weight:700;padding:10px 20px;border-radius:100px;text-decoration:none;transition:all .2s}
@@ -157,7 +157,7 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--noir);background:v
 .avbtn:hover:not(:disabled){background:var(--noir);color:#fff}
 .avbtn:disabled{opacity:.3;cursor:not-allowed}
 .avbtn svg{width:16px;height:16px}
-.avdots{display:flex;gap:7px;align-items:center}
+.avdots{display:flex;gap:18px;align-items:center}
 .avdot{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,.15);border:none;padding:0;cursor:pointer;transition:all .3s}
 .avdot.active{width:24px;border-radius:100px;background:var(--corail)}
 .avcta{text-align:center;margin-top:28px}
@@ -189,9 +189,9 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--noir);background:v
 .blire::after{content:' →'}
 
 /* ESTIMATION */
-.estim{padding:90px 8vw;text-align:center;background:linear-gradient(135deg,var(--bleu) 0%,var(--bleu-fonce) 100%)}
+.estim{padding:90px 8vw;text-align:center;background:linear-gradient(135deg,var(--bleu-prof) 0%,var(--bleu-fonce) 100%)}
 .estim .stitle{color:#fff}
-.estim .ssub{color:rgba(255,255,255,.65);margin:0 auto 36px}
+.estim .ssub{color:rgba(255,255,255,.92);margin:0 auto 36px}
 .btn-estim{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--bleu);font-size:15px;font-weight:700;padding:16px 40px;border-radius:100px;text-decoration:none;transition:all .2s;box-shadow:0 8px 30px rgba(0,0,0,.15)}
 .btn-estim:hover{transform:translateY(-2px)}
 
@@ -217,7 +217,7 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--noir);background:v
 footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
 .ft{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:32px}
 .fb p{font-size:13px;color:rgba(255,255,255,.72);line-height:1.65;margin-top:14px;max-width:280px}
-.fc h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.75);margin-bottom:14px}
+.fc h3{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.75);margin-bottom:14px}
 .fc a{display:block;font-size:13px;color:rgba(255,255,255,.82);text-decoration:none;margin-bottom:9px;transition:color .2s}
 .fc a:hover{color:#fff;text-decoration:underline}
 .fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
@@ -244,6 +244,7 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
   .ft{grid-template-columns:1fr}
   .fg2{grid-template-columns:1fr}
   .btabs{gap:6px}
+  .fc a{padding:8px 0}
 }
 /* Accessibilité — accents texte suffisamment contrastés sur fond clair (WCAG AA 4.5:1) */
 .eyebrow,.sva,.blire,.avcta a,.cinfo a,.bcat:not(.co):not(.dk){color:#0079A3}
@@ -262,6 +263,7 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
   <a href="#contact" class="nb-cta">Me contacter</a>
 </nav>
 
+<main>
 <!-- HERO -->
 <section class="hero">
   <div>
@@ -466,7 +468,7 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
 
 <!-- ESTIMATION -->
 <section class="estim">
-  <div class="eyebrow" style="color:rgba(255,255,255,.5)">Vendeurs</div>
+  <div class="eyebrow" style="color:rgba(255,255,255,.88)">Vendeurs</div>
   <h2 class="stitle">Vous souhaitez vendre ?<br/><em style="font-style:normal;color:#fff">Estimez gratuitement.</em></h2>
   <p class="ssub">Une estimation précise, gratuite et sans engagement de votre bien à Quarante, dans les Hauts Cantons ou sur la Costa Brava.</p>
   <a href="#contact" class="btn-estim">🏠 Estimer mon bien gratuitement</a>
@@ -494,10 +496,10 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
   @media(max-width:520px){.dev-grid{grid-template-columns:1fr}}
   .dev-card{background:#fff;border-radius:14px;padding:22px 16px;text-align:left;box-shadow:0 6px 20px rgba(0,95,128,.06);transition:transform .2s,box-shadow .2s}
   .dev-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,95,128,.14)}
-  .dev-tag{display:inline-block;font-size:12px;font-weight:800;color:#fff;background:var(--bleu);padding:5px 12px;border-radius:100px;margin-bottom:12px}
+  .dev-tag{display:inline-block;font-size:12px;font-weight:800;color:#fff;background:var(--bleu-prof);padding:5px 12px;border-radius:100px;margin-bottom:12px}
   .dev-card:nth-child(2) .dev-tag{background:var(--corail)}
   .dev-card p{font-size:13px;line-height:1.55;color:var(--gris-fonce);margin:0}
-  .dev-cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--bleu),var(--bleu-fonce));color:#fff;font-size:15px;font-weight:700;padding:16px 40px;border-radius:100px;text-decoration:none;box-shadow:0 10px 30px rgba(0,95,128,.25);transition:transform .2s}
+  .dev-cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--bleu-prof),var(--bleu-fonce));color:#fff;font-size:15px;font-weight:700;padding:16px 40px;border-radius:100px;text-decoration:none;box-shadow:0 10px 30px rgba(0,95,128,.25);transition:transform .2s}
   .dev-cta:hover{transform:translateY(-2px)}
   </style>
   <div class="dev-inner">
@@ -592,6 +594,8 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
   <div class="ft">
@@ -600,7 +604,7 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
       <p>Élodie Cimiotta · Conseillère immobilière iad · Quarante, Capestang, Saint-Chinian, Hérault & Aude · Rosas, Costa Brava, Espagne</p>
     </div>
     <div class="fc">
-      <h4>Immobilier local</h4>
+      <h3>Immobilier local</h3>
       <a href="article-quarante-elodie.html">Quarante (34310)</a>
       <a href="article-capestang-elodie.html">Capestang</a>
       <a href="article-hauts-cantons-elodie.html">Hauts Cantons Hérault</a>
@@ -608,7 +612,7 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
       <a href="article-rosas-elodie.html">Rosas · Costa Brava</a>
     </div>
     <div class="fc">
-      <h4>Guides pratiques</h4>
+      <h3>Guides pratiques</h3>
       <a href="article-vendre-herault-elodie.html">Vendre dans l'Hérault</a>
       <a href="article-dpe-herault-elodie.html">DPE en 2026</a>
       <a href="article-premier-achat-elodie.html">Premier achat</a>
@@ -618,7 +622,7 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
       <a href="#contact">Contact</a>
     </div>
     <div class="fc">
-      <h4>Suivez-nous</h4>
+      <h3>Suivez-nous</h3>
       <a href="https://www.facebook.com/Elodie.cimiotta.transactionimmo/" target="_blank" rel="noopener">Facebook</a>
       <a href="https://www.google.com/maps?cid=6386072553264324792" target="_blank" rel="noopener">Avis Google</a>
     </div>
