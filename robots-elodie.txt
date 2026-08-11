@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://elodie-cimiotta-iad.fr/sitemap.xml
+Sitemap: https://elodie-cimiotta-iad.com/sitemap.xml
