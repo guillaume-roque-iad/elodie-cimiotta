@@ -1,0 +1,32 @@
+# Redirections permanentes .html -> URL propre (301)
+# Corrige l'audit SEO du 12 aout 2026 : ces changements d'adresse sont definitifs (307 -> 301)
+/index.html / 301
+/article-acheter-ancien-elodie.html /article-acheter-ancien-elodie 301
+/article-acheter-espagne-elodie.html /article-acheter-espagne-elodie 301
+/article-argeliers-elodie.html /article-argeliers-elodie 301
+/article-beziers-elodie.html /article-beziers-elodie 301
+/article-bi-residence-elodie.html /article-bi-residence-elodie 301
+/article-capestang-elodie.html /article-capestang-elodie 301
+/article-costa-brava-elodie.html /article-costa-brava-elodie 301
+/article-cruzy-elodie.html /article-cruzy-elodie 301
+/article-dpe-herault-elodie.html /article-dpe-herault-elodie 301
+/article-estimation-quarante-saint-chinian-elodie.html /article-estimation-quarante-saint-chinian-elodie 301
+/article-frais-notaire-elodie.html /article-frais-notaire-elodie 301
+/article-hauts-cantons-elodie.html /article-hauts-cantons-elodie 301
+/article-home-staging-elodie.html /article-home-staging-elodie 301
+/article-investissement-espagne-elodie.html /article-investissement-espagne-elodie 301
+/article-locatif-costa-brava-elodie.html /article-locatif-costa-brava-elodie 301
+/article-premier-achat-elodie.html /article-premier-achat-elodie 301
+/article-puisserguier-elodie.html /article-puisserguier-elodie 301
+/article-quarante-elodie.html /article-quarante-elodie 301
+/article-rosas-elodie.html /article-rosas-elodie 301
+/article-rosas-secondaire-elodie.html /article-rosas-secondaire-elodie 301
+/article-saint-chinian-elodie.html /article-saint-chinian-elodie 301
+/article-saint-pons-elodie.html /article-saint-pons-elodie 301
+/article-vendre-costa-brava-guide-elodie.html /article-vendre-costa-brava-guide-elodie 301
+/article-vendre-herault-elodie.html /article-vendre-herault-elodie 301
+/estimation-immobiliere-quarante-saint-chinian-elodie.html /estimation-immobiliere-quarante-saint-chinian-elodie 301
+/estimation-immobiliere-roses-costa-brava-elodie.html /estimation-immobiliere-roses-costa-brava-elodie 301
+/mentions-legales.html /mentions-legales 301
+/vendre-costa-brava-elodie.html /vendre-costa-brava-elodie 301
+/vendre-quarante-saint-chinian-elodie.html /vendre-quarante-saint-chinian-elodie 301
