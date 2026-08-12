@@ -43,7 +43,7 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--noir);background:v
 .nb-logo{height:30px;width:auto}
 .nb-sep{width:1px;height:26px;background:rgba(0,0,0,.1)}
 .nb-name{font-size:12px;font-weight:700;color:var(--noir);line-height:1.25}
-.nb-name em{color:var(--corail);font-style:normal}
+.nb-name em{color:var(--corail-dark);font-style:normal}
 .nb-cta{background:var(--bleu-prof);color:#fff;font-size:13px;font-weight:700;padding:10px 26px;border-radius:100px;text-decoration:none;transition:background .2s}
 .nb-cta:hover{background:var(--bleu-dark)}
 
@@ -57,7 +57,7 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--noir);background:v
 .hero h1 em{color:var(--corail);font-style:normal;display:block}
 .hero-sub{font-size:17px;color:rgba(255,255,255,.92);line-height:1.65;margin-bottom:36px;max-width:460px}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:50px}
-.btn-w{background:#fff;color:var(--bleu);font-size:14px;font-weight:700;padding:15px 32px;border-radius:100px;text-decoration:none;transition:all .2s;display:inline-block}
+.btn-w{background:#fff;color:var(--bleu-prof);font-size:14px;font-weight:700;padding:15px 32px;border-radius:100px;text-decoration:none;transition:all .2s;display:inline-block}
 .btn-w:hover{background:var(--gris-clair);transform:translateY(-1px)}
 .btn-o{background:transparent;color:rgba(255,255,255,.95);font-size:14px;font-weight:500;padding:15px 32px;border-radius:100px;text-decoration:none;border:1.5px solid rgba(255,255,255,.3);transition:all .2s;display:inline-block}
 .btn-o:hover{color:#fff;border-color:rgba(255,255,255,.6)}
@@ -100,8 +100,8 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--noir);background:v
 .scard p{font-size:14px;color:rgba(255,255,255,.92);line-height:1.6;margin-bottom:16px}
 .scard-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
 .scard-tag{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);font-size:11px;font-weight:600;color:#fff;padding:4px 12px;border-radius:100px}
-.scard-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--bleu);font-size:12px;font-weight:700;padding:10px 20px;border-radius:100px;text-decoration:none;transition:all .2s}
-.scard-btn.rouge{color:#E03B2E}
+.scard-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--bleu-prof);font-size:12px;font-weight:700;padding:10px 20px;border-radius:100px;text-decoration:none;transition:all .2s}
+.scard-btn.rouge{color:#C4341F}
 .scard-btn:hover{transform:translateY(-2px)}
 
 /* ELODIE */
@@ -109,7 +109,7 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--noir);background:v
 .elodie-img{position:relative}
 .elodie-photo{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top;border-radius:24px;display:block}
 .elodie-tag{position:absolute;bottom:24px;right:-20px;background:#fff;border-radius:14px;padding:14px 20px;box-shadow:0 8px 32px rgba(0,0,0,.1)}
-.elodie-tag strong{display:block;font-size:13px;font-weight:700;color:var(--corail);margin-bottom:2px}
+.elodie-tag strong{display:block;font-size:13px;font-weight:700;color:var(--corail-dark);margin-bottom:2px}
 .elodie-tag span{font-size:11px;color:var(--gris)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
 .chip{background:var(--bleu-bg);color:var(--bleu-fonce);font-size:12px;font-weight:600;padding:7px 16px;border-radius:100px}
@@ -195,7 +195,7 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--noir);background:v
 .estim{padding:90px 8vw;text-align:center;background:linear-gradient(135deg,var(--bleu-prof) 0%,var(--bleu-fonce) 100%)}
 .estim .stitle{color:#fff}
 .estim .ssub{color:rgba(255,255,255,.92);margin:0 auto 36px}
-.btn-estim{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--bleu);font-size:15px;font-weight:700;padding:16px 40px;border-radius:100px;text-decoration:none;transition:all .2s;box-shadow:0 8px 30px rgba(0,0,0,.15)}
+.btn-estim{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--bleu-prof);font-size:15px;font-weight:700;padding:16px 40px;border-radius:100px;text-decoration:none;transition:all .2s;box-shadow:0 8px 30px rgba(0,0,0,.15)}
 .btn-estim:hover{transform:translateY(-2px)}
 
 /* FORMULAIRE */
@@ -212,8 +212,8 @@ body{font-family:'Inter',-apple-system,sans-serif;color:var(--noir);background:v
 .fg input,.fg select,.fg textarea{width:100%;padding:12px 16px;border:1.5px solid transparent;border-radius:10px;background:#fff;font-size:14px;font-family:inherit;color:var(--noir);outline:none;transition:border-color .2s}
 .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--bleu)}
 .fg textarea{min-height:90px;resize:vertical}
-.fsub{width:100%;background:var(--bleu);color:#fff;font-size:14px;font-weight:700;padding:15px;border:none;border-radius:10px;cursor:pointer;transition:background .2s;font-family:inherit}
-.fsub:hover{background:var(--bleu-dark)}
+.fsub{width:100%;background:var(--bleu-prof);color:#fff;font-size:14px;font-weight:700;padding:15px;border:none;border-radius:10px;cursor:pointer;transition:background .2s;font-family:inherit}
+.fsub:hover{background:var(--bleu-fonce)}
 .fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 
 /* FOOTER */
@@ -224,7 +224,7 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
 .fc a{display:block;font-size:13px;color:rgba(255,255,255,.82);text-decoration:none;margin-bottom:9px;transition:color .2s}
 .fc a:hover{color:#fff;text-decoration:underline}
 .fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
-.fleg{font-size:11px;color:rgba(255,255,255,.7);line-height:1.5;max-width:600px}
+.fleg{font-size:11px;color:rgba(255,255,255,.85);line-height:1.5;max-width:600px}
 .fcopy{font-size:12px;color:rgba(255,255,255,.7)}
 
 /* RESPONSIVE */
@@ -397,7 +397,7 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
     <div class="faq">
       <div class="faq-item"><b>Agence immobilière ou agent immobilier iad à Quarante et Saint-Chinian (34310) ?</b><p>Élodie Cimiotta est conseillère immobilière indépendante du réseau iad (agent commercial), et non une agence immobilière traditionnelle avec pignon sur rue. Sur le secteur de Quarante et Saint-Chinian, elle opère en binôme avec Guillaume Roque (iad France).</p></div>
       <div class="faq-item"><b>Quel est le secteur d'intervention d'Élodie à Quarante et Saint-Chinian ?</b><p>Élodie intervient sur tous les villages dans un rayon de 15 km autour de Quarante (34310), ainsi que sur le secteur de Saint-Pons-de-Thomières et 15 km à la ronde. Cela couvre notamment Saint-Chinian, Capestang, Cruzy, Creissan, Puisserguier, Cazedarnes et Riols côté Hérault, ainsi qu'Argeliers et Ouveillan côté Aude.</p></div>
-      <div class="faq-item"><b>Comment contacter un agent immobilier à Quarante ou Saint-Chinian ?</b><p>Vous pouvez contacter Élodie directement au <a href="tel:+33642344612" style="color:var(--bleu);font-weight:600">06 42 34 46 12</a> ou via le <a href="#contact" style="color:var(--bleu);font-weight:600">formulaire de contact</a> du site : réponse sous 24 heures, estimation gratuite et sans engagement.</p></div>
+      <div class="faq-item"><b>Comment contacter un agent immobilier à Quarante ou Saint-Chinian ?</b><p>Vous pouvez contacter Élodie directement au <a href="tel:+33642344612" style="color:#0079A3;font-weight:600">06 42 34 46 12</a> ou via le <a href="#contact" style="color:#0079A3;font-weight:600">formulaire de contact</a> du site : réponse sous 24 heures, estimation gratuite et sans engagement.</p></div>
     </div>
   </div>
 </section>
@@ -741,8 +741,8 @@ function filterArticles(cat, btn) {
   track.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});
   track.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50){go(dx<0?1:-1);restart();}},{passive:true});
   let rto=null;
-  window.addEventListener('resize',()=>{clearTimeout(rto);rto=setTimeout(()=>{current=Math.min(current,pages()-1);buildDots();render();},150);});
-  buildDots();render();autoplay();
+  window.addEventListener('resize',()=>{clearTimeout(rto);rto=setTimeout(()=>{current=Math.min(current,pages()-1);buildDots();requestAnimationFrame(render);},150);});
+  buildDots();requestAnimationFrame(render);autoplay();
 })();
 </script>
 </body>
