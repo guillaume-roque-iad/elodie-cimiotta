@@ -589,12 +589,16 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
   </div>
   <div class="fr">
     <script>
+    var elodieOK = false;
     function envoyerElodie(e) {
       e.preventDefault();
       var f = document.getElementById('fme');
       var btn = f.querySelector('.fsub');
+      var errBox = document.getElementById('ferr');
+      if (errBox) errBox.style.display = 'none';
       btn.textContent = 'Envoi en cours...';
       btn.disabled = true;
+      elodieOK = false;
       var params = 'nom=' + encodeURIComponent(f.querySelector('[name=nom]').value)
         + '&email=' + encodeURIComponent(f.querySelector('[name=email]').value)
         + '&telephone=' + encodeURIComponent(f.querySelector('[name=telephone]').value)
@@ -606,22 +610,27 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
         + '&callback=onElodieOK';
       var s = document.createElement('script');
       s.src = 'https://script.google.com/macros/s/AKfycbxGm2u93FF7-Rdt2Pqbo8lKtHLc6NDC0NtAQHyA7wEnvFZ6hZHoz_OKnZfQFKfxxXMSKA/exec?' + params;
+      s.onerror = function () { afficherErreurElodie(); };
       document.body.appendChild(s);
-      setTimeout(afficherSuccesElodie, 5000);
+      setTimeout(function () { if (!elodieOK) { afficherErreurElodie(); } }, 12000);
     }
-    function afficherSuccesElodie() {
-      var fs = document.getElementById('fse');
-      var fm = document.getElementById('fme');
-      if (fs && fm && fm.style.display !== 'none') {
-        fs.style.display = 'block';
-        fm.style.display = 'none';
-      }
+    function afficherErreurElodie() {
+      if (elodieOK) return;
+      var btn = document.querySelector('#fme .fsub');
+      if (btn) { btn.textContent = 'Envoyer mon message →'; btn.disabled = false; }
+      var errBox = document.getElementById('ferr');
+      if (errBox) errBox.style.display = 'block';
     }
     </script>
     <div id="fse" style="display:none;text-align:center;padding:48px 20px">
       <div style="width:72px;height:72px;background:rgba(0,180,236,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:36px">✅</div>
       <h3 style="font-size:20px;font-weight:800;color:var(--noir);margin-bottom:10px">Message envoyé !</h3>
       <p style="font-size:14px;color:var(--gris);line-height:1.6">Elodie vous contactera rapidement.<br/>Merci pour votre confiance ! 🙏</p>
+    </div>
+    <div id="ferr" style="display:none;text-align:center;padding:28px 20px;background:rgba(234,88,74,0.08);border-radius:12px;margin-bottom:20px">
+      <div style="width:52px;height:52px;background:rgba(234,88,74,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:26px">⚠️</div>
+      <h3 style="font-size:16px;font-weight:800;color:var(--noir);margin-bottom:8px">Le message n'a pas pu être envoyé</h3>
+      <p style="font-size:14px;color:var(--gris);line-height:1.6">Une erreur est survenue. Merci de réessayer, ou contactez directement Elodie au <a href="tel:+33642344612" style="color:#0079A3;font-weight:600">06&nbsp;42&nbsp;34&nbsp;46&nbsp;12</a>.</p>
     </div>
     <form id="fme" onsubmit="envoyerElodie(event); return false;">
       <input type="hidden" name="destinataire" value="elodie.cimiotta@iadespana.es"/>
@@ -637,6 +646,7 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
       <div class="fg"><label for="f-projet">Votre projet</label><select id="f-projet" name="projet"><option value="">Sélectionnez...</option><option>Vendre mon bien</option><option>Acheter un bien</option><option>Estimer mon bien</option><option>Investissement locatif</option><option>Rejoindre iad</option><option>Autre</option></select></div>
       <div class="fg"><label for="f-message">Message</label><textarea id="f-message" name="message" placeholder="Décrivez votre projet..."></textarea></div>
       <button type="submit" class="fsub">Envoyer mon message →</button>
+      <p style="font-size:12px;color:var(--gris);line-height:1.5;margin-top:12px">En envoyant ce formulaire, vous acceptez que vos informations soient utilisées pour traiter votre demande. Voir notre <a href="mentions-legales#rgpd" style="color:#0079A3;text-decoration:underline">politique de confidentialité (RGPD)</a>.</p>
     </form>
   </div>
 </section>
@@ -696,8 +706,11 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
 
 <script>
 function onElodieOK() {
+  elodieOK = true;
   document.getElementById('fse').style.display='block';
   document.getElementById('fme').style.display='none';
+  var errBox = document.getElementById('ferr');
+  if (errBox) errBox.style.display = 'none';
 }
 function filterArticles(cat, btn) {
   document.querySelectorAll('.btab').forEach(b => b.classList.remove('active'));
