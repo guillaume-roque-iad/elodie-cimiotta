@@ -1,97 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('consent', 'default', {
-  'analytics_storage': 'denied',
-  'ad_storage': 'denied',
-  'ad_user_data': 'denied',
-  'ad_personalization': 'denied',
-  'wait_for_update': 500
-});
-try {
-  if (localStorage.getItem('elodie_cookie_consent') === 'accepted') {
-    gtag('consent', 'update', {'analytics_storage': 'granted'});
-  }
-} catch(e) {}
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3NJTVP8D34"></script>
-<script>
-  gtag('js', new Date());
-  gtag('config', 'G-3NJTVP8D34');
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  if (typeof gtag === 'function') {
-    document.querySelectorAll('a[href^="tel:+33"]').forEach(function(a){
-      a.addEventListener('click', function(){ gtag('event','click_phone_fr'); });
-    });
-    document.querySelectorAll('a[href^="tel:+34"]').forEach(function(a){
-      a.addEventListener('click', function(){ gtag('event','click_phone_es'); });
-    });
-    document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){
-      a.addEventListener('click', function(){ gtag('event','click_email'); });
-    });
-    document.querySelectorAll('a[href*="estimation-immobiliere-quarante-saint-chinian-elodie"]').forEach(function(a){
-      a.addEventListener('click', function(){ gtag('event','click_estimation_fr'); });
-    });
-    document.querySelectorAll('a[href*="estimation-immobiliere-roses-costa-brava-elodie"]').forEach(function(a){
-      a.addEventListener('click', function(){ gtag('event','click_estimation_es'); });
-    });
-  }
-
-  // Consentement cookies (RGPD / CNIL) - bandeau + lien de gestion permanent
-  (function(){
-    var KEY = 'elodie_cookie_consent';
-    function getChoice(){ try { return localStorage.getItem(KEY); } catch(e) { return null; } }
-    function setChoice(v){ try { localStorage.setItem(KEY, v); } catch(e) {} }
-    function applyConsent(choice){
-      if (typeof gtag === 'function') {
-        gtag('consent', 'update', { 'analytics_storage': choice === 'accepted' ? 'granted' : 'denied' });
-      }
-    }
-    function hideBanner(){
-      var b = document.getElementById('ccBanner');
-      if (b) b.remove();
-    }
-    function showBanner(){
-      if (document.getElementById('ccBanner')) return;
-      var b = document.createElement('div');
-      b.id = 'ccBanner';
-      b.setAttribute('role', 'dialog');
-      b.setAttribute('aria-label', 'Consentement aux cookies');
-      b.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#fff;border-top:1px solid #e5e5e5;box-shadow:0 -4px 20px rgba(0,0,0,.12);padding:16px 20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;font-family:Montserrat,Helvetica,Arial,sans-serif';
-      b.innerHTML =
-        '<p style="margin:0;flex:1 1 260px;max-width:640px;font-size:13px;line-height:1.5;color:#333">' +
-        'Ce site utilise Google Analytics pour mesurer l\u2019audience, uniquement avec votre accord. ' +
-        'Vous pouvez accepter ou refuser \u00e0 tout moment \u2014 voir notre ' +
-        '<a href="mentions-legales#rgpd" style="color:#0079A3;text-decoration:underline">politique de confidentialit\u00e9</a>.</p>' +
-        '<div style="display:flex;gap:10px;flex-shrink:0">' +
-        '<button type="button" id="ccRefuse" style="padding:10px 22px;border-radius:999px;border:1.5px solid #3C4A5F;background:#fff;color:#3C4A5F;font-family:inherit;font-weight:700;font-size:13px;cursor:pointer">Refuser</button>' +
-        '<button type="button" id="ccAccept" style="padding:10px 22px;border-radius:999px;border:none;background:#00B4EC;color:#000;font-family:inherit;font-weight:700;font-style:italic;font-size:13px;cursor:pointer">Accepter</button>' +
-        '</div>';
-      document.body.appendChild(b);
-      document.getElementById('ccAccept').addEventListener('click', function(){ setChoice('accepted'); applyConsent('accepted'); hideBanner(); });
-      document.getElementById('ccRefuse').addEventListener('click', function(){ setChoice('refused'); applyConsent('refused'); hideBanner(); });
-    }
-    function ensureManageLink(){
-      if (document.getElementById('ccManage')) return;
-      var a = document.createElement('a');
-      a.id = 'ccManage';
-      a.href = '#';
-      a.textContent = 'Cookies';
-      a.style.cssText = 'position:fixed;left:12px;bottom:12px;z-index:99998;background:rgba(60,74,95,.9);color:#fff;font-family:Montserrat,Helvetica,Arial,sans-serif;font-size:11px;font-weight:600;padding:6px 12px;border-radius:999px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.15)';
-      a.addEventListener('click', function(e){ e.preventDefault(); showBanner(); });
-      document.body.appendChild(a);
-    }
-    var choice = getChoice();
-    if (choice) { applyConsent(choice); } else { showBanner(); }
-    ensureManageLink();
-  })();
-});
-</script>
+<script defer src="/assets/site.js"></script>
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <meta charset="UTF-8"/>
@@ -113,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <meta name="twitter:image" content="https://elodie-cimiotta-iad.com/img-a1d68288b51c.jpg"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"Person","name":"Elodie Cimiotta","jobTitle":"Conseillère & Manager iad","telephone":["+33642344612","+34613599378"],"email":"elodie.cimiotta@iadespana.es","url":"https://elodie-cimiotta-iad.com","worksFor":{"@type":"Organization","name":"iad France"}},{"@type":"RealEstateAgent","name":"Elodie Cimiotta — Conseillère iad","telephone":"+33642344612","email":"elodie.cimiotta@iadespana.es","url":"https://elodie-cimiotta-iad.com","address":{"@type":"PostalAddress","addressLocality":"Quarante","postalCode":"34310","addressRegion":"Hérault","addressCountry":"FR"},"areaServed":[{"@type":"GeoCircle","geoMidpoint":{"@type":"GeoCoordinates","latitude":43.3467,"longitude":2.9625},"geoRadius":"15000","name":"Quarante et 15 km à la ronde"},{"@type":"GeoCircle","geoMidpoint":{"@type":"GeoCoordinates","latitude":43.4886,"longitude":2.76028},"geoRadius":"15000","name":"Saint-Pons-de-Thomières et 15 km à la ronde"},{"@type":"City","name":"Quarante"},{"@type":"City","name":"Saint-Chinian"},{"@type":"City","name":"Capestang"},{"@type":"City","name":"Cruzy"},{"@type":"City","name":"Creissan"},{"@type":"City","name":"Puisserguier"},{"@type":"City","name":"Saint-Pons-de-Thomières"},{"@type":"City","name":"Argeliers"},{"@type":"City","name":"Ouveillan"}],"sameAs":["https://www.facebook.com/Elodie.cimiotta.transactionimmo/","https://www.google.com/maps?cid=6386072553264324792"]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://elodie-cimiotta-iad.com/#elodie-cimiotta","name":"Elodie Cimiotta","jobTitle":"Conseillère & Manager iad","telephone":["+33642344612","+34613599378"],"email":"elodie.cimiotta@iadespana.es","url":"https://elodie-cimiotta-iad.com","memberOf":{"@type":"Organization","name":"iad España","legalName":"iad España Inmobiliaria a Domicilio, S.L.","taxID":"B-67131573","url":"https://www.iadespana.es"},"colleague":{"@type":"Person","name":"Guillaume Roque","jobTitle":"Conseiller immobilier indépendant","memberOf":{"@type":"Organization","name":"iad France","url":"https://www.iad.fr"},"description":"Conseiller iad France, en binôme avec Elodie Cimiotta sur les mandats situés en France (secteur Quarante / Saint-Chinian)."}},{"@type":"RealEstateAgent","@id":"https://elodie-cimiotta-iad.com/#agent-immobilier","name":"Elodie Cimiotta — Conseillère iad","agent":{"@id":"https://elodie-cimiotta-iad.com/#elodie-cimiotta"},"telephone":"+33642344612","email":"elodie.cimiotta@iadespana.es","url":"https://elodie-cimiotta-iad.com","address":{"@type":"PostalAddress","addressLocality":"Quarante","postalCode":"34310","addressRegion":"Hérault","addressCountry":"FR"},"areaServed":[{"@type":"GeoCircle","geoMidpoint":{"@type":"GeoCoordinates","latitude":43.3467,"longitude":2.9625},"geoRadius":"15000","name":"Quarante et 15 km à la ronde"},{"@type":"GeoCircle","geoMidpoint":{"@type":"GeoCoordinates","latitude":43.4886,"longitude":2.76028},"geoRadius":"15000","name":"Saint-Pons-de-Thomières et 15 km à la ronde"},{"@type":"City","name":"Quarante"},{"@type":"City","name":"Saint-Chinian"},{"@type":"City","name":"Capestang"},{"@type":"City","name":"Cruzy"},{"@type":"City","name":"Creissan"},{"@type":"City","name":"Puisserguier"},{"@type":"City","name":"Saint-Pons-de-Thomières"},{"@type":"City","name":"Argeliers"},{"@type":"City","name":"Ouveillan"}],"sameAs":["https://www.facebook.com/Elodie.cimiotta.transactionimmo/","https://www.google.com/maps?cid=6386072553264324792"]}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Agence immobilière ou agent immobilier iad à Quarante et Saint-Chinian (34310) ?","acceptedAnswer":{"@type":"Answer","text":"Élodie Cimiotta est conseillère immobilière indépendante du réseau iad (agent commercial), et non une agence immobilière traditionnelle avec pignon sur rue. Sur le secteur de Quarante et Saint-Chinian, elle opère en binôme avec Guillaume Roque (iad France)."}},{"@type":"Question","name":"Quel est le secteur d'intervention d'Élodie à Quarante et Saint-Chinian ?","acceptedAnswer":{"@type":"Answer","text":"Élodie intervient sur tous les villages dans un rayon de 15 km autour de Quarante (34310), ainsi que sur le secteur de Saint-Pons-de-Thomières et 15 km à la ronde. Cela couvre notamment Saint-Chinian, Capestang, Cruzy, Creissan, Puisserguier, Cazedarnes et Riols côté Hérault, ainsi qu'Argeliers et Ouveillan côté Aude."}},{"@type":"Question","name":"Comment contacter un agent immobilier à Quarante ou Saint-Chinian ?","acceptedAnswer":{"@type":"Answer","text":"Vous pouvez contacter Élodie directement au 06 42 34 46 12 ou via le formulaire de contact du site : réponse sous 24 heures, estimation gratuite et sans engagement."}}]}
@@ -695,45 +605,6 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
     </div>
   </div>
   <div class="fr">
-    <script>
-    var elodieOK = false;
-    function envoyerElodie(e) {
-      e.preventDefault();
-      var f = document.getElementById('fme');
-      if (f.querySelector('[name=site_web]').value) {
-        f.style.display = 'none';
-        document.getElementById('fse').style.display = 'block';
-        return;
-      }
-      var btn = f.querySelector('.fsub');
-      var errBox = document.getElementById('ferr');
-      if (errBox) errBox.style.display = 'none';
-      btn.textContent = 'Envoi en cours...';
-      btn.disabled = true;
-      elodieOK = false;
-      var params = 'nom=' + encodeURIComponent(f.querySelector('[name=nom]').value)
-        + '&email=' + encodeURIComponent(f.querySelector('[name=email]').value)
-        + '&telephone=' + encodeURIComponent(f.querySelector('[name=telephone]').value)
-        + '&ville=' + encodeURIComponent(f.querySelector('[name=ville]').value)
-        + '&pays=' + encodeURIComponent(f.querySelector('[name=pays]').value)
-        + '&projet=' + encodeURIComponent(f.querySelector('[name=projet]').value)
-        + '&message=' + encodeURIComponent(f.querySelector('[name=message]').value)
-        + '&destinataire=' + encodeURIComponent('elodie.cimiotta@iadespana.es')
-        + '&callback=onElodieOK';
-      var s = document.createElement('script');
-      s.src = 'https://script.google.com/macros/s/AKfycbxGm2u93FF7-Rdt2Pqbo8lKtHLc6NDC0NtAQHyA7wEnvFZ6hZHoz_OKnZfQFKfxxXMSKA/exec?' + params;
-      s.onerror = function () { afficherErreurElodie(); };
-      document.body.appendChild(s);
-      setTimeout(function () { if (!elodieOK) { afficherErreurElodie(); } }, 12000);
-    }
-    function afficherErreurElodie() {
-      if (elodieOK) return;
-      var btn = document.querySelector('#fme .fsub');
-      if (btn) { btn.textContent = 'Envoyer mon message →'; btn.disabled = false; }
-      var errBox = document.getElementById('ferr');
-      if (errBox) errBox.style.display = 'block';
-    }
-    </script>
     <div id="fse" style="display:none;text-align:center;padding:48px 20px">
       <div style="width:72px;height:72px;background:rgba(0,180,236,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:36px">✅</div>
       <h3 style="font-size:20px;font-weight:800;color:var(--noir);margin-bottom:10px">Message envoyé !</h3>
@@ -744,8 +615,7 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
       <h3 style="font-size:16px;font-weight:800;color:var(--noir);margin-bottom:8px">Le message n'a pas pu être envoyé</h3>
       <p style="font-size:14px;color:var(--gris);line-height:1.6">Une erreur est survenue. Merci de réessayer, ou contactez directement Elodie au <a href="tel:+33642344612" style="color:#0079A3;font-weight:600">06&nbsp;42&nbsp;34&nbsp;46&nbsp;12</a>.</p>
     </div>
-    <form id="fme" onsubmit="envoyerElodie(event); return false;">
-      <input type="hidden" name="destinataire" value="elodie.cimiotta@iadespana.es"/>
+    <form id="fme">
       <div class="fg"><label for="f-nom">Nom et prénom *</label><input id="f-nom" type="text" name="nom" required placeholder="Jean Dupont"/></div>
       <div class="fg2">
         <div class="fg"><label for="f-email">Email *</label><input id="f-email" type="email" name="email" required placeholder="jean@email.com"/></div>
@@ -820,20 +690,6 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
 </footer>
 
 <script>
-function onElodieOK() {
-  elodieOK = true;
-  if (typeof gtag === 'function') {
-    var pj = document.querySelector('#fme [name=projet]');
-    gtag('event', 'generate_lead', {
-      'form_location': window.location.pathname,
-      'projet': pj ? pj.value : ''
-    });
-  }
-  document.getElementById('fse').style.display='block';
-  document.getElementById('fme').style.display='none';
-  var errBox = document.getElementById('ferr');
-  if (errBox) errBox.style.display = 'none';
-}
 function filterArticles(cat, btn) {
   document.querySelectorAll('.btab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');

@@ -1,97 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('consent', 'default', {
-  'analytics_storage': 'denied',
-  'ad_storage': 'denied',
-  'ad_user_data': 'denied',
-  'ad_personalization': 'denied',
-  'wait_for_update': 500
-});
-try {
-  if (localStorage.getItem('elodie_cookie_consent') === 'accepted') {
-    gtag('consent', 'update', {'analytics_storage': 'granted'});
-  }
-} catch(e) {}
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3NJTVP8D34"></script>
-<script>
-  gtag('js', new Date());
-  gtag('config', 'G-3NJTVP8D34');
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  if (typeof gtag === 'function') {
-    document.querySelectorAll('a[href^="tel:+33"]').forEach(function(a){
-      a.addEventListener('click', function(){ gtag('event','click_phone_fr'); });
-    });
-    document.querySelectorAll('a[href^="tel:+34"]').forEach(function(a){
-      a.addEventListener('click', function(){ gtag('event','click_phone_es'); });
-    });
-    document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){
-      a.addEventListener('click', function(){ gtag('event','click_email'); });
-    });
-    document.querySelectorAll('a[href*="estimation-immobiliere-quarante-saint-chinian-elodie"]').forEach(function(a){
-      a.addEventListener('click', function(){ gtag('event','click_estimation_fr'); });
-    });
-    document.querySelectorAll('a[href*="estimation-immobiliere-roses-costa-brava-elodie"]').forEach(function(a){
-      a.addEventListener('click', function(){ gtag('event','click_estimation_es'); });
-    });
-  }
-
-  // Consentement cookies (RGPD / CNIL) - bandeau + lien de gestion permanent
-  (function(){
-    var KEY = 'elodie_cookie_consent';
-    function getChoice(){ try { return localStorage.getItem(KEY); } catch(e) { return null; } }
-    function setChoice(v){ try { localStorage.setItem(KEY, v); } catch(e) {} }
-    function applyConsent(choice){
-      if (typeof gtag === 'function') {
-        gtag('consent', 'update', { 'analytics_storage': choice === 'accepted' ? 'granted' : 'denied' });
-      }
-    }
-    function hideBanner(){
-      var b = document.getElementById('ccBanner');
-      if (b) b.remove();
-    }
-    function showBanner(){
-      if (document.getElementById('ccBanner')) return;
-      var b = document.createElement('div');
-      b.id = 'ccBanner';
-      b.setAttribute('role', 'dialog');
-      b.setAttribute('aria-label', 'Consentement aux cookies');
-      b.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#fff;border-top:1px solid #e5e5e5;box-shadow:0 -4px 20px rgba(0,0,0,.12);padding:16px 20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;font-family:Montserrat,Helvetica,Arial,sans-serif';
-      b.innerHTML =
-        '<p style="margin:0;flex:1 1 260px;max-width:640px;font-size:13px;line-height:1.5;color:#333">' +
-        'Ce site utilise Google Analytics pour mesurer l\u2019audience, uniquement avec votre accord. ' +
-        'Vous pouvez accepter ou refuser \u00e0 tout moment \u2014 voir notre ' +
-        '<a href="mentions-legales#rgpd" style="color:#0079A3;text-decoration:underline">politique de confidentialit\u00e9</a>.</p>' +
-        '<div style="display:flex;gap:10px;flex-shrink:0">' +
-        '<button type="button" id="ccRefuse" style="padding:10px 22px;border-radius:999px;border:1.5px solid #3C4A5F;background:#fff;color:#3C4A5F;font-family:inherit;font-weight:700;font-size:13px;cursor:pointer">Refuser</button>' +
-        '<button type="button" id="ccAccept" style="padding:10px 22px;border-radius:999px;border:none;background:#00B4EC;color:#000;font-family:inherit;font-weight:700;font-style:italic;font-size:13px;cursor:pointer">Accepter</button>' +
-        '</div>';
-      document.body.appendChild(b);
-      document.getElementById('ccAccept').addEventListener('click', function(){ setChoice('accepted'); applyConsent('accepted'); hideBanner(); });
-      document.getElementById('ccRefuse').addEventListener('click', function(){ setChoice('refused'); applyConsent('refused'); hideBanner(); });
-    }
-    function ensureManageLink(){
-      if (document.getElementById('ccManage')) return;
-      var a = document.createElement('a');
-      a.id = 'ccManage';
-      a.href = '#';
-      a.textContent = 'Cookies';
-      a.style.cssText = 'position:fixed;left:12px;bottom:12px;z-index:99998;background:rgba(60,74,95,.9);color:#fff;font-family:Montserrat,Helvetica,Arial,sans-serif;font-size:11px;font-weight:600;padding:6px 12px;border-radius:999px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.15)';
-      a.addEventListener('click', function(e){ e.preventDefault(); showBanner(); });
-      document.body.appendChild(a);
-    }
-    var choice = getChoice();
-    if (choice) { applyConsent(choice); } else { showBanner(); }
-    ensureManageLink();
-  })();
-});
-</script>
+<script defer src="/assets/site.js"></script>
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <meta charset="UTF-8"/>
@@ -116,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet"/>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Vendre son bien sur la Costa Brava : le guide du vendeur français 2026","author":{"@type":"Person","name":"Elodie Cimiotta"},"publisher":{"@type":"Organization","name":"Elodie Cimiotta — iad"},"datePublished":"2026-08-07","dateModified":"2026-08-13"}
+{"@context":"https://schema.org","@type":"Article","headline":"Vendre son bien sur la Costa Brava : le guide du vendeur français 2026","author":{"@type":"Person","@id":"https://elodie-cimiotta-iad.com/#elodie-cimiotta","name":"Elodie Cimiotta"},"publisher":{"@type":"Organization","@id":"https://elodie-cimiotta-iad.com/#agent-immobilier","name":"Elodie Cimiotta — iad"},"datePublished":"2026-08-07","dateModified":"2026-08-13"}
 </script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -243,6 +153,7 @@ footer a{color:rgba(255,255,255,.5);text-decoration:none}
     <div>
       <strong>Elodie Cimiotta</strong>
       <span>Conseillère &amp; Manager iad depuis 2018 · 15 conseillers actifs · Quarante (Hérault) &amp; Rosas (Espagne)</span>
+      <span class="article-date-line" style="display:block;margin-top:4px;font-size:11px;color:#9CA3AF">Publié le 7 août 2026 · Mis à jour le 13 août 2026</span>
     </div>
   </div>
 </div>

@@ -2,3 +2,5 @@ wrangler.toml
 .assetsignore
 README.md
 .gitignore
+worker.js
+README-api-contact.md
