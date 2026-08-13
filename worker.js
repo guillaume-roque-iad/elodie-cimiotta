@@ -5,13 +5,17 @@
  * les données personnelles dans l'URL.
  *
  * Sécurité :
- *  - méthode POST uniquement (405 sinon) ;
+ *  - méthode POST uniquement (405 sinon, y compris GET et PUT) ;
  *  - aucune donnée personnelle dans l'URL ;
  *  - "destinataire" n'est jamais envoyé par le navigateur : il est fixé ici ;
- *  - validation des champs obligatoires + format email + longueur max ;
+ *  - Content-Type application/json exigé (400 sinon) ;
+ *  - taille du corps limitée à 20 Ko (413 au-delà) ;
+ *  - longueur maximale par champ : dépassement = rejet 400 (jamais de troncature silencieuse) ;
+ *  - validation des champs obligatoires + format email ;
  *  - neutralisation des caractères dangereux (contrôle, < >) ;
- *  - vérification de l'origine autorisée ;
- *  - honeypot vérifié côté serveur (transmis, jamais journalisé ni relayé) ;
+ *  - vérification de l'origine autorisée (403 si origine explicitement différente) ;
+ *  - honeypot vérifié côté serveur : rejet 400 générique ({error:"FORM_REJECTED"}),
+ *    JAMAIS de faux succès, rien n'est enregistré ni relayé ;
  *  - anti-envoi-trop-rapide (le formulaire doit être resté affiché >= 3s) ;
  *  - limitation basique du débit par IP via la Cache API (30s) ;
  *  - aucune donnée personnelle écrite dans les journaux techniques ;
@@ -24,14 +28,27 @@ const ALLOWED_ORIGINS = new Set([
 ]);
 
 const MAX_LEN = {
-  nom: 200,
-  email: 200,
+  nom: 120,
+  email: 254,
   telephone: 40,
   ville: 120,
-  pays: 60,
-  projet: 80,
-  message: 3000,
+  pays: 80,
+  projet: 120,
+  message: 5000,
   page_origine: 500
+};
+
+const MAX_BODY_BYTES = 20 * 1024; // 20 Ko
+
+const FIELD_LABELS = {
+  nom: 'Le nom',
+  email: 'L’email',
+  telephone: 'Le téléphone',
+  ville: 'La ville',
+  pays: 'Le pays',
+  projet: 'Le projet',
+  message: 'Le message',
+  page_origine: 'La page d’origine'
 };
 
 const RECIPIENT = 'elodie.cimiotta@iadespana.es'; // fixé côté serveur uniquement
@@ -72,9 +89,23 @@ async function handleContact(request, env, ctx) {
     return jsonResponse({ success: false, error: 'Origine non autorisée.' }, 403);
   }
 
+  // Content-Type : on n'accepte que du JSON explicite (rejette les tentatives de
+  // contournement via un type de contenu différent, ex. text/plain ou multipart).
+  const contentType = (request.headers.get('Content-Type') || '').toLowerCase();
+  if (!contentType.includes('application/json')) {
+    return jsonResponse({ success: false, error: 'Content-Type invalide, application/json attendu.' }, 400);
+  }
+
+  // Taille du corps : lue avant tout parsing pour éviter de traiter une charge excessive.
+  const rawBody = await request.text();
+  const bodyBytes = new TextEncoder().encode(rawBody).length;
+  if (bodyBytes > MAX_BODY_BYTES) {
+    return jsonResponse({ success: false, error: 'Requête trop volumineuse.' }, 413);
+  }
+
   let body;
   try {
-    body = await request.json();
+    body = JSON.parse(rawBody);
   } catch (e) {
     return jsonResponse({ success: false, error: 'Requête invalide.' }, 400);
   }
@@ -82,11 +113,11 @@ async function handleContact(request, env, ctx) {
     return jsonResponse({ success: false, error: 'Requête invalide.' }, 400);
   }
 
-  // Honeypot : vérifié réellement côté serveur. Un bot qui remplit ce champ reçoit une
-  // réponse "succès" générique (pour ne pas l'aider à s'adapter) mais rien n'est
-  // enregistré ni transmis par email.
+  // Honeypot : vérifié réellement côté serveur. Un bot qui remplit ce champ reçoit un
+  // rejet générique — jamais un faux succès — et le mécanisme antispam n'est jamais
+  // révélé publiquement. Rien n'est enregistré ni transmis par email.
   if (sanitize(body.site_web)) {
-    return jsonResponse({ success: true }, 200);
+    return jsonResponse({ success: false, error: 'FORM_REJECTED' }, 400);
   }
 
   // Anti-envoi-trop-rapide : le formulaire doit être resté affiché au moins 3 secondes.
@@ -95,14 +126,32 @@ async function handleContact(request, env, ctx) {
     return jsonResponse({ success: false, error: 'Merci de patienter quelques secondes avant d’envoyer le formulaire.' }, 429);
   }
 
-  const nom = sanitize(body.nom).slice(0, MAX_LEN.nom);
-  const email = sanitize(body.email).slice(0, MAX_LEN.email);
-  const telephone = sanitize(body.telephone).slice(0, MAX_LEN.telephone);
-  const ville = sanitize(body.ville).slice(0, MAX_LEN.ville);
-  const pays = sanitize(body.pays).slice(0, MAX_LEN.pays);
-  const projet = sanitize(body.projet).slice(0, MAX_LEN.projet);
-  const message = sanitize(body.message).slice(0, MAX_LEN.message);
-  const pageOrigine = sanitize(body.page_origine).slice(0, MAX_LEN.page_origine);
+  // Longueur des champs : on rejette explicitement (jamais de troncature silencieuse)
+  // toute valeur dépassant la limite déclarée pour ce champ.
+  const rawFields = {
+    nom: sanitize(body.nom),
+    email: sanitize(body.email),
+    telephone: sanitize(body.telephone),
+    ville: sanitize(body.ville),
+    pays: sanitize(body.pays),
+    projet: sanitize(body.projet),
+    message: sanitize(body.message),
+    page_origine: sanitize(body.page_origine)
+  };
+  for (const key of Object.keys(MAX_LEN)) {
+    if (rawFields[key].length > MAX_LEN[key]) {
+      return jsonResponse({ success: false, error: FIELD_LABELS[key] + ' dépasse la longueur maximale autorisée.' }, 400);
+    }
+  }
+
+  const nom = rawFields.nom;
+  const email = rawFields.email;
+  const telephone = rawFields.telephone;
+  const ville = rawFields.ville;
+  const pays = rawFields.pays;
+  const projet = rawFields.projet;
+  const message = rawFields.message;
+  const pageOrigine = rawFields.page_origine;
 
   if (!nom || !email) {
     return jsonResponse({ success: false, error: 'Le nom et l’email sont obligatoires.' }, 400);

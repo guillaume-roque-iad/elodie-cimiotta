@@ -115,7 +115,7 @@ footer a{color:rgba(255,255,255,.5);text-decoration:none}
   </header>
 
 <div class="article-body">
-  <p>Vous possédez un appartement, une maison ou une villa à Roses (Rosas) ou aux alentours, sur la Costa Brava, et vous vous demandez ce que vaut votre bien ? Une estimation sérieuse tient compte du secteur, de la vue, de l'étage, de l'état et de la demande réelle — pas d'un simple prix moyen au m². Élodie Cimiotta, conseillère iad franco-espagnole, vous propose une estimation gratuite et sans engagement, en français.</p>
+  <p>Vous possédez un appartement, une maison ou une villa à Roses (Rosas) ou aux alentours, sur la Costa Brava, et vous vous demandez ce que vaut votre bien ? Une estimation sérieuse tient compte du secteur, de la vue, de l'étage, de l'état et de la demande réelle — pas d'un simple prix moyen au m². Élodie Cimiotta, conseillère iad España, franco-espagnole, vous propose une estimation gratuite et sans engagement, en français.</p>
 
   <h2>Ce qui fait varier la valeur à Roses</h2>
   <p>Plusieurs éléments pèsent directement sur l'estimation d'un bien à Roses : le secteur exact, la vue (mer, montagne ou intérieur), l'étage et la présence d'un ascenseur, l'extérieur (terrasse, jardin, parking), l'état général et les charges de copropriété. Le statut touristique du bien — s'il dispose ou peut disposer d'une licence de location saisonnière — peut également influencer sa valeur pour un certain profil d'acheteurs.</p>
@@ -174,17 +174,17 @@ footer a{color:rgba(255,255,255,.5);text-decoration:none}
     </div>
     <form id="fme-estim">
       <input type="hidden" name="page_origine" value=""/>
-      <div class="fg"><label for="ef-nom">Nom et prénom *</label><input id="ef-nom" type="text" name="nom" required placeholder="Jean Dupont"/></div>
+      <div class="fg"><label for="ef-nom">Nom et prénom *</label><input id="ef-nom" type="text" name="nom" required maxlength="120" placeholder="Jean Dupont"/></div>
       <div class="fg2">
-        <div class="fg"><label for="ef-email">Email *</label><input id="ef-email" type="email" name="email" required placeholder="jean@email.com"/></div>
-        <div class="fg"><label for="ef-tel">Téléphone</label><input id="ef-tel" type="tel" name="telephone" placeholder="+33 6 00 00 00 00"/></div>
+        <div class="fg"><label for="ef-email">Email *</label><input id="ef-email" type="email" name="email" required maxlength="254" placeholder="jean@email.com"/></div>
+        <div class="fg"><label for="ef-tel">Téléphone</label><input id="ef-tel" type="tel" name="telephone" maxlength="40" placeholder="+33 6 00 00 00 00"/></div>
       </div>
       <div class="fg2">
-        <div class="fg"><label for="ef-ville">Commune du bien</label><input id="ef-ville" type="text" name="ville" placeholder="Roses, Empuriabrava..."/></div>
+        <div class="fg"><label for="ef-ville">Commune du bien</label><input id="ef-ville" type="text" name="ville" maxlength="120" placeholder="Roses, Empuriabrava..."/></div>
         <div class="fg"><label for="ef-pays">Pays</label><select id="ef-pays" name="pays"><option>France</option><option selected>Espagne</option><option>Autre</option></select></div>
       </div>
       <div class="fg"><label for="ef-projet">Votre projet</label><select id="ef-projet" name="projet"><option>Estimer mon bien</option><option>Vendre mon bien</option><option>Acheter un bien</option><option>Investissement locatif</option><option>Autre</option></select></div>
-      <div class="fg"><label for="ef-message">Message</label><textarea id="ef-message" name="message" placeholder="Décrivez votre bien (surface, type, état...)"></textarea></div>
+      <div class="fg"><label for="ef-message">Message</label><textarea id="ef-message" name="message" maxlength="5000" placeholder="Décrivez votre bien (surface, type, état...)"></textarea></div>
       <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label for="ef-site-web-2">Ne pas remplir</label><input type="text" id="ef-site-web-2" name="site_web" tabindex="-1" autocomplete="off"/></div>
       <button type="submit" class="fsub">Envoyer ma demande →</button>
       <p style="font-size:12px;color:var(--gris);line-height:1.5;margin-top:12px">En envoyant ce formulaire, vous acceptez que vos informations soient utilisées pour traiter votre demande. Voir notre <a href="/mentions-legales#rgpd" style="color:var(--bleu);text-decoration:underline">politique de confidentialité (RGPD)</a>.</p>
