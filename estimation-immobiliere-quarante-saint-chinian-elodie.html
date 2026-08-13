@@ -188,6 +188,11 @@ footer a{color:rgba(255,255,255,.5);text-decoration:none}
     function envoyerElodieEstim(e) {
       e.preventDefault();
       var f = document.getElementById('fme-estim');
+      if (f.querySelector('[name=site_web]').value) {
+        f.style.display = 'none';
+        document.getElementById('fse-estim').style.display = 'block';
+        return;
+      }
       var btn = f.querySelector('.fsub');
       var errBox = document.getElementById('ferr-estim');
       if (errBox) errBox.style.display = 'none';

@@ -283,7 +283,7 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
 <section class="hero">
   <div>
     <div class="hero-tag">Conseillère & Manager iad</div>
-    <h1>Votre projet immobilier<br/><em>entre de bonnes mains.</em></h1>
+    <h1>Estimer et vendre votre bien<br/><em>à Quarante ou à Roses.</em></h1>
     <p class="hero-sub">Conseillère immobilière indépendante iad, Élodie vous accompagne sur tous les villages dans un rayon de 15 km autour de Quarante, ainsi que sur le secteur de Saint-Pons-de-Thomières et 15 km à la ronde : Capestang, Cruzy, Creissan, Puisserguier, Saint-Chinian côté Hérault, Argeliers et Ouveillan côté Aude — ainsi qu'à Rosas sur la Costa Brava.</p>
     <div class="hero-btns">
       <a href="estimation-immobiliere-quarante-saint-chinian-elodie" class="btn-w">🇫🇷 Estimer en France</a>
@@ -608,6 +608,11 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
     function envoyerElodie(e) {
       e.preventDefault();
       var f = document.getElementById('fme');
+      if (f.querySelector('[name=site_web]').value) {
+        f.style.display = 'none';
+        document.getElementById('fse').style.display = 'block';
+        return;
+      }
       var btn = f.querySelector('.fsub');
       var errBox = document.getElementById('ferr');
       if (errBox) errBox.style.display = 'none';
