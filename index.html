@@ -1,6 +1,34 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3NJTVP8D34"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3NJTVP8D34');
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof gtag !== 'function') return;
+  document.querySelectorAll('a[href^="tel:+33"]').forEach(function(a){
+    a.addEventListener('click', function(){ gtag('event','click_phone_fr'); });
+  });
+  document.querySelectorAll('a[href^="tel:+34"]').forEach(function(a){
+    a.addEventListener('click', function(){ gtag('event','click_phone_es'); });
+  });
+  document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){
+    a.addEventListener('click', function(){ gtag('event','click_email'); });
+  });
+  document.querySelectorAll('a[href*="estimation-immobiliere-quarante-saint-chinian-elodie"]').forEach(function(a){
+    a.addEventListener('click', function(){ gtag('event','click_estimation_fr'); });
+  });
+  document.querySelectorAll('a[href*="estimation-immobiliere-roses-costa-brava-elodie"]').forEach(function(a){
+    a.addEventListener('click', function(){ gtag('event','click_estimation_es'); });
+  });
+});
+</script>
+
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -730,6 +758,13 @@ footer{background:var(--bleu-fonce);padding:50px 8vw 32px}
 <script>
 function onElodieOK() {
   elodieOK = true;
+  if (typeof gtag === 'function') {
+    var pj = document.querySelector('#fme [name=projet]');
+    gtag('event', 'generate_lead', {
+      'form_location': window.location.pathname,
+      'projet': pj ? pj.value : ''
+    });
+  }
   document.getElementById('fse').style.display='block';
   document.getElementById('fme').style.display='none';
   var errBox = document.getElementById('ferr');
