@@ -166,11 +166,23 @@
   }
 
   // ---------- Formulaires de contact / estimation (sécurisés, POST) ----------
+  var GENERIC_ERROR = "Votre demande n'a pas pu être envoyée. Vérifiez les informations saisies ou contactez directement Élodie.";
+  // Codes machine renvoyés par le serveur pour lesquels on ne doit JAMAIS afficher le
+  // détail brut (ex. FORM_REJECTED = antispam) : on retombe toujours sur un message
+  // générique, sans jamais révéler le mécanisme de rejet.
+  var SILENT_ERROR_CODES = { FORM_REJECTED: true };
+
   function showFormError(errBox, message) {
     if (!errBox) return;
     var p = errBox.querySelector('p') || errBox;
     if (message && p !== errBox) { p.textContent = message; }
     errBox.style.display = 'block';
+  }
+
+  function resolveErrorMessage(data) {
+    var code = data && data.error;
+    if (!code || SILENT_ERROR_CODES[code]) return GENERIC_ERROR;
+    return code;
   }
 
   function initSecureForm(cfg) {
@@ -240,13 +252,15 @@
           // GA4 : uniquement après un vrai succès serveur ET consentement accordé.
           trackEvent('generate_lead', { form_location: window.location.pathname, projet: payload.projet });
         } else {
+          // Le bouton est toujours réactivé et une nouvelle tentative reste possible,
+          // y compris après un rejet antispam silencieux (jamais révélé à l'utilisateur).
           if (btn) { btn.textContent = originalLabel; btn.disabled = false; }
-          showFormError(errBox, (r.data && r.data.error) || "Le message n'a pas pu être envoyé. Merci de réessayer, ou contactez directement Elodie.");
+          showFormError(errBox, resolveErrorMessage(r.data));
         }
       }).catch(function () {
         submitting = false;
         if (btn) { btn.textContent = originalLabel; btn.disabled = false; }
-        showFormError(errBox, "Le message n'a pas pu être envoyé. Merci de réessayer, ou contactez directement Elodie.");
+        showFormError(errBox, GENERIC_ERROR);
       });
     });
   }
