@@ -114,6 +114,9 @@
     document.querySelectorAll('a[href*="estimation-immobiliere-roses-costa-brava-elodie"]').forEach(function (a) {
       a.addEventListener('click', function () { trackEvent('click_estimation_es'); });
     });
+    document.querySelectorAll('a[href*="/es/valoracion-vivienda-roses"], a[href*="/es/vender-vivienda-roses"], a[href*="/es/agente-inmobiliario-roses"]').forEach(function (a) {
+      a.addEventListener('click', function () { trackEvent('click_es_pages'); });
+    });
   }
 
   // ---------- Bandeau de consentement ----------
