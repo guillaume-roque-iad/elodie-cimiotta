@@ -156,6 +156,7 @@
       a.id = 'ccManage';
       a.href = '#';
       a.textContent = 'Cookies';
+      a.setAttribute('aria-label', 'Gérer les préférences de cookies');
       a.style.cssText = 'position:fixed;left:12px;bottom:12px;z-index:99998;background:rgba(60,74,95,.9);color:#fff;font-family:Montserrat,Helvetica,Arial,sans-serif;font-size:11px;font-weight:600;padding:6px 12px;border-radius:999px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.15)';
       a.addEventListener('click', function (e) { e.preventDefault(); showBanner(); });
       document.body.appendChild(a);
