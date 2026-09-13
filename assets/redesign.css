@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap');
 /* Shared visual identity: iad guidelines 2025, commercial website. */
 :root{--bleu:#007DAF;--bleu-prof:#006B9A;--bleu-dark:#006390;--bleu-fonce:#006390;--bleu-bg:#E9FCFF;--gris-clair:#f7f9fa;--noir:#000;--gris:#333;--gris-fonce:#000;--corail:#007DAF;--corail-dark:#006390;--r:16px}
 html{scroll-padding-top:110px}body{font-family:Montserrat,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#000}button,input,select,textarea{font-family:inherit}img{max-width:100%}a,button,input,select,textarea,summary{touch-action:manipulation}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #007DAF;outline-offset:4px}h1,h2,h3{overflow-wrap:break-word}.skip-link{position:fixed;top:-100px;left:16px;background:#fff;padding:12px;z-index:10000}.skip-link:focus{top:12px}
@@ -21,3 +21,26 @@ html{scroll-padding-top:110px}body{font-family:Montserrat,Helvetica,Arial,sans-s
 @media(max-width:1100px){.navbar{height:104px}.nb-logo.iad-real-estate{width:88px}}
 @media(max-width:900px){.nav-links{top:104px}}
 @media(max-width:640px){.navbar{height:96px}.nb-logo.iad-real-estate{width:80px}.nav-links{top:96px}.nb-name{font-size:13px}.nb-brand{gap:8px}.footer-iad-logo{width:140px}}
+
+/* Boutons, pictogrammes et surfaces : harmonisation charte iad 2025. */
+.iad-icon{width:24px;height:24px;display:inline-block;flex:0 0 24px;vertical-align:middle;color:inherit}
+:is(.nb-cta,.btn-w,.btn-o,.scard-btn,.btn-estim,.dev-cta,.fsub,.hb-primary,.hb-ghost,.cta-box a){display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;border-radius:999px;font-family:Montserrat,Helvetica,Arial,sans-serif;font-style:italic;font-weight:700;line-height:1.35;text-align:center;text-decoration:none;box-shadow:none;transition:background-color .18s,color .18s,border-color .18s}
+:is(.nb-cta,.btn-w,.scard-btn,.btn-estim,.dev-cta,.fsub,.hb-primary,.cta-box a):not(.secondary):not(.hb-ghost){background:#00B4EC;color:#000;border:1px solid #00B4EC}
+:is(.nb-cta,.btn-w,.scard-btn,.btn-estim,.dev-cta,.fsub,.hb-primary,.cta-box a):hover{background:#95EBFF;color:#000;transform:none}
+:is(.nb-cta,.btn-w,.scard-btn,.btn-estim,.dev-cta,.fsub,.hb-primary,.cta-box a):active{background:#25CFFF;color:#000}
+.home-intro .btn-w.secondary,.hb-ghost{background:#fff;color:#000;border:1px solid #3c4a5f}
+.home-intro .btn-w.secondary:hover,.hb-ghost:hover{background:#E9FCFF;color:#000}
+.home-intro .btn-o{color:#000;min-height:48px;padding:12px 18px;text-decoration:underline;text-underline-offset:5px}
+.fsub:disabled{background:#D0CDC6;color:#000;border-color:#D0CDC6;cursor:wait;opacity:1}
+.sva,.blire{color:#006390;font-weight:700;text-underline-offset:5px}.sva:hover,.blire:hover{text-decoration:underline}
+.btab{font-family:inherit;min-height:44px;padding:10px 20px;border:1px solid #D0CDC6;background:#fff;color:#000}.btab.active{background:#00B4EC;border-color:#00B4EC;color:#000}.btab:hover{background:#E9FCFF;color:#000}
+.svicon{width:64px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:#E9FCFF;color:#006390;transform:rotate(5deg);margin-bottom:22px}.svicon .iad-icon{transform:rotate(-5deg);width:26px;height:26px}
+.scard-flag{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.12em;color:#006390;margin-bottom:22px}
+.scard{border-top:1px solid #D0CDC6!important}.scard:nth-child(2){background:#f7f9fa}.scard-bg.espagne{background:#f7f9fa}
+.svcard,.geo-card,.dev-card,.bcard{border-radius:16px}.svcard:hover,.bcard:hover{transform:none;box-shadow:none;border-color:#00B4EC}
+.geo-card{border:1px solid #e4e7eb;background:#fff}.geo{background:#f7f9fa}.role-note{border-bottom:1px solid #CDF7FF}
+.cinfo .iad-icon{width:20px;height:20px;flex-basis:20px}.zone-badge,.chip,.scard-tag{color:#000;background:#E9FCFF;border-color:transparent;font-size:13px}.hero-card{backdrop-filter:none}.hero-tag{font-weight:700}
+.avbtn{border-radius:999px;min-width:44px;min-height:44px;background:#fff;color:#000;border:1px solid #D0CDC6}.avbtn:hover{background:#E9FCFF}.avbtn:disabled{opacity:.45;cursor:default}.avstars,.stars{color:#006390}.avbadge{box-shadow:none;border:1px solid #D0CDC6;background:#fff}.avav{background:#E9FCFF!important;color:#006390!important}
+#fse .iad-icon,#ferr .iad-icon{width:32px;height:32px;flex-basis:32px}.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:#007DAF;outline:2px solid #007DAF;outline-offset:2px}.fg input,.fg select,.fg textarea{border-radius:8px}
+.article-cat,.home-hero .cat{color:#006390}.dev-badge{background:#E9FCFF!important;color:#006390!important}.dev-stat{border-top:3px solid #00B4EC!important}.dev-stat b{color:#000!important}.step{border-top-color:#00B4EC}.btop.co{background:#EA584A}.article-body a:not(.cta-box a){text-underline-offset:4px}
+@media(max-width:640px){.home-intro .hero-btns{width:100%}.home-intro .hero-btns a{width:100%}.btn-estim,.dev-cta{max-width:100%;padding:16px 22px!important}.nb-cta{min-height:44px}.svcard{padding:26px}.scard-tags{gap:8px}.scard-tag{font-size:12px}}
