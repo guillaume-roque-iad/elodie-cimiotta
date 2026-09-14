@@ -668,11 +668,11 @@ h1 .accent, h2 .accent { color: var(--iad-deep); }
 .site-header .brand > img.team-logo { width:80px; height:80px; }
 .team-signature { display:block; flex:none; color:#263d49; font-size:12px; line-height:1.5; font-weight:400; }
 .team-signature strong { display:block; font-size:13px; font-weight:700; white-space:nowrap; }
-.language-bar { background:#eafbff; border-bottom:1px solid #d6e3e8; font-size:12px; line-height:1.5; }
-.language-inner { display:flex; justify-content:flex-end; align-items:center; gap:18px; padding-block:5px; }
-.language-bar a { color:#005c7e; text-decoration:none; padding:5px 0; white-space:nowrap; }
-.language-bar a:hover,.language-bar a:focus-visible,.language-bar a[aria-current] { text-decoration:underline; text-underline-offset:4px; }
-.language-bar a[aria-current] { font-weight:800; }
+
+
+
+
+
 .site-header .nav-links { display:flex; position:static; flex:0 1 auto; min-width:0; flex-direction:row; flex-wrap:nowrap; justify-content:flex-end; align-items:center; gap:22px; padding:0; border:0; border-radius:0; box-shadow:none; font-size:12px; font-weight:600; }
 .site-header .nav-links > a { white-space:nowrap; }
 .site-header .nav-links > a:not(.btn) { padding:12px 0; }
@@ -699,9 +699,19 @@ html { scroll-padding-top:160px; }
   .team-signature { font-size:11px; }
   .team-signature strong { font-size:11px; }
   .site-header .menu-toggle { padding:9px 12px; font-size:12px; }
-  .language-inner { justify-content:center; }
-  .language-inner > span { display:none; }
+  
+  
   .topbar .wrap { justify-content:center; min-height:32px; }
   .topbar a { font-size:10px; letter-spacing:0; white-space:nowrap; }
   html { scroll-padding-top:145px; }
 }
+
+/* Sélecteur de langues : mêmes dimensions et états que Tribu Immo. */
+.language-bar{background:#eafbff;border-bottom:1px solid #d6e3e8;font-size:13px;line-height:1.5}
+.site-header .language-inner{width:100%;max-width:1240px;margin-inline:auto;display:flex;justify-content:flex-end;align-items:center;gap:6px 16px;flex-wrap:wrap;padding:8px 36px}
+.language-bar a{color:#005c7e;text-decoration:none;padding:4px 0;white-space:nowrap}
+.language-bar a:hover,.language-bar a:focus-visible,.language-bar a[aria-current]{text-decoration:underline;text-underline-offset:4px}
+.language-bar a[aria-current]{font-weight:800}
+@media(max-width:1050px){.site-header .language-inner{padding-inline:25px}}
+@media(max-width:800px){.site-header .language-inner{justify-content:center;gap:4px 14px}.language-inner>span{display:none}}
+@media(max-width:420px){.site-header .language-inner{padding-inline:20px}}
