@@ -659,54 +659,49 @@ h1 .accent, h2 .accent { color: var(--iad-deep); }
 }
 
 
-/* En-tête harmonisé avec Tribu Immo. */
-.site-header { background: #fff; backdrop-filter: none; border-bottom: 1px solid #d0cdc6; }
-.site-header .nav { min-height: 116px; gap: 28px; padding-block: 3px; }
-.site-header .brand { gap: 20px; color: #000; }
-.site-header .brand > img { width: 94px; height: 74px; object-fit: contain; flex: none; }
-.site-header .brand > img.team-logo { width: 110px; height: 110px; }
-.team-signature { display: block; flex: none; max-width: 125px; color: #263d49; font-size: 14px; line-height: 1.4; font-weight: 400; }
-.team-signature strong { display: block; font-size: 14px; font-weight: 700; }
-.language-bar { background: #eafbff; border-bottom: 1px solid #d6e3e8; font-size: 13px; line-height: 1.5; }
-.language-inner { display: flex; justify-content: flex-end; align-items: center; gap: 6px 16px; flex-wrap: wrap; padding-block: 8px; }
-.language-bar a { color: #005c7e; text-decoration: none; padding: 4px 0; white-space: nowrap; }
-.language-bar a:hover, .language-bar a:focus-visible, .language-bar a[aria-current] { text-decoration: underline; text-underline-offset: 4px; }
-.language-bar a[aria-current] { font-weight: 800; }
-.site-header .nav-links { display: flex; position: static; flex: 1 1 0; min-width: 0; flex-direction: row; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 12px 20px; padding: 0; border: 0; border-radius: 0; box-shadow: none; font-size: .84rem; font-weight: 600; }
-.site-header .nav-links > a:not(.btn) { padding: 0; }
-.site-header .nav-links > .btn { background: #006390; color: #fff; box-shadow: none; border: 1px solid transparent; padding: 12px 18px; font-size: .8rem; font-style: normal; gap: 12px; }
-.site-header .nav-links > .btn:hover { background: #006390; color: #fff; text-decoration: underline; transform: none; }
-.site-header .nav-links > .btn:active { background: #00b4ec; color: #000; }
-.site-header .nav-links > .btn .iad-symbol { color: inherit; }
-.site-header .menu-toggle { display: none; border-color: #007daf; font-weight: 500; }
-.site-header a:focus-visible { outline: 3px solid #007daf; outline-offset: 4px; }
-html { scroll-padding-top: 180px; }
-@media (max-width: 1100px) {
-  .site-header .brand { gap: 10px; }
-  .site-header .team-signature { max-width: 105px; }
+/* En-tête Team Lucky : alignement stable à chaque largeur. */
+.site-header { background:#fff; backdrop-filter:none; border-bottom:1px solid #d6e3e8; }
+.site-header .wrap { width:min(1320px, calc(100% - 48px)); }
+.site-header .nav { min-height:100px; gap:28px; padding-block:8px; }
+.site-header .brand { display:flex; gap:14px; color:#000; flex:none; }
+.site-header .brand > img { width:88px; height:64px; object-fit:contain; flex:none; }
+.site-header .brand > img.team-logo { width:80px; height:80px; }
+.team-signature { display:block; flex:none; color:#263d49; font-size:12px; line-height:1.5; font-weight:400; }
+.team-signature strong { display:block; font-size:13px; font-weight:700; white-space:nowrap; }
+.language-bar { background:#eafbff; border-bottom:1px solid #d6e3e8; font-size:12px; line-height:1.5; }
+.language-inner { display:flex; justify-content:flex-end; align-items:center; gap:18px; padding-block:5px; }
+.language-bar a { color:#005c7e; text-decoration:none; padding:5px 0; white-space:nowrap; }
+.language-bar a:hover,.language-bar a:focus-visible,.language-bar a[aria-current] { text-decoration:underline; text-underline-offset:4px; }
+.language-bar a[aria-current] { font-weight:800; }
+.site-header .nav-links { display:flex; position:static; flex:0 1 auto; min-width:0; flex-direction:row; flex-wrap:nowrap; justify-content:flex-end; align-items:center; gap:22px; padding:0; border:0; border-radius:0; box-shadow:none; font-size:12px; font-weight:600; }
+.site-header .nav-links > a { white-space:nowrap; }
+.site-header .nav-links > a:not(.btn) { padding:12px 0; }
+.site-header .nav-links > .btn { background:#006390; color:#fff; box-shadow:none; border:1px solid transparent; padding:13px 18px; font-size:12px; font-style:normal; gap:8px; }
+.site-header .nav-links > .btn:hover { background:#006390; color:#fff; text-decoration:underline; transform:none; }
+.site-header .nav-links > .btn:active { background:#00b4ec; color:#000; }
+.site-header .nav-links > .btn .iad-symbol { color:inherit; width:16px; height:16px; }
+.site-header .menu-toggle { display:none; border-color:#007daf; font-weight:600; }
+.site-header a:focus-visible { outline:3px solid #007daf; outline-offset:4px; }
+html { scroll-padding-top:160px; }
+@media (max-width:1279px) {
+  .site-header .menu-toggle { display:block; flex:none; }
+  .site-header .nav-links { display:none; position:absolute; top:100%; left:0; right:0; background:#fff; padding:20px 24px; box-shadow:0 8px 12px #00000015; flex-direction:column; align-items:stretch; gap:0; font-size:15px; max-height:calc(100dvh - 145px); overflow-y:auto; }
+  .site-header .nav-links.open { display:flex; }
+  .site-header .nav-links > a:not(.btn) { padding:14px 0; border-bottom:1px solid #e8eef1; }
+  .site-header .nav-links > .btn { margin-top:16px; min-height:46px; font-size:14px; }
 }
-@media (max-width: 1050px) {
-  .site-header .brand > img { width: 86px; height: 68px; }
-  .site-header .nav-links { font-size: .75rem; gap: 12px; }
-  .site-header .nav-links > .btn { padding: 12px 15px; }
-}
-@media (max-width: 800px) {
-  .site-header .nav { min-height: 96px; }
-  .site-header .brand { gap: 12px; }
-  .site-header .brand > img { width: 78px; height: 62px; }
-  .site-header .brand > img.team-logo { width: 90px; height: 90px; }
-  .language-inner { justify-content: center; gap: 4px 14px; }
-  .language-inner > span { display: none; }
-  .site-header .menu-toggle { display: block; flex: none; }
-  .site-header .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 25px; box-shadow: 0 8px 12px #00000015; flex-direction: column; align-items: stretch; font-size: 1rem; max-height: calc(100dvh - 140px); overflow-y: auto; }
-  .site-header .nav-links.open { display: flex; }
-  .site-header .nav-links > a:not(.btn) { padding: 8px 0; }
-  html { scroll-padding-top: 155px; }
-}
-@media (max-width: 420px) {
-  .site-header .nav { gap: 8px; }
-  .site-header .brand { gap: 6px; }
-  .site-header .brand > img { width: 54px; height: 54px; }
-  .site-header .brand > img.team-logo { width: 66px; height: 66px; }
-  .site-header .team-signature { max-width: 82px; }
+@media (max-width:600px) {
+  .site-header .wrap { width:calc(100% - 24px); }
+  .site-header .nav { min-height:88px; gap:8px; }
+  .site-header .brand { gap:8px; }
+  .site-header .brand > img { width:48px; height:44px; }
+  .site-header .brand > img.team-logo { width:60px; height:60px; }
+  .team-signature { font-size:11px; }
+  .team-signature strong { font-size:11px; }
+  .site-header .menu-toggle { padding:9px 12px; font-size:12px; }
+  .language-inner { justify-content:center; }
+  .language-inner > span { display:none; }
+  .topbar .wrap { justify-content:center; min-height:32px; }
+  .topbar a { font-size:10px; letter-spacing:0; white-space:nowrap; }
+  html { scroll-padding-top:145px; }
 }
