@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://equipe-elodie.guillaume-roque88.chatgpt.site/sitemap.xml
+Sitemap: https://team-lucky.com/sitemap.xml
