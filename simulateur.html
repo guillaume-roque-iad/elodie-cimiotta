@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulateur de rémunération iad et TIP | Team Lucky</title>
+  <meta name="description" content="Simulez votre rémunération iad France avec Team Lucky : dispositifs +, revenus d’équipe et bonus TIP. Choisissez votre profil et ajustez les chiffres.">
+  <meta name="theme-color" content="#00b4ec">
+  <link rel="canonical" href="https://team-lucky.com/simulateur">
+  <link rel="icon" href="/team-lucky-favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/team-lucky-v7.css">
+  
+
+
+
+
+
+
+
+<style>.simulator-page{background:#fff}.simulator-heading{padding-top:32px;padding-bottom:8px}.simulator-heading h1{font-size:clamp(1.6rem,3vw,2.4rem);margin:16px 0 8px}.simulator-heading p{max-width:800px}.simulator-note{font-size:13px;color:#52616b}@media(max-width:800px){.simulator-heading{padding-top:20px}}</style></head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <div class="topbar">
+    <div class="wrap">
+      <span>UN PROJET INDÉPENDANT. UNE MANAGER À VOS CÔTÉS.</span>
+      <a href="tel:+33642344612">Parlons de votre projet · 06 42 34 46 12</a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    
+    <nav class="nav wrap" aria-label="Navigation principale">
+      <a class="brand" href="/" aria-label="Team Lucky, accueil">
+        <img src="/iad-logo.svg" alt="iad immobilier" width="176" height="32">
+        <img class="team-logo" src="/team-lucky-logo.jpeg" alt="Team Lucky" width="1254" height="1254"><span class="team-signature">by <strong>Élodie Cimiotta</strong></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">Menu</button>
+      <div class="nav-links" id="navigation"><a href="/#presentations">Présentations</a>
+        <a href="/#accompagnement">L’accompagnement</a>
+        <a href="/#elodie">Votre manager</a>
+        <a href="/#modele">Votre activité</a>
+        <a href="/simulateur" aria-current="page">Simulateur</a>
+        <a href="/#questions">Vos questions</a>
+        <a class="btn btn-blue btn-small" href="/#contact"><svg class="iad-symbol" aria-hidden="true" focusable="false"><use href="/iad-icons.svg#mail"></use></svg> Échanger avec Élodie <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenu" class="simulator-page"><div class="wrap simulator-heading"><a href="/">Accueil</a><span aria-hidden="true"> / </span><span>Simulateur</span><h1>Simulez votre rémunération.</h1><p>Choisissez votre profil, puis ajustez les chiffres. Ce simulateur concerne <strong>iad France</strong> : dispositifs +, revenus d’équipe et TIP.</p><p class="simulator-note">Estimation HT avant charges et impôts, sous réserve des conditions d’éligibilité.</p></div><iframe id="simulator-frame" src="/simulateur-outil.html" title="Simulateur interactif de rémunération iad France" style="display:block;width:100%;height:1000px;border:0;background:#fff" loading="eager"></iframe><noscript><p class="wrap">Activez JavaScript pour ajuster les calculs du simulateur.</p></noscript></main>
+
+  <footer class="site-footer">
+    <div class="footer-grid wrap">
+      <div class="footer-brand"><img src="/iad-logo.svg" alt="iad immobilier" width="176" height="32"><div><strong>Team Lucky · by Élodie Cimiotta</strong><span>Développez votre activité immobilière avec un accompagnement humain.</span></div></div>
+      <div class="footer-links"><a href="/#accompagnement">Accompagnement</a><a href="/#elodie">Élodie</a><a href="/#questions">Questions</a><a href="https://www.iadespana.es/" rel="noopener">Site officiel iad España</a><a href="/mentions-legales.html">Mentions légales</a></div>
+    </div>
+    <div class="footer-bottom wrap"><span>© <span data-year></span> Team Lucky.</span><span>Site indépendant, non officiel iad France et iad España.</span></div>
+  </footer>
+
+  <script src="/team-lucky-v7.js" defer></script>
+<script>(()=>{const f=document.getElementById('simulator-frame');let observer;f.addEventListener('load',()=>{observer?.disconnect();try{const body=f.contentDocument.body;const resize=()=>{const height=Math.ceil(body.getBoundingClientRect().height)+12;if(height>100&&Math.abs(parseFloat(f.style.height)-height)>2)f.style.height=height+'px';};observer=new ResizeObserver(resize);observer.observe(body);resize();}catch(e){f.style.height='1400px';}});})();</script></body>
+</html>
+

@@ -104,3 +104,7 @@
     });
   }
 })();
+
+
+// Accès au simulateur France depuis les pages du site.
+(()=>{const nav=document.querySelector('.nav-links');if(!nav||nav.querySelector('a[href="/simulateur"]'))return;const a=document.createElement('a');a.href='/simulateur';const lang=document.documentElement.lang.split('-')[0];a.textContent=({fr:'Simulateur',es:'Simulador (FR)',ca:'Simulador (FR)',pt:'Simulador (FR)',it:'Simulatore (FR)',de:'Simulator (FR)',en:'Simulator (FR)'})[lang]||'Simulateur (FR)';nav.insertBefore(a,nav.querySelector('.btn'));a.addEventListener('click',()=>{nav.classList.remove('open');document.querySelector('.menu-toggle')?.setAttribute('aria-expanded','false');});})();

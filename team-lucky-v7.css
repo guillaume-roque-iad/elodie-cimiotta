@@ -751,3 +751,7 @@ main h1, main h2, main h3 { overflow-wrap:anywhere; }
 @media(min-width:1280px) and (max-width:1499px){.site-header .nav-links{gap:12px;font-size:12px}.nav .brand{gap:10px}}
 
 .lucky-agenda .section-head{margin-bottom:36px;max-width:900px}.lucky-agenda .section-head p{margin-top:20px;max-width:760px}
+
+
+/* Keep the simulator link comfortable in the desktop navigation. */
+@media(min-width:1280px){.site-header .nav-links{gap:12px;flex-wrap:wrap}}
