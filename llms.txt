@@ -1,61 +1,28 @@
-# Périmètre actuel des services
+# Team Lucky
 
-En France, Élodie Cimiotta accompagne uniquement les acquéreurs dans leur projet d’achat. Les vendeurs, les estimations et les mandats de vente en France sont pris en charge par Guillaume Roque, conseiller immobilier indépendant iad France. En Espagne, Élodie accompagne les acquéreurs et les vendeurs sur la Costa Brava.
+Site de présentation de l’accompagnement proposé par Élodie Cimiotta aux personnes qui envisagent de devenir conseillères ou conseillers immobiliers indépendants au sein du réseau iad.
 
-# Élodie Cimiotta — Conseillère immobilière iad
+## Informations principales
 
-> Élodie Cimiotta est conseillère immobilière indépendante, membre du réseau iad España. Elle intervient principalement en Espagne (Roses et la Costa Brava, province de Gérone). En France, elle accompagne uniquement les acquéreurs. Guillaume Roque, conseiller iad France, accompagne les vendeurs et réalise les estimations en France. Élodie propose les estimations et l’accompagnement des vendeurs uniquement en Espagne.
+- Élodie Cimiotta est conseillère et manager iad depuis 2018.
+- Son organisation compte 15 conseillers actifs.
+- Elle dispose d’une expérience professionnelle en France et en Espagne.
+- Le site est disponible en français, espagnol et catalan.
+- L’activité présentée est indépendante et les revenus sont variables. Aucun revenu ni délai de réussite n’est garanti.
 
-## Accueil
-- [Élodie Cimiotta — Immobilier Hérault & Costa Brava](https://elodie-cimiotta-iad.com/)
+## Pages
 
-## Espagne — Roses & Costa Brava
-- [Immobilier à Roses, Costa Brava, en 2026](https://elodie-cimiotta-iad.com/article-rosas-elodie)
-- [Résidence secondaire à Roses : le guide 2026](https://elodie-cimiotta-iad.com/article-rosas-secondaire-elodie)
-- [Estimation immobilière à Roses](https://elodie-cimiotta-iad.com/estimation-immobiliere-roses-costa-brava-elodie)
-- [Acheter sur la Costa Brava : guide français](https://elodie-cimiotta-iad.com/article-costa-brava-elodie)
-- [Vendre en Catalogne espagnole : guide 2026](https://elodie-cimiotta-iad.com/article-vendre-costa-brava-guide-elodie)
-- [Vendre votre bien en Catalogne espagnole](https://elodie-cimiotta-iad.com/vendre-costa-brava-elodie)
-- [Locatif saisonnier Costa Brava : investir en 2026](https://elodie-cimiotta-iad.com/article-locatif-costa-brava-elodie)
-- [Investissement locatif en Espagne : guide 2026](https://elodie-cimiotta-iad.com/article-investissement-espagne-elodie)
-- [Acheter en Espagne depuis la France en 2026](https://elodie-cimiotta-iad.com/article-acheter-espagne-elodie)
-- [Vendre un bien en Espagne : fiscalité et plus-value](https://elodie-cimiotta-iad.com/article-fiscalite-vente-espagne-elodie)
-
-## Versión en español (Roses & Costa Brava)
-- [Élodie Cimiotta, agente inmobiliaria en Roses](https://elodie-cimiotta-iad.com/es/agente-inmobiliario-roses)
-- [Tasación de vivienda en Roses](https://elodie-cimiotta-iad.com/es/valoracion-vivienda-roses)
-- [Vender mi vivienda en Roses](https://elodie-cimiotta-iad.com/es/vender-vivienda-roses)
-
-## France / Espagne — vie entre les deux pays
-- [Vivre entre France et Espagne : bi-résidence](https://elodie-cimiotta-iad.com/article-bi-residence-elodie)
-
-## France — Hérault & Aude (Quarante, Saint-Chinian, Sud-Hérault)
-- [Immobilier à Quarante (34310) en 2026](https://elodie-cimiotta-iad.com/article-quarante-elodie)
-- [Immobilier à Saint-Chinian (34360) en 2026](https://elodie-cimiotta-iad.com/article-saint-chinian-elodie)
-- [Hauts Cantons de l'Hérault : immobilier 2026](https://elodie-cimiotta-iad.com/article-hauts-cantons-elodie)
-- [Combien vaut ma maison à Quarante et Saint-Chinian ?](https://elodie-cimiotta-iad.com/article-estimation-quarante-saint-chinian-elodie)
-- [Estimation immobilière Quarante & Saint-Chinian](https://elodie-cimiotta-iad.com/estimation-immobiliere-quarante-saint-chinian-elodie)
-- [Vendre à Quarante et Saint-Chinian](https://elodie-cimiotta-iad.com/vendre-quarante-saint-chinian-elodie)
-- [Immobilier à Capestang (34310) en 2026](https://elodie-cimiotta-iad.com/article-capestang-elodie)
-- [Immobilier à Puisserguier et Creissan (34)](https://elodie-cimiotta-iad.com/article-puisserguier-elodie)
-- [Immobilier à Cruzy et Quarante, villages viticoles](https://elodie-cimiotta-iad.com/article-cruzy-elodie)
-- [Immobilier à Saint-Pons-de-Thomières (34220)](https://elodie-cimiotta-iad.com/article-saint-pons-elodie)
-- [Immobilier à Argeliers et Ouveillan (Aude)](https://elodie-cimiotta-iad.com/article-argeliers-elodie)
-- [Immobilier à Béziers et son bassin en 2026](https://elodie-cimiotta-iad.com/article-beziers-elodie)
-- [Vendre sa maison dans l'Hérault en 2026](https://elodie-cimiotta-iad.com/article-vendre-herault-elodie)
-
-## Guides pratiques (achat, vente, fiscalité)
-- [Premier achat immobilier : les étapes clés](https://elodie-cimiotta-iad.com/article-premier-achat-elodie)
-- [Acheter un bien ancien : la checklist](https://elodie-cimiotta-iad.com/article-acheter-ancien-elodie)
-- [Frais de notaire en 2026 : combien prévoir ?](https://elodie-cimiotta-iad.com/article-frais-notaire-elodie)
-- [Le DPE en 2026 pour les vendeurs de l'Hérault](https://elodie-cimiotta-iad.com/article-dpe-herault-elodie)
-- [Home staging : 7 conseils pour vendre vite](https://elodie-cimiotta-iad.com/article-home-staging-elodie)
-
-## Informations légales
-- [Mentions légales](https://elodie-cimiotta-iad.com/mentions-legales)
+- Français : /
+- Español : /es/
+- Català : /ca/
+- Mentions légales : /mentions-legales.html
 
 ## Contact
-- Élodie Cimiotta — Conseillère immobilière iad España — Quarante (Hérault) & Roses (Espagne)
-- Tél : +34 613 599 378 (Espagne) / 06 42 34 46 12 (France)
-- Site : https://elodie-cimiotta-iad.com
 
+- E-mail : elodie.cimiotta@iadespana.es
+- Espagne : +34 613 599 378
+- France : +33 6 42 34 46 12
+
+## Source officielle du réseau
+
+- https://www.iadespana.es/

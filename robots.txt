@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://elodie-cimiotta-iad.com/sitemap.xml
+Sitemap: https://equipe-elodie.guillaume-roque88.chatgpt.site/sitemap.xml
