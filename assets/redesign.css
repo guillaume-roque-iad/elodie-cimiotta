@@ -58,3 +58,29 @@ html{scroll-padding-top:110px}body{font-family:Montserrat,Helvetica,Arial,sans-s
 img.iad-charter-icon{object-fit:contain;display:inline-block;vertical-align:middle;flex-shrink:0;width:24px;height:24px;max-width:none}
 .svicon:has(.iad-charter-icon){background:transparent;transform:none;border-radius:0;width:64px;height:56px}
 .svicon img.iad-charter-icon{width:52px;height:52px;transform:none}
+
+/* iad web buttons — charter CTA models, 2026-09-14. */
+body :is(.nb-cta,.btn-w,.scard-btn,.btn-estim,.dev-cta,.fsub,.hb-primary,.cta-box a):not(.secondary):not(.hb-ghost){
+ display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;max-width:100%;padding:14px 26px;border:1px solid #007DAF;border-radius:999px;background:#007DAF!important;color:#fff!important;font-family:Montserrat,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;font-style:italic;line-height:1.4;text-align:center;text-decoration:none;white-space:normal;box-shadow:none;transform:none;transition:background-color .16s,color .16s,border-color .16s;
+}
+body :is(.nb-cta,.btn-w,.scard-btn,.btn-estim,.dev-cta,.fsub,.hb-primary,.cta-box a):not(.secondary):not(.hb-ghost):hover{background:#006B9A!important;color:#fff!important;border-color:#006B9A;text-decoration:underline;text-underline-offset:3px;transform:none}
+body :is(.nb-cta,.btn-w,.scard-btn,.btn-estim,.dev-cta,.fsub,.hb-primary,.cta-box a):not(.secondary):not(.hb-ghost):active{background:#00B4EC!important;color:#000!important;border-color:#00B4EC}
+body .home-intro .btn-w.secondary,body .hb-ghost,body #ccRefuse{
+ display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;max-width:100%;padding:14px 26px;background:#fff!important;color:#000!important;border:1px solid #00B4EC!important;border-radius:999px;font-family:Montserrat,Helvetica,Arial,sans-serif;font-weight:700;font-style:italic;line-height:1.4;text-align:center;text-decoration:none;box-shadow:none;transform:none;
+}
+body .home-intro .btn-w.secondary::after,body .hb-ghost::after{content:'→';font-size:22px;font-style:normal;line-height:1;color:#007DAF}
+body .home-intro .btn-w.secondary:hover,body .hb-ghost:hover,body #ccRefuse:hover{background:#E9FCFF!important;text-decoration:underline;text-underline-offset:3px;transform:none}
+body .home-intro .btn-w.secondary:active,body .hb-ghost:active,body #ccRefuse:active{background:#95EBFF!important}
+body .home-intro .btn-o{background:transparent;border:0;color:#007DAF;font-style:normal;font-weight:600;text-decoration:none;padding:12px 8px}
+body .home-intro .btn-o:hover{color:#006390;text-decoration:underline;text-underline-offset:3px}
+body :is(.menu-toggle,.btab,.avbtn){border:1px solid #000;background:#fff;color:#000;border-radius:999px;font-family:Montserrat,Helvetica,Arial,sans-serif;font-weight:600;font-style:normal;box-shadow:none}
+body :is(.menu-toggle,.btab,.avbtn):hover{background:#fff;text-decoration:underline;text-underline-offset:3px}
+body :is(.menu-toggle,.btab,.avbtn):active{background:#00B4EC;color:#000}
+body .btab.active,body .menu-toggle[aria-expanded="true"]{background:#95EBFF;color:#000;border-color:#000}
+body .language-switcher{border-color:#000}.language-switcher a[aria-current="page"]{background:#95EBFF}.language-switcher a:hover{text-decoration:underline;text-underline-offset:3px}.language-switcher a:active{background:#00B4EC}
+body #ccAccept{background:#007DAF!important;color:#fff!important;border:1px solid #007DAF!important;border-radius:999px;font-weight:700;font-style:italic;min-height:48px}
+body #ccAccept:hover{background:#006B9A!important;text-decoration:underline}body #ccAccept:active{background:#00B4EC!important;color:#000!important}
+body :is(.nb-cta,.btn-w,.btn-o,.scard-btn,.btn-estim,.dev-cta,.fsub,.hb-primary,.hb-ghost,.cta-box a,.btab,.menu-toggle,.avbtn,#ccAccept,#ccRefuse):focus-visible{outline:3px solid #006390;outline-offset:4px}
+body button.fsub:disabled:not(.secondary):not(.hb-ghost){background:#D0CDC6!important;color:#333!important;border-color:#D0CDC6!important;text-decoration:none;cursor:wait;opacity:1}
+body .avbtn:disabled{background:#f1ece5;color:#3c4a5f;border-color:#D0CDC6;text-decoration:none;cursor:default}
+@media(max-width:640px){body :is(.btn-w,.scard-btn,.hb-primary,.hb-ghost,.cta-box a){padding:13px 20px}.home-intro .hero-btns{gap:14px}.home-intro .btn-o{justify-self:center}}
