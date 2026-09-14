@@ -26,11 +26,11 @@
     const dotsBox = document.getElementById('avDots');
     const total = cards.length;
     function perView() { const w = window.innerWidth; if (w <= 640) return 1; if (w <= 960) return 2; return 3; }
-    let current = 0, timer = null, paused = false;
+    let current = 0, timer = null, paused = false, cardWidth = 0;
     const pages = () => Math.max(1, total - perView() + 1);
     function render() {
       const gap = 20;
-      const offset = (cards[0].offsetWidth + gap) * current;
+      const offset = (cardWidth + gap) * current;
       track.style.transform = 'translateX(-' + offset + 'px)';
       dotsBox.querySelectorAll('.avdot').forEach((d, i) => d.classList.toggle('active', i === current));
       prev.disabled = current === 0; next.disabled = current >= pages() - 1;
@@ -47,7 +47,7 @@
       }
     }
     function go(dir) { current = Math.max(0, Math.min(pages() - 1, current + dir)); render(); }
-    function autoplay() { stop(); timer = setInterval(() => { if (paused) return; current = current >= pages() - 1 ? 0 : current + 1; render(); }, 6000); }
+    function autoplay() { stop(); if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; timer = setInterval(() => { if (paused || document.hidden) return; current = current >= pages() - 1 ? 0 : current + 1; render(); }, 6000); }
     function stop() { if (timer) { clearInterval(timer); timer = null; } }
     function restart() { stop(); autoplay(); }
     prev.onclick = () => { go(-1); restart(); };
@@ -59,7 +59,21 @@
     track.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 50) { go(dx < 0 ? 1 : -1); restart(); } }, { passive: true });
     let rto = null;
     window.addEventListener('resize', () => { clearTimeout(rto); rto = setTimeout(() => { current = Math.min(current, pages() - 1); buildDots(); requestAnimationFrame(render); }, 150); });
-    buildDots(); requestAnimationFrame(render); autoplay();
+    // ResizeObserver measures after layout; render never forces a layout read.
+    const sizeObserver = new ResizeObserver(entries => {
+      cardWidth = entries[0].borderBoxSize?.[0]?.inlineSize || entries[0].contentRect.width;
+      requestAnimationFrame(render);
+    });
+    sizeObserver.observe(cards[0]);
+    function initCarousel() { buildDots(); render(); autoplay(); }
+    if ('IntersectionObserver' in window) {
+      const visibility = new IntersectionObserver(entries => {
+        if (entries.some(entry => entry.isIntersecting)) {
+          initCarousel(); visibility.disconnect();
+        }
+      }, { rootMargin: '250px' });
+      visibility.observe(track.closest('.avis'));
+    } else { initCarousel(); }
   })();
 })();
 

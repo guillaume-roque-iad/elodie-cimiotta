@@ -17,3 +17,25 @@
 
 /robots.txt
   Content-Type: text/plain; charset=utf-8
+
+
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/iad-immobilier-bleu-320.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/iad-immobilier-bleu-640.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/elodie-portrait-540.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/elodie-portrait-800.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/img-*.avif
+  Cache-Control: public, max-age=31536000, immutable
+
+/img-*.webp
+  Cache-Control: public, max-age=31536000, immutable

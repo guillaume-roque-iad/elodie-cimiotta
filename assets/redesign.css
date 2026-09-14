@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap');
+/* Montserrat from Google Fonts, locally hosted to avoid a CSS waterfall. */
+@font-face{font-family:Montserrat;font-style:normal;font-weight:100 900;font-display:swap;src:url('/assets/fonts/montserrat-latin-v31.woff2') format('woff2')}
+@font-face{font-family:Montserrat;font-style:italic;font-weight:700;font-display:swap;src:url('/assets/fonts/montserrat-latin-700-italic-v31.woff2') format('woff2')}
 /* Shared visual identity: iad guidelines 2025, commercial website. */
 :root{--bleu:#007DAF;--bleu-prof:#006B9A;--bleu-dark:#006390;--bleu-fonce:#006390;--bleu-bg:#E9FCFF;--gris-clair:#f7f9fa;--noir:#000;--gris:#333;--gris-fonce:#000;--corail:#007DAF;--corail-dark:#006390;--r:16px}
 html{scroll-padding-top:110px}body{font-family:Montserrat,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#000}button,input,select,textarea{font-family:inherit}img{max-width:100%}a,button,input,select,textarea,summary{touch-action:manipulation}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #007DAF;outline-offset:4px}h1,h2,h3{overflow-wrap:break-word}.skip-link{position:fixed;top:-100px;left:16px;background:#fff;padding:12px;z-index:10000}.skip-link:focus{top:12px}
