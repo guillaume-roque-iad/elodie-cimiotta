@@ -53,3 +53,8 @@ html{scroll-padding-top:110px}body{font-family:Montserrat,Helvetica,Arial,sans-s
 @media(max-width:1250px){.menu-toggle{display:block;margin-left:auto}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;padding:24px 6vw;border-bottom:1px solid #ddd;align-items:stretch}.nav-links.is-open{display:flex;flex-direction:column}.nav-links a{padding:10px}.language-switcher{margin-left:0}}
 @media(max-width:640px){.navbar{height:auto;min-height:112px;display:grid;grid-template-columns:1fr auto;padding:10px 16px;gap:4px 12px}.nb-brand{grid-column:1;grid-row:1 / 3}.menu-toggle{grid-column:2;grid-row:1;justify-self:end;font-size:12px;padding:6px 12px}.language-switcher{grid-column:2;grid-row:2;justify-self:end}.language-switcher a{min-width:32px;min-height:32px;font-size:11px}.nb-logo.iad-real-estate{width:64px}.nb-name{font-size:12px}.nb-name small{max-width:120px;font-size:9px}.nb-sep{display:none}.nav-links{top:100%}.role-note{font-size:13px!important}}
 @media(max-width:360px){.nb-name{max-width:115px}.nb-logo.iad-real-estate{width:48px}.navbar{gap:4px 6px;padding:10px}}
+
+/* Exact vector icons from iad guidelines 2025, pages 18–19. */
+img.iad-charter-icon{object-fit:contain;display:inline-block;vertical-align:middle;flex-shrink:0;width:24px;height:24px;max-width:none}
+.svicon:has(.iad-charter-icon){background:transparent;transform:none;border-radius:0;width:64px;height:56px}
+.svicon img.iad-charter-icon{width:52px;height:52px;transform:none}
