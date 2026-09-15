@@ -1,0 +1,45 @@
+{
+  "publications": [
+    {
+      "isoWeek": "2026-W38",
+      "date": "2026-09-15",
+      "slug": "reconversion-immobilier-sans-experience-commerciale",
+      "audience": "reconversion",
+      "title": "Peut-on se reconvertir dans l’immobilier sans expérience commerciale ?",
+      "languages": [
+        "fr",
+        "es",
+        "pt",
+        "it",
+        "de",
+        "en"
+      ],
+      "paths": [
+        "/conseils/reconversion-immobilier-sans-experience-commerciale/",
+        "/es/conseils/reconversion-immobilier-sans-experience-commerciale/",
+        "/pt/conseils/reconversion-immobilier-sans-experience-commerciale/",
+        "/it/conseils/reconversion-immobilier-sans-experience-commerciale/",
+        "/de/conseils/reconversion-immobilier-sans-experience-commerciale/",
+        "/en/conseils/reconversion-immobilier-sans-experience-commerciale/"
+      ],
+      "research": {
+        "checked": "2026-09-15",
+        "signals": [
+          {
+            "url": "https://www.join-iad.fr/blog/qualites-pour-reussir-dans-limmobilier/",
+            "note": "FAQ explicite sur l'absence d'expérience et l'accompagnement"
+          },
+          {
+            "url": "https://www.join-iad.fr/blog/comment-devenir-agent-commercial-immobilier/",
+            "note": "FAQ sur l'accessibilité d'une reconversion sans expérience sectorielle"
+          }
+        ],
+        "officialReferences": [
+          "https://www.onisep.fr/ressources/univers-metier/metiers/agent-immobilier-agente-immobiliere",
+          "https://entreprendre.service-public.gouv.fr/vosdroits/F32994"
+        ],
+        "limitations": "Recherche de discussions publiques effectuée ; aucun fil précis suffisamment vérifiable retenu. Aucun volume de requêtes ni accès aux requêtes privées IA."
+      }
+    }
+  ]
+}
