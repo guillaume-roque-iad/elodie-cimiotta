@@ -17,7 +17,12 @@
 
 
 
-<style>.simulator-page{background:#fff}.simulator-heading{padding-top:32px;padding-bottom:8px}.simulator-heading h1{font-size:clamp(1.6rem,3vw,2.4rem);margin:16px 0 8px}.simulator-heading p{max-width:800px}.simulator-note{font-size:13px;color:#52616b}@media(max-width:800px){.simulator-heading{padding-top:20px}}</style></head>
+<style>
+.simulator-page{background:#fff}.simulator-heading{padding-top:32px;padding-bottom:8px}.simulator-heading h1{font-size:clamp(1.6rem,3vw,2.4rem);margin:16px 0 8px}.simulator-heading p{max-width:800px}.simulator-note{font-size:13px;color:#52616b}
+.sim-lead{display:none;max-width:940px;margin:26px auto 10px;padding:0 20px}.sim-lead.open{display:block}.sim-lead-card{background:#e9fcff;border:1px solid #95ebff;border-radius:22px;padding:28px}.sim-lead-card h2{font-size:clamp(1.45rem,3vw,2rem);margin:0 0 8px}.sim-lead-card>p{margin:0 0 22px;color:#3c4a5f}.sim-lead-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.sim-lead-field{margin-bottom:14px}.sim-lead-field label{display:block;font-size:.86rem;font-weight:800;margin-bottom:6px}.sim-lead-field input,.sim-lead-field select{width:100%;padding:13px 14px;border:1px solid #a1a8b1;border-radius:10px;background:#fff;color:#000}.sim-lead-consent{display:flex;gap:10px;align-items:flex-start;margin:8px 0 18px;font-size:.78rem;line-height:1.5}.sim-lead-consent input{margin-top:4px}.sim-lead-submit{width:100%;border:0;border-radius:999px;padding:14px 20px;background:#006390;color:#fff;font-weight:800;cursor:pointer}.sim-lead-submit:disabled{opacity:.65;cursor:wait}.sim-lead-error{display:none;margin-top:14px;padding:12px;border:1px solid #ea584a;border-radius:9px;background:#fff;color:#000}.sim-lead-success{display:none}.sim-lead-success .btn{margin-top:12px}.sim-lead-privacy{font-size:.72rem;line-height:1.55;margin-top:14px;color:#3c4a5f}.sim-lead-hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+@media(max-width:800px){.simulator-heading{padding-top:20px}.sim-lead-card{padding:22px}.sim-lead-grid{grid-template-columns:1fr}}
+@media(max-width:1500px){.nav{position:relative}.menu-toggle{display:block!important;margin-left:auto}.nav-links{display:none!important;position:absolute!important;top:100%;left:0;right:0;background:#fff;padding:24px 28px;box-shadow:0 8px 18px rgba(0,0,0,.12);flex-direction:column!important;align-items:stretch!important;gap:14px!important;z-index:120}.nav-links.open{display:flex!important}.nav-links .btn{width:100%;justify-content:center}}
+</style></head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
 
@@ -47,7 +52,34 @@
     </nav>
   </header>
 
-  <main id="contenu" class="simulator-page"><div class="wrap simulator-heading"><a href="/">Accueil</a><span aria-hidden="true"> / </span><span>Simulateur</span><h1>Simulez votre rémunération.</h1><p>Choisissez votre profil, puis ajustez les chiffres. Ce simulateur concerne <strong>iad France</strong> : dispositifs +, revenus d’équipe et TIP.</p><p class="simulator-note">Estimation HT avant charges et impôts, sous réserve des conditions d’éligibilité.</p></div><iframe id="simulator-frame" src="/simulateur-outil.html" title="Simulateur interactif de rémunération iad France" style="display:block;width:100%;height:1000px;border:0;background:#fff" loading="eager"></iframe><noscript><p class="wrap">Activez JavaScript pour ajuster les calculs du simulateur.</p></noscript></main>
+  <main id="contenu" class="simulator-page"><div class="wrap simulator-heading"><a href="/">Accueil</a><span aria-hidden="true"> / </span><span>Simulateur</span><h1>Simulez votre rémunération.</h1><p>Choisissez votre profil et ajustez les chiffres. Votre estimation principale s’affiche immédiatement ; le détail complet est accessible après avoir indiqué vos coordonnées.</p><p class="simulator-note">Ce simulateur concerne <strong>iad France</strong>. Estimation HT avant charges et impôts, sous réserve des conditions d’éligibilité.</p></div>
+<section class="sim-lead" id="sim-lead-panel" aria-labelledby="sim-lead-title">
+  <div class="sim-lead-card">
+    <div id="sim-lead-success" class="sim-lead-success" role="status" aria-live="polite" tabindex="-1">
+      <h2>Votre résultat complet est débloqué.</h2>
+      <p>Vous pouvez maintenant consulter le détail de votre simulation. Élodie dispose également des éléments essentiels pour reprendre votre projet avec vous.</p>
+      <a class="btn btn-primary" href="#simulator-frame">Voir mon résultat complet ↗</a>
+    </div>
+    <form id="sim-lead-form">
+      <h2 id="sim-lead-title">Votre simulation est prête.</h2>
+      <p>Indiquez vos coordonnées pour débloquer le détail complet et permettre à Élodie de reprendre votre simulation avec vous si vous le souhaitez.</p>
+      <div class="sim-lead-grid">
+        <div class="sim-lead-field"><label for="sim-name">Nom et prénom *</label><input id="sim-name" name="nom" autocomplete="name" required></div>
+        <div class="sim-lead-field"><label for="sim-phone">Téléphone *</label><input id="sim-phone" name="telephone" type="tel" autocomplete="tel" required></div>
+        <div class="sim-lead-field"><label for="sim-email">E-mail *</label><input id="sim-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="sim-lead-field"><label for="sim-city">Ville / secteur *</label><input id="sim-city" name="ville" autocomplete="address-level2" required></div>
+        <div class="sim-lead-field"><label for="sim-situation">Votre situation *</label><select id="sim-situation" name="situation" required><option value="">Sélectionnez…</option><option>Déjà professionnel(le) de l’immobilier</option><option>En reconversion</option><option>Indépendant(e) / chef d’entreprise</option><option>Salarié(e)</option><option>En recherche d’emploi</option><option>Autre</option></select></div>
+        <div class="sim-lead-field"><label for="sim-dispo">Quand souhaitez-vous échanger ?</label><select id="sim-dispo" name="disponibilite"><option value="">Pas de préférence</option><option>Cette semaine</option><option>La semaine prochaine</option><option>Dans le mois</option><option>Je souhaite d’abord consulter ma simulation</option></select></div>
+      </div>
+      <div class="sim-lead-hp" aria-hidden="true"><label for="sim-company">Société</label><input id="sim-company" name="societe" tabindex="-1" autocomplete="off"></div>
+      <label class="sim-lead-consent"><input type="checkbox" name="consentement" value="oui" required><span>J’accepte d’être recontacté(e) par Élodie Cimiotta au sujet de ma simulation et de mon projet. *</span></label>
+      <button type="submit" class="sim-lead-submit">Voir mon résultat complet ↗</button>
+      <div id="sim-lead-error" class="sim-lead-error" role="alert">L’envoi automatique n’a pas abouti. Vous pouvez contacter Élodie au <a href="tel:+33642344612">06 42 34 46 12</a>.</div>
+      <p class="sim-lead-privacy">Vos informations sont utilisées uniquement pour traiter votre demande et vous recontacter au sujet de votre simulation. Conservation : 3 ans à compter du dernier contact. <a href="/mentions-legales.html">Confidentialité et mentions légales</a>.</p>
+    </form>
+  </div>
+</section>
+<iframe id="simulator-frame" src="/simulateur-outil.html" title="Simulateur interactif de rémunération iad France" style="display:block;width:100%;height:1000px;border:0;background:#fff" loading="eager"></iframe><noscript><p class="wrap">Activez JavaScript pour ajuster les calculs du simulateur.</p></noscript></main>
 
   <footer class="site-footer">
     <div class="footer-grid wrap">
@@ -58,6 +90,120 @@
   </footer>
 
   <script src="/team-lucky-v7.js" defer></script>
-<script>(()=>{const f=document.getElementById('simulator-frame');let observer;f.addEventListener('load',()=>{observer?.disconnect();try{const body=f.contentDocument.body;const resize=()=>{const height=Math.ceil(body.getBoundingClientRect().height)+12;if(height>100&&Math.abs(parseFloat(f.style.height)-height)>2)f.style.height=height+'px';};observer=new ResizeObserver(resize);observer.observe(body);resize();}catch(e){f.style.height='1400px';}});})();</script></body>
+<script>(()=>{const f=document.getElementById('simulator-frame');let observer;f.addEventListener('load',()=>{observer?.disconnect();try{const body=f.contentDocument.body;const resize=()=>{const height=Math.ceil(body.getBoundingClientRect().height)+12;if(height>100&&Math.abs(parseFloat(f.style.height)-height)>2)f.style.height=height+'px';};observer=new ResizeObserver(resize);observer.observe(body);resize();}catch(e){f.style.height='1400px';}});})();</script><script>
+(function(){
+  var ENDPOINT='https://script.google.com/macros/s/AKfycbz6ZtOtnaGlVn0vLQr-kBl5aIjmCr2oCBlfJFzq8EiVZVpsG4gTRREGtLxAWQFbn8360Q/exec';
+  var SHEET_ID='18oo7Hu93VyLJpWWEgWRv0WCSYTaaN4CqZIBcOiUi-VQ';
+  var frame=document.getElementById('simulator-frame');
+  var panel=document.getElementById('sim-lead-panel');
+  var form=document.getElementById('sim-lead-form');
+  var success=document.getElementById('sim-lead-success');
+  var error=document.getElementById('sim-lead-error');
+
+  function unlocked(){try{return sessionStorage.getItem('team_lucky_simulator_unlocked')==='1';}catch(e){return false;}}
+  function unlock(){try{sessionStorage.setItem('team_lucky_simulator_unlocked','1');}catch(e){}}
+  function openLead(){
+    panel.classList.add('open');
+    panel.scrollIntoView({behavior:'smooth',block:'start'});
+    setTimeout(function(){document.getElementById('sim-name')?.focus();},300);
+  }
+  function applyGate(){
+    try{
+      var doc=frame.contentDocument;if(!doc||!doc.body)return;
+      var isUnlocked=unlocked();
+      doc.body.classList.toggle('team-lucky-lead-locked',!isUnlocked);
+      var style=doc.getElementById('team-lucky-lead-gate-style');
+      if(!style){
+        style=doc.createElement('style');style.id='team-lucky-lead-gate-style';
+        style.textContent=[
+          '.team-lucky-lead-locked .result .line,.team-lucky-lead-locked .result details,.team-lucky-lead-locked .result .divider,.team-lucky-lead-locked #tl-report tbody,.team-lucky-lead-locked .tip-notes{filter:blur(7px);user-select:none;pointer-events:none;opacity:.55}',
+          '#team-lucky-lead-cta{position:static;width:100%;margin-top:20px;background:#3C4A5F;color:#fff;border-radius:14px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:14px;font-family:Montserrat,Arial,sans-serif}',
+          '#team-lucky-lead-cta strong{display:block;font-size:15px}#team-lucky-lead-cta span{display:block;font-size:12px;opacity:.9;margin-top:2px}',
+          '#team-lucky-lead-cta button{flex:none;background:#006390!important;color:#fff!important;border:0!important;padding:11px 16px!important;font-weight:700!important}',
+          '@media(max-width:650px){#team-lucky-lead-cta{align-items:stretch;flex-direction:column}#team-lucky-lead-cta button{width:100%}}'
+        ].join('');
+        doc.head.appendChild(style);
+      }
+      var cta=doc.getElementById('team-lucky-lead-cta');
+      if(!isUnlocked&&!cta){
+        cta=doc.createElement('div');cta.id='team-lucky-lead-cta';
+        cta.innerHTML='<div><strong>Votre estimation est prête.</strong><span>Débloquez le détail complet de la simulation.</span></div><button type="button">Voir mon résultat complet ↗</button>';
+        cta.querySelector('button').addEventListener('click',function(){window.parent.postMessage({type:'team-lucky-open-lead'},location.origin);});
+        var anchor=doc.querySelector('.main-result')||doc.querySelector('.result');
+        (anchor||doc.body).appendChild(cta);
+      }
+      if(isUnlocked&&cta)cta.remove();
+    }catch(e){}
+  }
+  function simulationSummary(){
+    var doc;try{doc=frame.contentDocument;}catch(e){}
+    var read=function(id){var el=doc&&doc.getElementById(id);return el?(('value'in el&&el.value!=='')?el.value:(el.textContent||'').trim()):'';};
+    var selected='';try{var p=doc.querySelector('[data-profile][aria-pressed="true"]');selected=p?(p.textContent.trim()||p.dataset.profile):'';}catch(e){}
+    var params=new URLSearchParams(location.search);
+    var utm=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].map(function(k){return params.get(k)?k+'='+params.get(k):'';}).filter(Boolean).join('&');
+    return [
+      'SIMULATION TEAM LUCKY',
+      'Site / marque : Team Lucky',
+      'Responsable : Élodie Cimiotta',
+      'Google Sheet cible : '+SHEET_ID,
+      'Statut : Nouveau',
+      'Profil simulation : '+(selected||'non identifié'),
+      'Estimation annuelle : '+(read('annual')||read('simple-tip-total')||'—'),
+      'Équivalent mensuel : '+(read('monthly')||'—'),
+      'CA production saisi : '+(read('production')||'—'),
+      'Nombre de ventes : '+(read('sales')||read('pro-sales')||'—'),
+      'Honoraires moyens : '+(read('fees')||'—'),
+      '% ventes partagées : '+(read('shared')||'—'),
+      'Taux actuel : '+(read('rate')||'—'),
+      'Développement équipe : '+((doc&&doc.getElementById('develop-team')&&doc.getElementById('develop-team').checked)?'Oui':'Non'),
+      'Niveau 1 : '+(read('level-1')||'0'),
+      'Niveau 2 : '+(read('level-2')||'0'),
+      'Niveau 3 : '+(read('level-3')||'0'),
+      'Niveau 4 : '+(read('level-4')||'0'),
+      'Niveau 5 : '+(read('level-5')||'0'),
+      'CA moyen / conseiller : '+(read('member-ca')||'—'),
+      'Récurrences estimées : '+(read('recurrence-total')||'—'),
+      'TIP estimé : '+(read('simple-tip-total')||read('tip-result')||'—'),
+      'Page : '+location.href.split('#')[0],
+      'Référent : '+(document.referrer||'(direct)'),
+      'UTM : '+(utm||'(aucun)')
+    ].join('\n');
+  }
+
+  window.addEventListener('message',function(e){if(e.origin===location.origin&&e.data&&e.data.type==='team-lucky-open-lead')openLead();});
+  frame.addEventListener('load',applyGate);
+
+  form.addEventListener('submit',async function(event){
+    event.preventDefault();if(!form.reportValidity())return;
+    var fields=new FormData(form);if(fields.get('societe')){openLead();return;}
+    var button=form.querySelector('[type=submit]');error.style.display='none';
+    var body=new FormData();
+    body.set('nom',fields.get('nom')||'');
+    body.set('email',fields.get('email')||'');
+    body.set('telephone',fields.get('telephone')||'');
+    body.set('ville',fields.get('ville')||'');
+    body.set('situation',fields.get('situation')||'');
+    body.set('disponibilite',fields.get('disponibilite')||'');
+    body.set('consentement',fields.get('consentement')||'');
+    body.set('societe','');
+    body.set('message',simulationSummary());
+    body.set('source_site','Team Lucky');
+    body.set('responsable','Élodie Cimiotta');
+    body.set('spreadsheet_id',SHEET_ID);
+    button.disabled=true;button.textContent='Envoi de votre simulation…';
+    var controller=new AbortController();var timer=setTimeout(function(){controller.abort();},25000);
+    try{
+      var response=await fetch(ENDPOINT,{method:'POST',body:body,signal:controller.signal});
+      if(!response.ok)throw new Error('HTTP '+response.status);
+      var result=await response.json();if(result.ok!==true)throw new Error('Unconfirmed');
+      unlock();form.style.display='none';success.style.display='block';success.focus();applyGate();
+      setTimeout(function(){frame.scrollIntoView({behavior:'smooth',block:'start'});},250);
+    }catch(e){
+      error.style.display='block';button.disabled=false;button.textContent='Voir mon résultat complet ↗';
+    }finally{clearTimeout(timer);}
+  });
+  if(unlocked())applyGate();
+})();
+</script></body>
 </html>
 
