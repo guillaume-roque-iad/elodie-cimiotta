@@ -40,6 +40,51 @@
         ],
         "limitations": "Recherche de discussions publiques effectuée ; aucun fil précis suffisamment vérifiable retenu. Aucun volume de requêtes ni accès aux requêtes privées IA."
       }
+    },
+    {
+      "isoWeek": "2026-W39",
+      "date": "2026-09-22",
+      "slug": "organiser-30-premiers-jours-conseiller-immobilier",
+      "audience": "débutants souhaitant développer une activité immobilière indépendante",
+      "title": "Comment organiser ses 30 premiers jours comme conseiller immobilier indépendant ?",
+      "languages": [
+        "fr",
+        "es",
+        "pt",
+        "it",
+        "de",
+        "en"
+      ],
+      "paths": [
+        "/conseils/organiser-30-premiers-jours-conseiller-immobilier/",
+        "/es/conseils/organiser-30-premiers-jours-conseiller-immobilier/",
+        "/pt/conseils/organiser-30-premiers-jours-conseiller-immobilier/",
+        "/it/conseils/organiser-30-premiers-jours-conseiller-immobilier/",
+        "/de/conseils/organiser-30-premiers-jours-conseiller-immobilier/",
+        "/en/conseils/organiser-30-premiers-jours-conseiller-immobilier/"
+      ],
+      "research": {
+        "checked": "2026-09-22",
+        "signals": [
+          {
+            "url": "https://www.join-iad.fr/blog/qualites-pour-reussir-dans-limmobilier/",
+            "note": "Le contenu métier met en avant organisation, relation, outils et compétences à structurer pour débuter."
+          },
+          {
+            "url": "https://www.join-iad.fr/blog/comment-devenir-agent-commercial-immobilier/",
+            "note": "La FAQ et le parcours présentent les étapes, missions et apprentissages recherchés par les débutants."
+          },
+          {
+            "url": "https://www.onisep.fr/ressources/univers-metier/metiers/agent-immobilier-agente-immobiliere",
+            "note": "La fiche métier publique confirme l'importance de la communication, de la négociation, de l'organisation et de l'autonomie."
+          }
+        ],
+        "officialReferences": [
+          "https://www.onisep.fr/ressources/univers-metier/metiers/agent-immobilier-agente-immobiliere",
+          "https://entreprendre.service-public.gouv.fr/vosdroits/F32994"
+        ],
+        "limitations": "Recherche de discussions publiques effectuée ; aucun fil précis suffisamment vérifiable retenu. Les signaux indiquent un intérêt éditorial, sans volume de requêtes ni accès aux requêtes privées des utilisateurs d’IA."
+      }
     }
   ]
 }
