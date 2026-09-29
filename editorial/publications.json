@@ -85,6 +85,55 @@
         ],
         "limitations": "Recherche de discussions publiques effectuée ; aucun fil précis suffisamment vérifiable retenu. Les signaux indiquent un intérêt éditorial, sans volume de requêtes ni accès aux requêtes privées des utilisateurs d’IA."
       }
+    },
+    {
+      "isoWeek": "2026-W40",
+      "date": "2026-09-29",
+      "slug": "changer-reseau-immobilier-criteres-verifier",
+      "audience": "conseillers expérimentés envisageant de changer de réseau ou recherchant un meilleur accompagnement",
+      "title": "Changer de réseau immobilier : quels critères vérifier avant de se décider ?",
+      "languages": [
+        "fr",
+        "es",
+        "pt",
+        "it",
+        "de",
+        "en"
+      ],
+      "paths": [
+        "/conseils/changer-reseau-immobilier-criteres-verifier/",
+        "/es/conseils/changer-reseau-immobilier-criteres-verifier/",
+        "/pt/conseils/changer-reseau-immobilier-criteres-verifier/",
+        "/it/conseils/changer-reseau-immobilier-criteres-verifier/",
+        "/de/conseils/changer-reseau-immobilier-criteres-verifier/",
+        "/en/conseils/changer-reseau-immobilier-criteres-verifier/"
+      ],
+      "research": {
+        "checked": "2026-09-29",
+        "signals": [
+          {
+            "url": "https://www.join-iad.fr/blog/choisir-reseau-mandataire-immobilier/",
+            "note": "FAQ professionnelle actuelle consacrée aux critères de choix d’un réseau : outils, organisation et solidité."
+          },
+          {
+            "url": "https://www.optimhome-recrutement.com/blog/comment-choisir-reseau-immobilier-pour-devenir-mandataire-independant",
+            "note": "FAQ professionnelle comparant formation, outils, accompagnement, diffusion et rémunération réelle."
+          },
+          {
+            "url": "https://info-mandataire.com/comparatif-reseaux-mandataires-immobiliers/",
+            "note": "Comparatif professionnel signalant la récurrence des arbitrages entre commission, expérience, secteur et accompagnement."
+          },
+          {
+            "url": "https://forum.quechoisir.org/quel-reseau-de-mandataire-choisir-t247379.html",
+            "note": "Discussion publique demandant comment choisir un réseau et évoquant le rôle de l’accompagnement ; signal d’intérêt uniquement, pas une preuve juridique."
+          }
+        ],
+        "officialReferences": [
+          "https://entreprendre.service-public.gouv.fr/vosdroits/F37410"
+        ],
+        "limitations": "Les signaux publics montrent que la question est discutée, sans établir de volume ni de classement. Aucun accès à des requêtes privées d’utilisateurs d’IA. Les conséquences juridiques et financières dépendent du pays, du contrat et des circonstances."
+      }
     }
   ]
 }
+
