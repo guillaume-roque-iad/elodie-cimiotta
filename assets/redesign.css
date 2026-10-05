@@ -93,3 +93,11 @@ body .avbtn:disabled{background:#f1ece5;color:#3c4a5f;border-color:#D0CDC6;text-
 @media(max-width:1100px){.nb-personal-logo{width:92px;height:92px}}
 @media(max-width:640px){.nb-personal-logo{width:84px;height:84px}.nb-brand{min-width:0}.nb-name{font-size:11px}.nb-name small{font-size:9px}}
 @media(max-width:360px){.nb-personal-logo{width:68px;height:68px}.nb-name{max-width:100px}}
+
+/* Les deux identités restent visibles et distinctes. */
+.nb-brand{gap:14px}
+.footer-brand-logos{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:18px}
+.footer-brand-logos .footer-iad-logo{width:120px;height:auto;background:#fff;padding:8px;border-radius:8px;margin:0}
+.footer-brand-logos .footer-personal-logo{width:150px;height:150px;margin:0}
+@media(max-width:640px){.nb-brand{gap:12px}.nb-brand .nb-name,.nb-brand .nb-sep{display:none}.nb-brand .nb-logo.iad-real-estate{width:64px;height:auto}.nb-personal-logo{width:84px;height:84px}}
+@media(max-width:360px){.nb-brand{gap:10px}.nb-brand .nb-logo.iad-real-estate{width:56px}.nb-personal-logo{width:72px;height:72px}}
