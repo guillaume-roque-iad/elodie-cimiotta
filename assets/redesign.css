@@ -86,3 +86,10 @@ body :is(.nb-cta,.btn-w,.btn-o,.scard-btn,.btn-estim,.dev-cta,.fsub,.hb-primary,
 body button.fsub:disabled:not(.secondary):not(.hb-ghost){background:#D0CDC6!important;color:#333!important;border-color:#D0CDC6!important;text-decoration:none;cursor:wait;opacity:1}
 body .avbtn:disabled{background:#f1ece5;color:#3c4a5f;border-color:#D0CDC6;text-decoration:none;cursor:default}
 @media(max-width:640px){body :is(.btn-w,.scard-btn,.hb-primary,.hb-ghost,.cta-box a){padding:13px 20px}.home-intro .hero-btns{gap:14px}.home-intro .btn-o{justify-self:center}}
+
+/* Logo personnel Élodie CIMIOTTA, version validée du 5 octobre 2026. */
+.nb-personal-logo{display:block;width:100px;height:100px;object-fit:contain;flex-shrink:0;background:#fff}
+.footer-personal-logo{display:block;width:180px;height:180px;object-fit:contain;background:#fff;border-radius:8px;margin-bottom:18px;max-width:100%}
+@media(max-width:1100px){.nb-personal-logo{width:92px;height:92px}}
+@media(max-width:640px){.nb-personal-logo{width:84px;height:84px}.nb-brand{min-width:0}.nb-name{font-size:11px}.nb-name small{font-size:9px}}
+@media(max-width:360px){.nb-personal-logo{width:68px;height:68px}.nb-name{max-width:100px}}
