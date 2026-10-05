@@ -12,10 +12,10 @@ Site de présentation de l’accompagnement proposé par Élodie Cimiotta aux pe
 
 ## Pages
 
-- Français : /
-- Español : /es/
-- Català : /ca/
-- Mentions légales : /mentions-legales.html
+- [Français](https://team-lucky.com/)
+- [Español](https://team-lucky.com/es/)
+- [Català](https://team-lucky.com/ca/)
+- [Mentions légales](https://team-lucky.com/mentions-legales.html)
 
 ## Contact
 
