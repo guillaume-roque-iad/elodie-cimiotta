@@ -133,6 +133,51 @@
         ],
         "limitations": "Les signaux publics montrent que la question est discutée, sans établir de volume ni de classement. Aucun accès à des requêtes privées d’utilisateurs d’IA. Les conséquences juridiques et financières dépendent du pays, du contrat et des circonstances."
       }
+    },
+    {
+      "isoWeek": "2026-W41",
+      "date": "2026-10-06",
+      "slug": "demarrer-conseiller-immobilier-temps-partiel",
+      "audience": "personnes en reconversion souhaitant tester progressivement une activité immobilière indépendante",
+      "title": "Peut-on démarrer comme conseiller immobilier indépendant à temps partiel ?",
+      "languages": [
+        "fr",
+        "es",
+        "pt",
+        "it",
+        "de",
+        "en"
+      ],
+      "paths": [
+        "/conseils/demarrer-conseiller-immobilier-temps-partiel/",
+        "/es/conseils/demarrer-conseiller-immobilier-temps-partiel/",
+        "/pt/conseils/demarrer-conseiller-immobilier-temps-partiel/",
+        "/it/conseils/demarrer-conseiller-immobilier-temps-partiel/",
+        "/de/conseils/demarrer-conseiller-immobilier-temps-partiel/",
+        "/en/conseils/demarrer-conseiller-immobilier-temps-partiel/"
+      ],
+      "research": {
+        "checked": "2026-10-06",
+        "signals": [
+          {
+            "url": "https://www.join-iad.fr/blog/peut-on-etre-agent-immobilier-independant-a-temps-partiel/",
+            "note": "FAQ professionnelle publiée le 1er octobre 2026, consacrée explicitement au démarrage d’une activité immobilière indépendante à temps partiel."
+          },
+          {
+            "url": "https://www.pmcorp.fr/articles/agent-immobilier-temps-partiel",
+            "note": "Article professionnel récent structuré autour du statut, de la disponibilité et des limites d’un démarrage à temps partiel."
+          },
+          {
+            "url": "https://www.lemonde.fr/campus/article/2025/05/16/l-irresistible-attraction-des-jeunes-actifs-pour-les-metiers-de-l-immobilier_6606394_4401467.html",
+            "note": "Article de presse sur l’intérêt de profils en reconversion pour l’autonomie et la flexibilité des métiers immobiliers."
+          }
+        ],
+        "officialReferences": [
+          "https://entreprendre.service-public.gouv.fr/vosdroits/F23264",
+          "https://entreprendre.service-public.gouv.fr/vosdroits/F32994"
+        ],
+        "limitations": "Les signaux publics établissent que la question est traitée et discutée, sans mesurer son volume ni son classement. Recherche de forums effectuée ; aucun fil précis suffisamment vérifiable n’a été retenu. Aucun accès aux requêtes privées des utilisateurs d’IA. Le cadre juridique cité concerne la France."
+      }
     }
   ]
 }
