@@ -566,7 +566,7 @@ function leadGateMarkup(){
  <p id="sq-lead-error" class="error" role="alert" hidden></p>
  <p class="lead-test">Vos informations et votre simulation sont transmises à l’équipe pour traiter votre demande. <a href="/mentions-legales" target="_top">Confidentialité et droits</a>.</p></form>`;
 }
-flatResult=function(){return leadUnlocked?ungatedResult():leadGateMarkup();};
+flatResult=function(){return leadUnlocked?ungatedResult()+'<div style="padding:20px;margin-top:20px;background:#e9fcff;border-radius:18px"><strong>Votre prochaine étape</strong><p>Découvrez le métier et posez vos questions lors d’une présentation.</p><a class="next" href="/#presentations" target="_top">Choisir une présentation ↗</a></div>':leadGateMarkup();};
 automaticDevices=function(){return leadUnlocked?ungatedDevices():'';};
 const beforeGateRender=render;
 render=function(){
@@ -596,6 +596,7 @@ function wireLeadGate(){
    const response=await fetch(LEAD_ENDPOINT,{method:'POST',body,signal:controller.signal});
    if(!response.ok)throw Error('Enregistrement non confirmé');const saved=await response.json();
    if(saved.ok!==true||saved.saved!==true)throw Error('Enregistrement non confirmé');
+   try{sessionStorage.setItem('lucky-simulation-contact',JSON.stringify({at:Date.now(),name:body.get('nom'),email:body.get('email'),phone:body.get('telephone'),city:body.get('ville')}));}catch{}
    leadUnlocked=true;leadDraft={};render();
    const output=root.querySelector('.flat-output');if(output)output.scrollIntoView({behavior:'smooth',block:'start'});
   }catch(error){
@@ -604,6 +605,8 @@ function wireLeadGate(){
  };
 }
 const startProfile=new URLSearchParams(location.search).get('profil');
+if(startProfile==='debutant'){a.profile='neo';}
+if(startProfile==='conseiller'){a.profile='solo';}
 if(startProfile==='equipe'){a.profile='team';a.team='yes';a.withTeam='yes';}
 result=render;
 render();
