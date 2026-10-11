@@ -75,7 +75,7 @@
     </form>
   </div>
 </section>
-<p class="wrap"><a href="/preparer-mon-projet">Compléter ma réflexion : budget, charges d’agence et parcours d’intégration ↗</a></p><iframe id="simulator-frame" src="/simulateur-outil.html" title="Simulateur interactif de rémunération iad France" style="display:block;width:100%;height:1000px;border:0;background:#fff" loading="eager"></iframe><noscript><p class="wrap">Activez JavaScript pour ajuster les calculs du simulateur.</p></noscript></main>
+<p class="wrap"><a href="/preparer-mon-projet">Compléter ma réflexion : budget, charges d’agence et parcours d’intégration ↗</a></p><iframe id="simulator-frame" src="/simulateur-outil.html?v=20261011-guided" title="Simulateur interactif de rémunération iad France" style="display:block;width:100%;height:1000px;border:0;background:#fff" loading="eager"></iframe><noscript><p class="wrap">Activez JavaScript pour ajuster les calculs du simulateur.</p></noscript></main>
 
   <footer class="site-footer">
     <div class="footer-grid wrap">
@@ -112,61 +112,32 @@
       if(!style){
         style=doc.createElement('style');style.id='team-lucky-lead-gate-style';
         style.textContent=[
+          '.team-lucky-lead-locked #tg-content>.tg-lines,.team-lucky-lead-locked #tg-content>details,.team-lucky-lead-locked #tg-content>.tg-separate{display:none!important}',
           '.team-lucky-lead-locked .result .line,.team-lucky-lead-locked .result details,.team-lucky-lead-locked .result .divider,.team-lucky-lead-locked #tl-report tbody,.team-lucky-lead-locked .tip-notes{filter:blur(7px);user-select:none;pointer-events:none;opacity:.55}',
-          '#team-lucky-lead-cta{position:static;width:100%;margin-top:20px;background:#3C4A5F;color:#fff;border-radius:14px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:14px;font-family:Montserrat,Arial,sans-serif}',
-          '#team-lucky-lead-cta strong{display:block;font-size:15px}#team-lucky-lead-cta span{display:block;font-size:12px;opacity:.9;margin-top:2px}',
-          '#team-lucky-lead-cta button{flex:none;background:#006390!important;color:#fff!important;border:0!important;padding:11px 16px!important;font-weight:700!important}',
+          '#team-lucky-lead-cta{position:static;left:auto;bottom:auto;transform:none;z-index:auto;width:100%;box-sizing:border-box;background:#3C4A5F;color:#fff;border-radius:14px;padding:14px 16px;box-shadow:none;display:flex;align-items:center;justify-content:space-between;gap:14px;font-family:Montserrat,Arial,sans-serif;margin-top:20px}',
+          '#tribu-guide #team-lucky-lead-cta strong{display:block;font-size:15px;color:#fff!important}#tribu-guide #team-lucky-lead-cta span{display:block;font-size:13px;color:#fff!important;opacity:1;margin-top:4px}',
+          '#tribu-guide #team-lucky-lead-cta button{flex:none;cursor:pointer;border-radius:8px;min-height:44px;background:#fff!important;color:#174658!important;border:0!important;padding:11px 16px!important;font-weight:700!important}',
           '@media(max-width:650px){#team-lucky-lead-cta{align-items:stretch;flex-direction:column}#team-lucky-lead-cta button{width:100%}}'
         ].join('');
         doc.head.appendChild(style);
       }
       var cta=doc.getElementById('team-lucky-lead-cta');
-      if(!isUnlocked&&!cta){
+      if(!isUnlocked&&!cta&&doc.querySelector('.tg-result')){
         cta=doc.createElement('div');cta.id='team-lucky-lead-cta';
         cta.innerHTML='<div><strong>Votre estimation est prête.</strong><span>Débloquez le détail complet de la simulation.</span></div><button type="button">Voir mon résultat complet ↗</button>';
-        cta.querySelector('button').addEventListener('click',function(){window.parent.postMessage({type:'team-lucky-open-lead'},location.origin);});
-        var anchor=doc.querySelector('.main-result')||doc.querySelector('.result');
+        cta.querySelector('button').addEventListener('click',openLead);
+        var anchor=doc.querySelector('.tg-result')||doc.querySelector('.main-result')||doc.querySelector('.result');
         (anchor||doc.body).appendChild(cta);
       }
       if(isUnlocked&&cta)cta.remove();
     }catch(e){}
   }
   function simulationSummary(){
-    var doc;try{doc=frame.contentDocument;}catch(e){}
-    var read=function(id){var el=doc&&doc.getElementById(id);return el?(('value'in el&&el.value!=='')?el.value:(el.textContent||'').trim()):'';};
-    var selected='';try{var p=doc.querySelector('[data-profile][aria-pressed="true"]');selected=p?(p.textContent.trim()||p.dataset.profile):'';}catch(e){}
-    var params=new URLSearchParams(location.search);
-    var utm=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].map(function(k){return params.get(k)?k+'='+params.get(k):'';}).filter(Boolean).join('&');
-    return [
-      'SIMULATION TEAM LUCKY',
-      'Site / marque : Team Lucky',
-      'Responsable : Élodie Cimiotta',
-      'Google Sheet cible : '+SHEET_ID,
-      'Statut : Nouveau',
-      'Profil simulation : '+(selected||'non identifié'),
-      'Estimation annuelle : '+(read('annual')||read('simple-tip-total')||'—'),
-      'Équivalent mensuel : '+(read('monthly')||'—'),
-      'CA production saisi : '+(read('production')||'—'),
-      'Nombre de ventes : '+(read('sales')||read('pro-sales')||'—'),
-      'Honoraires moyens : '+(read('fees')||'—'),
-      '% ventes partagées : '+(read('shared')||'—'),
-      'Taux actuel : '+(read('rate')||'—'),
-      'Développement équipe : '+((doc&&doc.getElementById('develop-team')&&doc.getElementById('develop-team').checked)?'Oui':'Non'),
-      'Niveau 1 : '+(read('level-1')||'0'),
-      'Niveau 2 : '+(read('level-2')||'0'),
-      'Niveau 3 : '+(read('level-3')||'0'),
-      'Niveau 4 : '+(read('level-4')||'0'),
-      'Niveau 5 : '+(read('level-5')||'0'),
-      'CA moyen / conseiller : '+(read('member-ca')||'—'),
-      'Récurrences estimées : '+(read('recurrence-total')||'—'),
-      'TIP estimé : '+(read('simple-tip-total')||read('tip-result')||'—'),
-      'Page : '+location.href.split('#')[0],
-      'Référent : '+(document.referrer||'(direct)'),
-      'UTM : '+(utm||'(aucun)')
-    ].join('\n');
+    return 'SIMULATION TEAM LUCKY\n'+JSON.stringify(frame.contentWindow.tribuSimulation||{},null,2);
   }
 
-  window.addEventListener('message',function(e){if(e.origin===location.origin&&e.data&&e.data.type==='team-lucky-open-lead')openLead();});
+  window.addEventListener('message',function(e){if(e.origin!==location.origin||e.source!==frame.contentWindow||!e.data)return;if(e.data.type==='tribu-simulator-results')applyGate();});
+  if(new URLSearchParams(location.search).get('profil')==='equipe')frame.src='/simulateur-outil.html?v=20261011-guided&profil=equipe';
   frame.addEventListener('load',applyGate);
 
   form.addEventListener('submit',async function(event){
@@ -185,7 +156,11 @@
     body.set('message',simulationSummary()+(window.projectAppointmentSummary?window.projectAppointmentSummary(form):''));
     body.set('source_site','Team Lucky');
     body.set('responsable','Élodie Cimiotta');
-    body.set('spreadsheet_id',SHEET_ID);
+    body.set('action','lead_capture');
+    body.set('simulation',JSON.stringify(frame.contentWindow.tribuSimulation||{}));
+    body.set('page',location.href.split('#')[0]);
+    body.set('referent',document.referrer);
+    body.set('submission_id',form.dataset.submissionId||(form.dataset.submissionId=crypto.randomUUID()));
     button.disabled=true;button.textContent='Envoi de votre simulation…';
     var controller=new AbortController();var timer=setTimeout(function(){controller.abort();},25000);
     try{

@@ -95,6 +95,11 @@
         + 'Source : ' + location.origin + location.pathname + '\n'
         + 'Consentement : Élodie Cimiotta et Guillaume Roque, suivi partagé\n\n'
         + (fields.get('message') || ''));
+      body.set('action','lead_capture');
+      body.set('source_site','Team Lucky');
+      body.set('page',location.href.split('#')[0]);
+      body.set('referent',document.referrer);
+      body.set('submission_id',form.dataset.submissionId||(form.dataset.submissionId=crypto.randomUUID()));
       busy = true; button.disabled = true; button.textContent = ui.sending;
       status.hidden = true; status.removeAttribute('data-error');
       var controller = new AbortController();
@@ -105,7 +110,7 @@
         var result = await response.json();
         if (result.ok !== true) throw new Error('Unconfirmed');
         status.textContent = ui.success; status.hidden = false; status.focus();
-        form.reset();
+        form.reset(); delete form.dataset.submissionId;
       } catch(error) {
         status.textContent = ui.error; status.dataset.error = ''; status.hidden = false; status.focus();
       } finally {

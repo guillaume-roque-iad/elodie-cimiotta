@@ -17,7 +17,7 @@ if(new URLSearchParams(location.search).has('projet')){
 if(!page)return;
 let active='debutant';
 const names={debutant:'Reconversion',professionnel:'Conseiller expérimenté',equipe:'Agence ou équipe'};
-function choose(key){active=names[key]?key:'debutant'; document.querySelectorAll('[data-project-choice]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.projectChoice===active)));document.querySelectorAll('[data-project-panel]').forEach(p=>p.hidden=p.dataset.projectPanel!==active);update();}
+function choose(key){if(key==='equipe'){location.replace('/simulateur?profil=equipe');return;}active=names[key]?key:'debutant'; document.querySelectorAll('[data-project-choice]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.projectChoice===active)));document.querySelectorAll('[data-project-panel]').forEach(p=>p.hidden=p.dataset.projectPanel!==active);update();}
 function valid(ids){return ids.every(id=>{const e=document.getElementById(id);return e.value!==''&&e.checkValidity();});}
 function calculateBudget(v){return {before:v.cost*v.delay+v.setup,surplus:v.sales.map((s,i)=>s*v.commission-v.cost*12-(i===0?v.setup:0))};}
 function calculateAgency(current,future,transition){const monthly=current-future;return{monthly,annual:monthly*12-transition,months:monthly>0?Math.ceil(transition/monthly):null};}
