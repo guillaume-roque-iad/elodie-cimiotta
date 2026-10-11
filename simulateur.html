@@ -48,7 +48,7 @@
     </nav>
   </header>
 
-  <main id="contenu" class="simulator-page"><div class="wrap simulator-heading"><a href="/">Accueil</a><span aria-hidden="true"> / </span><span>Simulateur</span><h1>Comparez votre rémunération avec iad.</h1><p>Un seul tableau : choisissez votre situation et ajustez vos chiffres. Découvrez si vous gagneriez plus ou moins, puis renseignez vos coordonnées pour consulter les montants et les dispositifs correspondants.</p><p class="simulator-note">Simulation iad France, montants HT avant cotisations et impôts. Hypothèses et conditions précisées dans le résultat.</p></div><iframe id="simulator-frame" src="/simulateur-outil.html?v=20261011-tableau-html" title="Simulateur interactif de rémunération iad — Team Lucky" style="display:block;width:100%;height:1250px;border:0;background:#fff" loading="eager"></iframe><noscript><p class="wrap">Activez JavaScript pour utiliser le simulateur.</p></noscript></main>
+  <main id="contenu" class="simulator-page"><div class="wrap simulator-heading"><a href="/">Accueil</a><span aria-hidden="true"> / </span><span>Simulateur</span><h1>Comparez votre rémunération avec iad.</h1><p>Un seul tableau : choisissez votre situation et ajustez vos chiffres. Découvrez si vous gagneriez plus ou moins, puis renseignez vos coordonnées pour consulter les montants et les dispositifs correspondants.</p><p class="simulator-note">Simulation iad France, montants HT avant cotisations et impôts. Hypothèses et conditions précisées dans le résultat.</p></div><iframe id="simulator-frame" src="/simulateur-outil.html?v=20261011-parcours" title="Simulateur interactif de rémunération iad — Team Lucky" style="display:block;width:100%;height:1250px;border:0;background:#fff" loading="eager"></iframe><noscript><p class="wrap">Activez JavaScript pour utiliser le simulateur.</p></noscript></main>
 
   <footer class="site-footer">
     <div class="footer-grid wrap">
@@ -59,6 +59,6 @@
   </footer>
 
   <script src="/team-lucky-v7.js" defer></script>
-<script>(()=>{const f=document.getElementById('simulator-frame');let observer;f.addEventListener('load',()=>{observer?.disconnect();try{const body=f.contentDocument.body;const resize=()=>{const height=Math.ceil(body.getBoundingClientRect().height)+12;if(height>100&&Math.abs(parseFloat(f.style.height)-height)>2)f.style.height=height+'px';};observer=new ResizeObserver(resize);observer.observe(body);resize();}catch(e){f.style.height='1800px';}});})();</script><script>(()=>{if(new URLSearchParams(location.search).get('profil')==='equipe'){const f=document.getElementById('simulator-frame');f.src+='&profil=equipe';}})();</script></body>
+<script>(()=>{const f=document.getElementById('simulator-frame');let observer;f.addEventListener('load',()=>{observer?.disconnect();try{const body=f.contentDocument.body;const resize=()=>{const height=Math.ceil(body.getBoundingClientRect().height)+12;if(height>100&&Math.abs(parseFloat(f.style.height)-height)>2)f.style.height=height+'px';};observer=new ResizeObserver(resize);observer.observe(body);resize();}catch(e){f.style.height='1800px';}});})();</script><script>(()=>{const profil=new URLSearchParams(location.search).get('profil');if(['equipe','debutant','conseiller'].includes(profil)){const f=document.getElementById('simulator-frame');f.src+='&profil='+profil;}})();</script></body>
 </html>
 
