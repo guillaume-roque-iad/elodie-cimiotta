@@ -1,3 +1,13 @@
+// Archive expired presentations as text, without keeping registration links.
+(() => {
+ const cards=[...document.querySelectorAll('[data-poa-start]')];
+ const expired=cards.filter(c=>Date.parse(c.dataset.poaStart)<=Date.now());
+ if(!expired.length)return;
+ const section=expired[0].closest('section');if(!section)return;
+ let archive=section.querySelector('[data-presentation-archive]');
+ if(!archive){archive=document.createElement('details');archive.className='project-archive';archive.dataset.presentationArchive='';const title=document.createElement('summary');title.textContent=({fr:'Présentations passées',es:'Presentaciones anteriores',en:'Past presentations',de:'Vergangene Präsentationen',pt:'Apresentações anteriores',it:'Presentazioni passate',ca:'Presentacions anteriors'})[document.documentElement.lang.slice(0,2)]||'Past presentations';archive.append(title,document.createElement('ul'));section.append(archive);}
+ expired.forEach(c=>{const item=document.createElement('li');item.textContent=(c.querySelector('time')||c.querySelector('h3')||c).textContent.trim();archive.querySelector('ul').append(item);c.remove();});
+})();
 (function () {
   'use strict';
 
@@ -108,3 +118,6 @@
 
 // Accès au simulateur France depuis les pages du site.
 (()=>{const nav=document.querySelector('.nav-links');if(!nav||nav.querySelector('a[href="/simulateur"]'))return;const a=document.createElement('a');a.href='/simulateur';const lang=document.documentElement.lang.split('-')[0];a.textContent=({fr:'Simulateur',es:'Simulador (FR)',ca:'Simulador (FR)',pt:'Simulador (FR)',it:'Simulatore (FR)',de:'Simulator (FR)',en:'Simulator (FR)'})[lang]||'Simulateur (FR)';nav.insertBefore(a,nav.querySelector('.btn'));a.addEventListener('click',()=>{nav.classList.remove('open');document.querySelector('.menu-toggle')?.setAttribute('aria-expanded','false');});})();
+
+// Recruitment planning entry point; the detailed page is currently in French.
+(()=>{const menu=document.querySelector('.nav-links');if(!menu||menu.querySelector('a[href="/preparer-mon-projet"]'))return;const a=document.createElement('a');a.href='/preparer-mon-projet';a.textContent=document.documentElement.lang.startsWith('fr')?'Préparer mon projet':'Projet & budget (FR)';menu.insertBefore(a,menu.querySelector('.btn'));a.addEventListener('click',()=>{menu.classList.remove('open');document.querySelector('.menu-toggle')?.setAttribute('aria-expanded','false');});})();
