@@ -1,0 +1,20 @@
+/* Formulaire d'accueil simplifié : présentation iad et champs d'origine conservés. */
+.home-form-step{font-size:.72rem!important;line-height:1.5!important;font-weight:800!important;letter-spacing:.09em!important;color:#006390!important;margin:23px 0 13px!important;text-transform:uppercase}
+.home-form-step:first-of-type{margin-top:10px!important}
+.home-form-section{border-bottom:1px solid #DFEAF0;padding-bottom:12px;margin-bottom:10px}
+.home-form-section .fg:last-child{margin-bottom:10px}
+.home-form-more{margin:7px 0 18px;border:1px solid #D2E7F0;border-radius:14px;padding:4px 14px;background:#F4FBFD}
+.home-form-more summary{min-height:48px;display:flex;align-items:center;cursor:pointer;font-size:.87rem;font-weight:750;color:#006390}
+.home-form-more[open]{padding-bottom:14px}
+.home-form-more .fg,.home-form-more .field{margin:12px 0 4px}
+.home-form-more textarea{width:100%;resize:vertical}
+#rejoindre .form-panel>p,#contact .contact-form>p{margin-bottom:15px!important}
+#rejoindre .form-panel,#contact .contact-form{border-radius:20px}
+#rejoindre .form-panel .fg2,#contact .form-grid{gap:12px 16px}
+#rejoindre .form-panel .fg select,#rejoindre .form-panel .fg input,#rejoindre .form-panel .fg textarea,#contact .field input,#contact .field select,#contact .field textarea{min-height:48px;border-radius:11px}
+#rejoindre .fconsent,#contact .consent{margin-top:19px}
+#rejoindre .fsub{border-radius:999px;min-height:52px;font-weight:800;font-style:italic}
+#contact .home-form-section>.field{margin-top:4px}
+#contact .home-form-more{color:#263445}
+#contact .home-form-more .field{display:grid;gap:8px}
+@media(max-width:640px){.home-form-step{margin-top:18px!important}.home-form-more{padding:4px 12px}#rejoindre .form-panel,#contact .contact-form{padding:22px 18px}}
