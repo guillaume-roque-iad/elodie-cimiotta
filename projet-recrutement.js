@@ -6,6 +6,7 @@ const fmt=n=>new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',maxi
 const n=id=>{const el=document.getElementById(id); return el&&el.value!==''&&el.checkValidity()?Number(el.value):0;};
 window.projectAppointmentSummary=function(form){return '\n\nRendez-vous souhaité : '+(form.elements.echange_format?.value||'À définir')+'\nDisponibilité proposée : '+(form.elements.echange_date?.value||'À convenir')+'\nCréneau à confirmer personnellement.';};
 document.querySelectorAll('form#fm:not([data-presentation]),form[data-contact-form],form#sim-lead-form').forEach(form=>{
+ if(form.querySelector('[data-home-meeting-select]'))return; // Éviter un second bloc de rendez-vous à l'accueil.
  const area=document.createElement('fieldset'); area.className='project-contact';
  area.innerHTML='<legend>Votre échange individuel</legend><label>Format souhaité<select name="echange_format"><option>Visio</option><option>Café — lieu à convenir</option><option>Appel téléphonique</option></select></label><label>Vos disponibilités (facultatif)<input name="echange_date" maxlength="120" placeholder="Ex. mardi après-midi ou vendredi matin"></label><p>Il s’agit d’une demande de rendez-vous. Le lieu, la date et l’heure vous seront confirmés personnellement.</p>';
  const anchor=form.querySelector('[type="submit"]'); if(anchor)anchor.before(area);else form.append(area);
