@@ -46,11 +46,11 @@ Le générateur échoue si une page a changé sans date éditoriale fournie. Ne 
 curl -sI https://team-lucky.com/mentions-legales
 # 200 direct
 curl -sI https://team-lucky.com/mentions-legales.html
-# 301 vers /mentions-legales
+# 308 permanent vers /mentions-legales
 curl -sI https://team-lucky.com/es/aviso-legal
 curl -sI https://team-lucky.com/ca/avis-legal
 curl -sI https://team-lucky.com/es
-# 301 vers /es/
+# 308 permanent vers /es/
 curl -sI https://team-lucky.com/es/
 # 200 direct
 curl -sI https://team-lucky.com/en/simulateur
@@ -76,3 +76,15 @@ Valider les types et propriétés dans https://validator.schema.org/ ; tester /s
 6. Suivre les visites Googlebot et l’indexation. Ni le sitemap, ni les données structurées, ni une demande d’indexation ne garantissent l’indexation. Un volume de mots n’est pas un seuil technique d’admission dans Google.
 
 Aucune action Search Console effectuée par ces scripts ; procédure à exécuter dans la propriété après mise en ligne.
+
+## Résultats observés après mise en ligne
+
+- Les 42 URL du sitemap renvoient un 200 direct, sans redirection.
+- Le sitemap servi par le domaine correspond exactement au fichier généré.
+- Les anciennes URL légales .html et /es sans slash renvoient une redirection permanente 308 native de Cloudflare, vers la destination propre en une étape. Le diagnostic initial mentionnait 301 ; aucun changement d’infrastructure ajouté pour remplacer ce 308.
+- /en/simulateur renvoie 404 ; aucun lien interne ne mène à cette URL.
+- Le navigateur affiche le simulateur embarqué fonctionnel et le bloc éditorial statique sous l’outil, avec les quatre FAQ.
+- Vérification locale : 44 pages, 42 URL dans le sitemap, JSON-LD valides, annotations réciproques, FAQ conforme au texte visible, tous les formulaires et styles préservés.
+- Sept ancres de contact rompues préexistantes corrigées : #contacto en ES et #contacte en CA, sans modifier les formulaires.
+- Rich Results Test et validateur schema.org : procédure fournie, pas de validation distante exécutée. Aucun affichage enrichi promis.
+- Search Console : procédure fournie ; aucune soumission ou demande d’indexation effectuée.

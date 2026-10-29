@@ -38,6 +38,14 @@ for p in sorted(ROOT.rglob('*.html')):
    if path.endswith('.html'):errors.append(rel+': redirecting .html '+v)
    exists=target.is_file() or path.endswith('/') and (target/'index.html').is_file() or not path.endswith('/') and Path(str(target)+'.html').is_file()
    if not exists:errors.append(rel+': missing/redirecting target '+v)
+ # Check same-origin fragment targets, including cross-page contact links.
+ for a in s.xpath('//a[@href]'):
+  u=urlsplit(a.get('href'))
+  if not u.fragment or u.netloc and u.netloc!='team-lucky.com' or u.scheme and u.scheme not in ['http','https']:continue
+  target=p if not u.path else ROOT/u.path.lstrip('/')
+  if target.is_dir():target=target/'index.html'
+  elif not target.suffix:target=Path(str(target)+'.html')
+  if target.exists() and not html.fromstring(target.read_text()).xpath('//*[@id=$v or @name=$v]',v=unquote(u.fragment)):errors.append(rel+': missing anchor '+a.get('href'))
  for x in s.xpath('//article[@data-poa-start]'):
   if datetime.fromisoformat(x.get('data-poa-start'))<datetime.now().astimezone():errors.append(rel+': past session in upcoming cards')
  if 'meet.google.com/' in raw:errors.append(rel+': raw Meet URL')
