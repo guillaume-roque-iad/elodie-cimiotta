@@ -2,12 +2,16 @@
 
 Site de présentation de l’accompagnement proposé par Élodie Cimiotta aux personnes qui envisagent de devenir conseillères ou conseillers immobiliers indépendants au sein du réseau iad.
 
+Team Lucky est un site indépendant d’équipe, non officiel iad France et iad España.
+
 ## Informations principales
 
 - Élodie Cimiotta est conseillère et manager iad depuis 2018.
 - Son organisation compte 15 conseillers actifs.
 - Elle dispose d’une expérience professionnelle en France et en Espagne.
-- Le site est disponible en français, espagnol et catalan.
+- Les pages d’accueil sont disponibles en français, espagnol, catalan, portugais, italien, allemand et anglais. Cette disponibilité linguistique ne constitue pas une implantation dans chacun de ces pays.
+- Les conseils sont disponibles en français, espagnol, portugais, italien, allemand et anglais. La page catalane renvoie explicitement aux articles en français.
+- Le simulateur et la préparation du projet sont disponibles en français ; le simulateur concerne les conditions iad France.
 - L’activité présentée est indépendante et les revenus sont variables. Aucun revenu ni délai de réussite n’est garanti.
 
 ## Pages
@@ -15,7 +19,16 @@ Site de présentation de l’accompagnement proposé par Élodie Cimiotta aux pe
 - [Français](https://team-lucky.com/)
 - [Español](https://team-lucky.com/es/)
 - [Català](https://team-lucky.com/ca/)
-- [Mentions légales](https://team-lucky.com/mentions-legales.html)
+- [Português](https://team-lucky.com/pt/)
+- [Italiano](https://team-lucky.com/it/)
+- [Deutsch](https://team-lucky.com/de/)
+- [English](https://team-lucky.com/en/)
+- [Conseils](https://team-lucky.com/conseils/)
+- [Simulateur iad France](https://team-lucky.com/simulateur)
+- [Préparer mon projet](https://team-lucky.com/preparer-mon-projet)
+- [Mentions légales](https://team-lucky.com/mentions-legales)
+- [Aviso legal](https://team-lucky.com/es/aviso-legal)
+- [Avís legal](https://team-lucky.com/ca/avis-legal)
 
 ## Contact
 

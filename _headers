@@ -1,0 +1,10 @@
+# Working files are public resources, not search landing pages.
+# Keep crawling allowed in robots.txt so engines can read this directive.
+/seo/*
+  X-Robots-Tag: noindex
+
+/scripts/*
+  X-Robots-Tag: noindex
+
+/editorial/*
+  X-Robots-Tag: noindex
