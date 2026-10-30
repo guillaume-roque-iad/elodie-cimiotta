@@ -1,11 +1,35 @@
 #!/usr/bin/env python3
 """Local SEO invariants. Requires lxml; pip install lxml."""
-import json,re,subprocess
+import argparse,json,re,subprocess
 from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlsplit,unquote,urljoin
 from lxml import html
 from generate_sitemap import ROOT,BASE,generate
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--baseline',default='HEAD',help='Git revision used to protect existing forms and inline styles')
+parser.add_argument('--allow-agenda-options',action='store_true',help='Allow generated presentation options; all other form fields and settings remain protected')
+parser.add_argument('--allow-added-style',action='append',default=[],help='ID of a reviewed new style block; existing style blocks remain protected')
+args=parser.parse_args()
+try:
+ subprocess.run(['git','rev-parse','--verify','--end-of-options',args.baseline+'^{commit}'],cwd=ROOT,check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+except subprocess.CalledProcessError:
+ parser.error('Baseline must resolve to an existing Git commit: '+args.baseline)
+
+def protected_markup(document,xpath):
+ result=[]
+ for original in document.xpath(xpath):
+  if xpath=='//style' and original.get('id') in args.allow_added_style:continue
+  node=html.fromstring(html.tostring(original,with_tail=False))
+  if xpath=='//form' and args.allow_agenda_options:
+   for option in node.xpath('.//select[@name="presentation"]//option[@data-poa-option]'):
+    option.getparent().remove(option)
+  for element in node.iter():
+   if element.text is not None and not element.text.strip():element.text=None
+   if element.tail is not None and not element.tail.strip():element.tail=None
+  result.append(html.tostring(node,with_tail=False))
+ return result
+
 errors=[];count=0
 for p in sorted(ROOT.rglob('*.html')):
  rel=p.relative_to(ROOT).as_posix()
@@ -54,9 +78,11 @@ for p in sorted(ROOT.rglob('*.html')):
  if 'noindex' in raw.lower() and rel not in ['404.html','simulateur-outil.html']:errors.append(rel+': unexpected noindex')
  # Compare forms and visual styles to pre-change Git revision when available.
  try:
-  old=subprocess.check_output(['git','show','HEAD:'+rel],cwd=ROOT,stderr=subprocess.DEVNULL).decode();before=html.fromstring(old)
+  old=subprocess.check_output(['git','show',args.baseline+':'+rel],cwd=ROOT,stderr=subprocess.DEVNULL).decode();before=html.fromstring(old)
+  for style_id in args.allow_added_style:
+   if before.xpath('//style[@id=$value]',value=style_id):errors.append(rel+': allowed style ID already exists in baseline: '+style_id)
   for xp in ['//form','//style']:
-   if [html.tostring(x,with_tail=False) for x in s.xpath(xp)]!=[html.tostring(x,with_tail=False) for x in before.xpath(xp)]:errors.append(rel+': modified '+xp)
+   if protected_markup(s,xp)!=protected_markup(before,xp):errors.append(rel+': modified '+xp)
  except subprocess.CalledProcessError:pass
 xml,_,n=generate()
 if (ROOT/'sitemap.xml').read_bytes()!=xml:errors.append('stale sitemap')

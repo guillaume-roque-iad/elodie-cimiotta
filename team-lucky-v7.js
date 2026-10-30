@@ -1,13 +1,3 @@
-// Archive expired presentations as text, without keeping registration links.
-(() => {
- const cards=[...document.querySelectorAll('[data-poa-start]')];
- const expired=cards.filter(c=>Date.parse(c.dataset.poaStart)<=Date.now());
- if(!expired.length)return;
- const section=expired[0].closest('section');if(!section)return;
- let archive=section.querySelector('[data-presentation-archive]');
- if(!archive){archive=document.createElement('details');archive.className='project-archive';archive.dataset.presentationArchive='';const title=document.createElement('summary');title.textContent=({fr:'Présentations passées',es:'Presentaciones anteriores',en:'Past presentations',de:'Vergangene Präsentationen',pt:'Apresentações anteriores',it:'Presentazioni passate',ca:'Presentacions anteriors'})[document.documentElement.lang.slice(0,2)]||'Past presentations';archive.append(title,document.createElement('ul'));section.append(archive);}
- expired.forEach(c=>{const item=document.createElement('li');item.textContent=(c.querySelector('time')||c.querySelector('h3')||c).textContent.trim();archive.querySelector('ul').append(item);c.remove();});
-})();
 (function () {
   'use strict';
 
@@ -46,24 +36,70 @@
   }
 
 
+  // Dates and labels are generated into the initial HTML from one agenda source.
+  // This guard only expires choices between deployments; it never invents dates.
+  var presentationSelect = document.getElementById('presentation');
+  var expiredSelection = false;
   function refreshDates() {
+    var now = Date.now();
     var count = 0;
     document.querySelectorAll('[data-poa-start]').forEach(function(card) {
-      card.hidden = Date.parse(card.dataset.poaStart) <= Date.now();
-      if (!card.hidden) count++;
+      var start = Date.parse(card.dataset.poaStart);
+      if (!Number.isFinite(start) || start <= now) {
+        var archive = card.closest('section')?.querySelector('[data-presentation-archive] ul');
+        var date = card.dataset.poaStart.slice(0, 10);
+        if (archive && !archive.querySelector('[data-presentation-date="' + date + '"]')) {
+          var item = document.createElement('li');
+          item.dataset.presentationDate = date;
+          item.textContent = (card.querySelector('time') || card.querySelector('h3')).textContent.trim();
+          archive.append(item);
+        }
+        card.remove();
+      } else {
+        count++;
+      }
     });
     document.querySelectorAll('[data-poa-option]').forEach(function(option) {
-      if (Date.parse(option.dataset.poaOption) <= Date.now()) option.remove();
+      var start = Date.parse(option.dataset.poaOption);
+      if (!Number.isFinite(start) || start <= now) {
+        if (option.selected) expiredSelection = true;
+        option.remove();
+      }
+    });
+    if (expiredSelection && presentationSelect) presentationSelect.selectedIndex = 0;
+    document.querySelectorAll('optgroup[data-meeting-format]').forEach(function(group) {
+      if (!group.children.length) group.remove();
     });
     var empty = document.querySelector('[data-agenda-empty]');
     if (empty) empty.hidden = count > 0;
+    return expiredSelection;
   }
   refreshDates();
-  document.querySelectorAll('[data-presentation]').forEach(function(link) {
-    link.addEventListener('click', function() {
+  // Recheck a tab that stayed open across the start of a presentation.
+  window.addEventListener('pageshow', refreshDates);
+  document.addEventListener('visibilitychange', function() {
+    if (!document.hidden) refreshDates();
+  });
+  if (presentationSelect) {
+    presentationSelect.addEventListener('focus', refreshDates);
+    presentationSelect.addEventListener('change', function() { expiredSelection = false; });
+  }
+  document.querySelectorAll('.agenda-card a[data-presentation-id]').forEach(function(link) {
+    link.addEventListener('click', function(event) {
       refreshDates();
-      document.getElementById('presentation').value = link.dataset.presentation;
-      document.getElementById('name').focus({preventScroll:true});
+      if (!link.isConnected) {
+        event.preventDefault();
+        return;
+      }
+      // French external registration links keep their existing destination.
+      if (!link.hasAttribute('data-presentation') || !presentationSelect) return;
+      var option = Array.from(presentationSelect.options).find(function(candidate) {
+        return candidate.dataset.presentationId === link.dataset.presentationId;
+      });
+      if (!option) { event.preventDefault(); return; }
+      presentationSelect.value = option.value;
+      expiredSelection = false;
+      document.getElementById('name')?.focus({preventScroll:true});
     });
   });
   var form = document.querySelector('[data-contact-form]');
@@ -71,6 +107,26 @@
     var busy = false;
     form.addEventListener('submit', async function(event) {
       event.preventDefault();
+      if (refreshDates()) {
+        var dateStatus = form.querySelector('[data-form-status]');
+        var dateMessages = {
+          fr: 'Cette présentation a commencé. Choisissez un autre rendez-vous ou un entretien individuel.',
+          es: 'Esta presentación ya ha comenzado. Elige otra fecha o una conversación individual.',
+          ca: 'Aquesta presentació ja ha començat. Tria una altra data o una conversa individual.',
+          pt: 'Esta apresentação já começou. Escolha outra data ou uma conversa individual.',
+          it: 'Questa presentazione è già iniziata. Scegli un’altra data o un colloquio individuale.',
+          de: 'Diese Präsentation hat bereits begonnen. Wählen Sie einen anderen Termin oder ein persönliches Gespräch.',
+          en: 'This presentation has started. Choose another date or an individual conversation.'
+        };
+        if (dateStatus) {
+          dateStatus.textContent = dateMessages[document.documentElement.lang.slice(0, 2)] || dateMessages.fr;
+          dateStatus.dataset.error = '';
+          dateStatus.hidden = false;
+        }
+        presentationSelect?.focus();
+        expiredSelection = false;
+        return;
+      }
       if (busy || !form.reportValidity()) return;
       var fields = new FormData(form);
       if (fields.get('societe')) return;
@@ -128,33 +184,3 @@
 
 // Reprise temporaire des coordonnées dans le même onglet, sans inscription automatique.
 (()=>{try{const key='lucky-simulation-contact',raw=sessionStorage.getItem(key);if(!raw)return;const data=JSON.parse(raw);sessionStorage.removeItem(key);if(Date.now()-data.at>30*60*1000)return;const form=document.querySelector('[data-contact-form]');if(!form)return;['name','email','phone','city'].forEach(name=>{const field=form.elements.namedItem(name);if(field&&!field.value)field.value=data[name]||'';});}catch{}})();
-
-
-// Accueil : sélectionner une présentation ou un entretien, à partir des dates visibles dans l'agenda.
-// Aucune inscription à un événement n'est réalisée ici : le choix est transmis avec la demande.
-(()=>{
- const select=document.querySelector('select[data-home-meeting-select]');
- if(!select)return;
- const groups={
-  visio:select.querySelector('optgroup[data-meeting-format="visio"]'),
-  presentiel:select.querySelector('optgroup[data-meeting-format="presentiel"]')
- };
- const cards=[...document.querySelectorAll('article[data-poa-start]')]
-  .filter(card=>Number.isFinite(Date.parse(card.dataset.poaStart))&&Date.parse(card.dataset.poaStart)>Date.now())
-  .sort((a,b)=>Date.parse(a.dataset.poaStart)-Date.parse(b.dataset.poaStart));
- for(const card of cards){
-  const badge=card.querySelector('.num, .eyebrow')?.textContent||'';
-  const type=card.dataset.poaFormat==='online'||/visio/i.test(badge)?'visio':'presentiel';
-  const group=groups[type];
-  const date=card.querySelector('time')?.textContent.trim();
-  const hours=card.querySelector('p strong')?.textContent.trim();
-  if(!group||!date||!hours)continue;
-  const format=type==='visio'?'Présentation en visio (Google Meet)':'Présentation en présentiel (Narbonne)';
-  const option=document.createElement('option');
-  option.value=format+' — '+date+' · '+hours+' (heure de Paris)';
-  option.textContent=date+' · '+hours;
-  option.dataset.poaOption=card.dataset.poaStart;
-  group.append(option);
- }
- for(const group of Object.values(groups)){if(group&&!group.children.length)group.remove();}
-})();

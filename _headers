@@ -8,3 +8,17 @@
 
 /editorial/*
   X-Robots-Tag: noindex
+
+# These font filenames carry an explicit version. Use a new filename when
+# replacing their content; HTML and unversioned scripts keep their current cache.
+/montserrat-home-v10.woff2
+  Cache-Control: public, max-age=86400
+
+/montserrat-latin-v8.woff2
+  Cache-Control: public, max-age=86400
+
+/montserrat-latin-v9.woff2
+  Cache-Control: public, max-age=86400
+
+/montserrat-title-v12.woff2
+  Cache-Control: public, max-age=86400
