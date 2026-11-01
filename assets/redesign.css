@@ -101,3 +101,6 @@ body .avbtn:disabled{background:#f1ece5;color:#3c4a5f;border-color:#D0CDC6;text-
 .footer-brand-logos .footer-personal-logo{width:150px;height:150px;margin:0}
 @media(max-width:640px){.nb-brand{gap:12px}.nb-brand .nb-name,.nb-brand .nb-sep{display:none}.nb-brand .nb-logo.iad-real-estate{width:64px;height:auto}.nb-personal-logo{width:84px;height:84px}}
 @media(max-width:360px){.nb-brand{gap:10px}.nb-brand .nb-logo.iad-real-estate{width:56px}.nb-personal-logo{width:72px;height:72px}}
+
+/* Immediate control states avoid paint-only animations when carousel buttons disable. */
+body .avbtn{transition:none}
