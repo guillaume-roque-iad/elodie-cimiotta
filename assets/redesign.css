@@ -104,3 +104,22 @@ body .avbtn:disabled{background:#f1ece5;color:#3c4a5f;border-color:#D0CDC6;text-
 
 /* Immediate control states avoid paint-only animations when carousel buttons disable. */
 body .avbtn{transition:none}
+
+/* Consistent, accessible pill actions on the three homepages. */
+.home-intro .hero-btns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;width:100%;align-items:stretch;margin-bottom:28px}
+.home-intro .hero-action{display:flex;align-items:center;justify-content:flex-start;gap:10px;min-width:0;min-height:114px;padding:20px 16px;border:1px solid #D0E7F0;border-radius:999px;background:#fff;color:#000;text-decoration:none;box-shadow:0 4px 16px #00639009;transition:transform .16s ease}
+.hero-action-icon{display:flex;align-items:center;justify-content:center;width:34px;height:34px;flex:0 0 34px;border-radius:50%;background:#E9FCFF}
+.hero-action-icon img{display:block;width:24px;height:24px;object-fit:contain}
+.hero-action-copy{display:flex;flex-direction:column;gap:6px;min-width:0;text-align:left}
+.hero-action-copy strong{font-size:13px;line-height:1.4;font-weight:700}
+.hero-action-copy>span{font-size:11px;line-height:1.5;color:#3C4A5F}
+.home-intro .hero-action--primary{background:#007DAF;color:#fff;border-color:#007DAF}
+.hero-action--primary .hero-action-icon{background:#fff}
+.hero-action--primary .hero-action-copy>span{color:#fff}
+.home-intro .hero-action:hover{background:#E9FCFF;border-color:#007DAF;transform:translateY(-2px)}
+.home-intro .hero-action--primary:hover{background:#006390;color:#fff;border-color:#006390}
+.home-intro .hero-action:focus-visible{outline:3px solid #006390;outline-offset:4px}
+.home-intro .hero-action:active{transform:none}
+@media(max-width:1100px) and (min-width:641px){.home-intro .hero-btns{grid-template-columns:repeat(2,minmax(0,1fr))}.home-intro .hero-action{min-height:100px}.home-intro .hero-action:last-child{grid-column:1/-1;min-height:76px;justify-content:center}}
+@media(max-width:640px){.home-intro .hero-btns{grid-template-columns:1fr;gap:12px}.home-intro .hero-action{min-height:84px;padding:18px 24px;gap:16px}.hero-action-icon{width:38px;height:38px;flex-basis:38px}.hero-action-copy strong{font-size:14px}.hero-action-copy>span{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.home-intro .hero-action{transition:none;transform:none!important}}
