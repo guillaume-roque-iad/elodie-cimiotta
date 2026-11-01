@@ -123,3 +123,16 @@ body .avbtn{transition:none}
 @media(max-width:1100px) and (min-width:641px){.home-intro .hero-btns{grid-template-columns:repeat(2,minmax(0,1fr))}.home-intro .hero-action{min-height:100px}.home-intro .hero-action:last-child{grid-column:1/-1;min-height:76px;justify-content:center}}
 @media(max-width:640px){.home-intro .hero-btns{grid-template-columns:1fr;gap:12px}.home-intro .hero-action{min-height:84px;padding:18px 24px;gap:16px}.hero-action-icon{width:38px;height:38px;flex-basis:38px}.hero-action-copy strong{font-size:14px}.hero-action-copy>span{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.home-intro .hero-action{transition:none;transform:none!important}}
+
+/* Main navigation: readable iad pills, separate contact action, safe wrap on mobile. */
+.navbar{padding-inline:max(24px,calc((100vw - 1480px)/2));gap:18px}
+.navbar .nav-links{gap:6px}
+.navbar .nav-links>a.nav-pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:11px 15px;border:1px solid #D0E7F0;border-radius:999px;background:#F7F9FA;color:#000;font-size:13px;font-weight:600;line-height:1.4;white-space:nowrap;text-decoration:none;box-shadow:none}
+.nav-pill img{display:block;flex:0 0 20px;object-fit:contain}
+.navbar .nav-links>a.nav-pill:hover,.navbar .nav-links>a.nav-pill:focus-visible{background:#E9FCFF;border-color:#007DAF;color:#000}
+.navbar .nav-links>a.nav-pill[aria-current="page"]{background:#CDF7FF;border-color:#00B4EC}
+.navbar .nav-links>a.nav-pill:active{background:#95EBFF}
+.navbar .nav-links>a.nb-cta{font-size:13px;padding:13px 16px;margin-left:4px;white-space:nowrap;flex-shrink:0}
+@media(min-width:1251px) and (max-width:1320px){.navbar .menu-toggle{display:block;margin-left:auto}.navbar .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;padding:22px 6vw;border-bottom:1px solid #e4e7eb;align-items:stretch}.navbar .nav-links.is-open{display:flex;flex-direction:column}.navbar .language-switcher{margin-left:0}}
+@media(max-width:1320px){.navbar .nav-links{gap:10px}.navbar .nav-links>a.nav-pill{justify-content:flex-start;min-height:48px;padding:14px 18px;font-size:14px}.navbar .nav-links .nb-cta{margin-left:0;white-space:normal}.navbar{padding-inline:24px}}
+@media(max-width:640px){.navbar{padding-inline:16px;gap:4px 12px}.navbar .nav-links{padding:20px 24px}}
