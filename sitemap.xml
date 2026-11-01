@@ -867,4 +867,28 @@
     <xhtml:link rel="alternate" hreflang="ca" href="https://elodie-cimiotta-iad.com/ca/article-certificat-energetique-vendre-roses-elodie"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elodie-cimiotta-iad.com/article-certificat-energetique-vendre-roses-elodie"/>
   </url>
+  <url>
+    <loc>https://elodie-cimiotta-iad.com/conseils/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elodie-cimiotta-iad.com/conseils/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://elodie-cimiotta-iad.com/es/consejos/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://elodie-cimiotta-iad.com/ca/consells/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elodie-cimiotta-iad.com/conseils/"/>
+  </url>
+  <url>
+    <loc>https://elodie-cimiotta-iad.com/es/consejos/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elodie-cimiotta-iad.com/conseils/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://elodie-cimiotta-iad.com/es/consejos/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://elodie-cimiotta-iad.com/ca/consells/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elodie-cimiotta-iad.com/conseils/"/>
+  </url>
+  <url>
+    <loc>https://elodie-cimiotta-iad.com/ca/consells/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elodie-cimiotta-iad.com/conseils/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://elodie-cimiotta-iad.com/es/consejos/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://elodie-cimiotta-iad.com/ca/consells/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elodie-cimiotta-iad.com/conseils/"/>
+  </url>
 </urlset>
