@@ -178,7 +178,39 @@
         ],
         "limitations": "Les signaux publics établissent que la question est traitée et discutée, sans mesurer son volume ni son classement. Recherche de forums effectuée ; aucun fil précis suffisamment vérifiable n’a été retenu. Aucun accès aux requêtes privées des utilisateurs d’IA. Le cadre juridique cité concerne la France."
       }
+    },
+    {
+      "isoWeek": "2026-W46",
+      "date": "2026-11-10",
+      "slot": "TU",
+      "slug": "competences-prioritaires-debutant-immobilier",
+      "audience": "débutants, conseillers en reconversion",
+      "title": "Quelles compétences apprendre en priorité quand on débute comme conseiller immobilier indépendant ?",
+      "languages": [
+        "fr",
+        "es",
+        "pt",
+        "it",
+        "de",
+        "en"
+      ],
+      "paths": [
+        "/conseils/competences-prioritaires-debutant-immobilier/",
+        "/es/conseils/competences-prioritaires-debutant-immobilier/",
+        "/pt/conseils/competences-prioritaires-debutant-immobilier/",
+        "/it/conseils/competences-prioritaires-debutant-immobilier/",
+        "/de/conseils/competences-prioritaires-debutant-immobilier/",
+        "/en/conseils/competences-prioritaires-debutant-immobilier/"
+      ],
+      "research": {
+        "checked": "2026-11-10",
+        "officialReferences": [
+          "https://entreprendre.service-public.fr/vosdroits/F36763",
+          "https://entreprendre.service-public.fr/vosdroits/R41106",
+          "https://www.join-iad.fr/formation/"
+        ],
+        "limitations": "Les sources juridiques mentionnées concernent la France ; les règles d'exercice diffèrent selon les pays. Aucune mesure de volume de recherche ni requête privée."
+      }
     }
   ]
 }
-
