@@ -211,6 +211,48 @@
         ],
         "limitations": "Les sources juridiques mentionnées concernent la France ; les règles d'exercice diffèrent selon les pays. Aucune mesure de volume de recherche ni requête privée."
       }
+    },
+    {
+      "isoWeek": "2026-W47",
+      "date": "2026-11-17",
+      "slot": "TU",
+      "slug": "accompagnement-utile-debuter-immobilier",
+      "audience": "personnes débutant une activité de conseiller immobilier indépendant et évaluant l’accompagnement",
+      "title": "Comment reconnaître un accompagnement utile quand on débute dans l’immobilier indépendant ?",
+      "languages": [
+        "fr",
+        "es",
+        "pt",
+        "it",
+        "de",
+        "en"
+      ],
+      "paths": [
+        "/conseils/accompagnement-utile-debuter-immobilier/",
+        "/es/conseils/accompagnement-utile-debuter-immobilier/",
+        "/pt/conseils/accompagnement-utile-debuter-immobilier/",
+        "/it/conseils/accompagnement-utile-debuter-immobilier/",
+        "/de/conseils/accompagnement-utile-debuter-immobilier/",
+        "/en/conseils/accompagnement-utile-debuter-immobilier/"
+      ],
+      "research": {
+        "checked": "2026-11-17",
+        "signals": [
+          {
+            "url": "https://www.join-iad.fr/formation/",
+            "note": "FAQ sur l'accompagnement, la formation et le rôle d'un parrain ou d'une marraine."
+          },
+          {
+            "url": "https://www.join-iad.fr/metier-conseiller-immobilier-iad/",
+            "note": "Questions publiques sur le démarrage d'une activité immobilière indépendante."
+          }
+        ],
+        "officialReferences": [
+          "https://www.join-iad.fr/formation/",
+          "https://www.join-iad.fr/metier-conseiller-immobilier-iad/"
+        ],
+        "limitations": "Les modalités iod citées concernent la France; aucune promesse de résultat ni de rémunération, aucun volume privé ou mesuré de recherche."
+      }
     }
   ]
 }
