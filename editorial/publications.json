@@ -253,6 +253,47 @@
         ],
         "limitations": "Les modalités iod citées concernent la France; aucune promesse de résultat ni de rémunération, aucun volume privé ou mesuré de recherche."
       }
+    },
+    {
+      "isoWeek": "2026-W48",
+      "date": "2026-11-24",
+      "slot": "TU",
+      "slug": "developper-equipe-immobiliere-sans-delaisser-clients",
+      "audience": "conseillers expérimentés souhaitant développer et accompagner une équipe",
+      "title": "Comment développer une équipe immobilière sans délaisser ses propres clients ?",
+      "languages": [
+        "fr",
+        "es",
+        "pt",
+        "it",
+        "de",
+        "en"
+      ],
+      "paths": [
+        "/conseils/developper-equipe-immobiliere-sans-delaisser-clients/",
+        "/es/conseils/developper-equipe-immobiliere-sans-delaisser-clients/",
+        "/pt/conseils/developper-equipe-immobiliere-sans-delaisser-clients/",
+        "/it/conseils/developper-equipe-immobiliere-sans-delaisser-clients/",
+        "/de/conseils/developper-equipe-immobiliere-sans-delaisser-clients/",
+        "/en/conseils/developper-equipe-immobiliere-sans-delaisser-clients/"
+      ],
+      "research": {
+        "checked": "2026-11-24",
+        "signals": [
+          {
+            "url": "https://www.join-iad.fr/modele-iad/",
+            "note": "Présentation publique du modèle collaboratif et de l’entrepreneuriat."
+          },
+          {
+            "url": "https://www.join-iad.fr/profil-immobilier/",
+            "note": "Parcours proposé aux professionnels de l’immobilier."
+          }
+        ],
+        "officialReferences": [
+          "https://www.join-iad.fr/modele-iad/"
+        ],
+        "limitations": "Conseils organisationnels, aucune promesse de revenus, aucun classement de recherche ni affirmation juridique."
+      }
     }
   ]
 }
